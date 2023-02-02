@@ -1,6 +1,6 @@
 <?php 
     // Koneksi ke Database
-    $conn = mysqli_connect("Localhost", "root", "", "cekullah");
+    $conn = mysqli_connect("localhost", "root", "", "db_spp");
 
     // READ
     function query($query){

@@ -1,7 +1,7 @@
 <?php 
     require 'functions.php';
     $siswa = query("SELECT * FROM tb_siswa");
-    var_dump($siswa);
+    // var_dump($siswa);
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +26,8 @@
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <th>NIS</th>
-            <th>Gambar</th>
             <th>Nama</th>
+            <th>Password</th>
             <th>Kelas</th>
             <th>Jenis Kelamin</th>
             <th>Alamat</th>
@@ -37,8 +37,8 @@
         <?php foreach($siswa as $ssw) : ?> 
         <tr>
             <td><?= $ssw["nis"]; ?></td>
-            <td><img src="img/<?= $ssw = ["gambar"]; ?>"></td>
-            <td><?= $ssw["nama"]; ?></td>
+            <td><?= $ssw["nama_siswa"]; ?></td>
+            <td><?= $ssw["password"] ?></td>
             <td><?= $ssw["kelas"]; ?></td>
             <td><?= $ssw["jenis_kelamin"]; ?></td>
             <td><?= $ssw["alamat"]; ?></td>
