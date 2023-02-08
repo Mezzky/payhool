@@ -1,7 +1,6 @@
 <?php 
     require 'functions.php';
     $siswa = query("SELECT * FROM tb_siswa");
-    // var_dump($siswa);
 ?>
 
 <!DOCTYPE html>
