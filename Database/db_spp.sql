@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2023 at 05:16 PM
+-- Generation Time: Feb 09, 2023 at 04:00 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -37,11 +37,35 @@ CREATE TABLE `tb_pembayaran` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_petugas`
+--
+
+CREATE TABLE `tb_petugas` (
+  `id_petugas` int(11) NOT NULL,
+  `nip` varchar(5) NOT NULL,
+  `nama_petugas` varchar(100) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `leveluser` varchar(50) NOT NULL,
+  `no_telp` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_petugas`
+--
+
+INSERT INTO `tb_petugas` (`id_petugas`, `nip`, `nama_petugas`, `username`, `password`, `leveluser`, `no_telp`) VALUES
+(1, 'A-01', 'Rizky Robby Romeo', 'ryans', 'qwerty50', 'Admin', '087463522');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_siswa`
 --
 
 CREATE TABLE `tb_siswa` (
-  `nis` int(11) NOT NULL,
+  `id_siswa` int(11) NOT NULL,
+  `nis` int(5) NOT NULL,
   `nama_siswa` varchar(100) NOT NULL,
   `password` varchar(10) NOT NULL,
   `kelas` varchar(10) NOT NULL,
@@ -53,8 +77,8 @@ CREATE TABLE `tb_siswa` (
 -- Dumping data for table `tb_siswa`
 --
 
-INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `kelas`, `jenis_kelamin`, `alamat`) VALUES
-(5414, 'Rizky Ryan Sahadha', 'qwerty65', 'XIIRPL3', 'L', 'Jl. Gatot Kayu');
+INSERT INTO `tb_siswa` (`id_siswa`, `nis`, `nama_siswa`, `password`, `kelas`, `jenis_kelamin`, `alamat`) VALUES
+(1, 5414, 'Rizky Ryan Sahadha', 'qwerty', 'XII RPL 3', 'L', 'Jl. Gatot Kayu');
 
 -- --------------------------------------------------------
 
@@ -88,16 +112,38 @@ ALTER TABLE `tb_pembayaran`
   ADD PRIMARY KEY (`id_spp`);
 
 --
+-- Indexes for table `tb_petugas`
+--
+ALTER TABLE `tb_petugas`
+  ADD PRIMARY KEY (`id_petugas`);
+
+--
 -- Indexes for table `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
-  ADD PRIMARY KEY (`nis`);
+  ADD PRIMARY KEY (`id_siswa`);
 
 --
 -- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tb_petugas`
+--
+ALTER TABLE `tb_petugas`
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tb_siswa`
+--
+ALTER TABLE `tb_siswa`
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

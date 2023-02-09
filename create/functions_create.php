@@ -8,13 +8,13 @@
 
         $nis = htmlspecialchars($data["nis"]);
         $nama = htmlspecialchars($data["nama_siswa"]);
-        $pass = htmlspecialchars($data["password"]);
+        $pass = htmlspecialchars($data["password"]); 
         $kelas = htmlspecialchars($data["kelas"]);
         $jenisKel = htmlspecialchars($data["jenis_kelamin"]);
         $alamat = htmlspecialchars($data["alamat"]);
 
         // Query Insert Data
-        $query = "INSERT INTO tb_siswa VALUE ('$nis', '$nama', '$pass', '$kelas', '$jenisKel', '$alamat')";
+        $query = "INSERT INTO tb_siswa VALUES ('', '$nis', '$nama', '$pass', '$kelas', '$jenisKel', '$alamat')";
 
         mysqli_query($conn, $query);
 

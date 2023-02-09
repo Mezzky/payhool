@@ -1,6 +1,6 @@
 <?php 
     require 'functions.php';
-    $siswa = query("SELECT * FROM tb_siswa");
+    $petugas = query("SELECT * FROM tb_petugas");
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Siswa</title>
+    <title>Data Petugas</title>
     <style>
         html,
         body{
@@ -21,29 +21,29 @@
     </style>
 </head>
 <body>
-    <h1>Data Siswa</h1>
-    <a href="../create/create_siswa.php">Tambah Siswa</a>
+    <h1>Data Petugas</h1>
+    <a href="../create/create_petugas.php">Tambah Petugas</a>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
-            <th>NIS</th>
+            <th>NIP</th>
             <th>Nama</th>
+            <th>Username</th>
             <th>Password</th>
-            <th>Kelas</th>
-            <th>Jenis Kelamin</th>
-            <th>Alamat</th>
+            <th>leveluser</th>
+            <th>No Telepon</th>
             <th>Aksi</th>
         </tr>
 
-        <?php foreach($siswa as $ssw) : ?> 
+        <?php foreach($petugas as $row) : ?> 
         <tr>
-            <td><?= $ssw["nis"]; ?></td>
-            <td><?= $ssw["nama_siswa"]; ?></td>
-            <td><?= $ssw["password"] ?></td>
-            <td><?= $ssw["kelas"]; ?></td>
-            <td><?= $ssw["jenis_kelamin"]; ?></td>
-            <td><?= $ssw["alamat"]; ?></td>
+            <td><?= $row["nip"]; ?></td>
+            <td><?= $row["nama_petugas"]; ?></td>
+            <td><?= $row["username"] ?></td>
+            <td><?= $row["password"]; ?></td>
+            <td><?= $row["leveluser"]; ?></td>
+            <td><?= $row["no_telp"]; ?></td>
             <td>
-                <a href="../delete/delete_siswa.php?<?= $ssw["id_siswa"]; ?>">Hapus</a>
+                <a href="">Hapus</a>
                 <a href="">Edit</a>
             </td>
         </tr>
