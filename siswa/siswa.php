@@ -1,5 +1,5 @@
 <?php 
-    require 'functions.php';
+    require 'functions_siswa.php';
     $siswa = query("SELECT * FROM tb_siswa");
 ?>
 
@@ -22,7 +22,7 @@
 </head>
 <body>
     <h1>Data Siswa</h1>
-    <a href="../create/create_siswa.php">Tambah Siswa</a>
+    <a href="create_siswa.php">Tambah Siswa</a>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <th>NIS</th>
@@ -43,8 +43,8 @@
             <td><?= $ssw["jenis_kelamin"]; ?></td>
             <td><?= $ssw["alamat"]; ?></td>
             <td>
-                <a href="../delete/delete_siswa.php?<?= $ssw["id_siswa"]; ?>">Hapus</a>
-                <a href="">Edit</a>
+                <a href="delete_siswa.php?id_siswa=<?= $ssw["id_siswa"]; ?>">Hapus</a>
+                <a href="update_siswa.php?id_siswa=<?= $ssw["id_siswa"]; ?>">Edit</a>
             </td>
         </tr>
         <?php endforeach; ?>

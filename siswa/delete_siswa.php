@@ -1,5 +1,5 @@
 <?php
-    require 'functions_delete.php';
+    require 'functions_siswa.php';
 
     $id = $_GET["id_siswa"];
 
@@ -7,14 +7,14 @@
             echo "
                 <script>
                     alert('Data Berhasil Dihapus!');
-                    document.location.href = '../read/siswa.php';
+                    document.location.href = 'siswa.php';
                 </script>
             ";
         } else{
             echo "
                 <script>
                     alert('Data Gagal Dihapus!');
-                    document.location.href = '../read/siswa.php';
+                    document.location.href = 'siswa.php';
                 </script>
             ";
         }
