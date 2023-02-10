@@ -1,5 +1,5 @@
 <?php 
-    require 'functions.php';
+    require 'functions_petugas.php';
     $petugas = query("SELECT * FROM tb_petugas");
 ?>
 
@@ -22,7 +22,7 @@
 </head>
 <body>
     <h1>Data Petugas</h1>
-    <a href="../create/create_petugas.php">Tambah Petugas</a>
+    <a href="create_petugas.php">Tambah Petugas</a>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <th>NIP</th>
@@ -43,8 +43,8 @@
             <td><?= $row["leveluser"]; ?></td>
             <td><?= $row["no_telp"]; ?></td>
             <td>
-                <a href="">Hapus</a>
-                <a href="">Edit</a>
+                <a href="delete_petugas.php?id_petugas=<?= $row["id_petugas"] ?>">Hapus</a>
+                <a href="update_petugas.php?id_petugas=<?= $row["id_petugas"] ?>">Edit</a>
             </td>
         </tr>
         <?php endforeach; ?>
