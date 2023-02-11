@@ -1,9 +1,9 @@
 <?php
     require 'functions_petugas.php';
 
-    $id = $_GET["id_petugas"];
+    $nip = $_GET["nip"];
 
-    if(deletePetugas($id) > 0){
+    if(deletePetugas($nip) > 0){
             echo "
                 <script>
                     alert('Data Berhasil Dihapus!');

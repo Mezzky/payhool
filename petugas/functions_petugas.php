@@ -26,7 +26,7 @@
         $no_telp = htmlspecialchars($data["no_telp"]);
 
         // Query Insert Data
-        $query = "INSERT INTO tb_petugas VALUES ('', '$nip', '$nama', '$username', '$pass', '$leveluser', '$no_telp')";
+        $query = "INSERT INTO tb_petugas VALUES ('$nip', '$nama', '$username', '$pass', '$leveluser', '$no_telp')";
 
         mysqli_query($conn, $query);
 
@@ -37,7 +37,7 @@
     function updatePetugas($data){
         global $conn;
 
-        $id = $data["id_petugas"];
+        // $id = $data["id_petugas"];
         $nip = htmlspecialchars($data["nip"]);
         $nama = htmlspecialchars($data["nama_petugas"]);
         $username = htmlspecialchars($data["username"]);
@@ -47,13 +47,12 @@
 
         // Query Update Data
         $query = "UPDATE tb_petugas SET
-                    nip = '$nip',
                     nama_petugas = '$nama',
                     password = '$pass',
                     username = '$username',
                     leveluser = '$leveluser',
                     no_telp = '$no_telp'
-                    WHERE id_petugas = '$id'";
+                    WHERE nip = '$nip'";
 
         mysqli_query($conn, $query) or die(mysqli_error($conn));
 
@@ -61,10 +60,10 @@
     }
 
     // Delete Petugas
-    function deletePetugas($id){
+    function deletePetugas($nip){
         global $conn;
 
-        mysqli_query($conn, "DELETE FROM tb_petugas WHERE id_petugas = $id");
+        mysqli_query($conn, "DELETE FROM tb_petugas WHERE nip = $nip");
         return mysqli_affected_rows($conn);
     }
 

@@ -1,9 +1,9 @@
 <?php
     require 'functions_siswa.php';
 
-    $id = $_GET["id_siswa"];
+    $nis = $_GET["nis"];
 
-    if(deleteSiswa($id) > 0){
+    if(deleteSiswa($nis) > 0){
             echo "
                 <script>
                     alert('Data Berhasil Dihapus!');
