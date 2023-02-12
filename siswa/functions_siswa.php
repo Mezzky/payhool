@@ -26,7 +26,7 @@
         $alamat = htmlspecialchars($data["alamat"]);
 
         // Query Insert Data
-        $query = "INSERT INTO tb_siswa VALUES ('', '$nis', '$nama', '$pass', '$kelas', '$jenisKel', '$alamat')";
+        $query = "INSERT INTO tb_siswa VALUES ('$nis', '$nama', '$pass', '$kelas', '$jenisKel', '$alamat')";
 
         mysqli_query($conn, $query);
 
@@ -37,7 +37,7 @@
     function updateSiswa($data){
         global $conn;
 
-        $id = $data["id_siswa"];
+        // $id = $data["id_siswa"];
         $nis = htmlspecialchars($data["nis"]);
         $nama = htmlspecialchars($data["nama_siswa"]);
         $pass = htmlspecialchars($data["password"]); 
@@ -47,13 +47,11 @@
 
         // Query Update Data
         $query = "UPDATE tb_siswa SET
-                    nis = '$nis',
                     nama_siswa = '$nama',
                     password = '$pass',
                     kelas = '$kelas',
-                    jenis_kelamin = '$jenisKel',
                     alamat = '$alamat'
-                    WHERE id_siswa = '$id'";
+                    WHERE nis = '$nis'";
 
         mysqli_query($conn, $query) or die(mysqli_error($conn));
 
@@ -61,10 +59,10 @@
     }
 
     // Delete Siswa
-    function deleteSiswa($id){
+    function deleteSiswa($nis){
         global $conn;
 
-        mysqli_query($conn, "DELETE FROM tb_siswa WHERE id_siswa = $id");
+        mysqli_query($conn, "DELETE FROM tb_siswa WHERE nis = $nis");
         return mysqli_affected_rows($conn);
     }
 

@@ -2,9 +2,9 @@
     require 'functions_siswa.php';
 
     // Get data dari URL
-    $id = $_GET["id_siswa"];
+    $nis = $_GET["nis"];
 
-    $siswa = query("SELECT * FROM tb_siswa WHERE id_siswa = $id")[0];
+    $siswa = query("SELECT * FROM tb_siswa WHERE nis = $nis")[0];
 
     if(isset($_POST["submit"])){
         if(updateSiswa($_POST) > 0){
@@ -35,13 +35,8 @@
 </head>
 <body>
     <form action="" method="POST">
-        <input type="hidden" name="id_siswa" value="<?= $siswa["id_siswa"] ?>">
-        <input type="hidden" name="jenis_kelamin" value="<?= $siswa["jenis_kelamin"] ?>">
+        <input type="hidden" name="nis" value="<?= $siswa["nis"] ?>">
         <!-- <input type="hidden" name="nis"> -->
-        <div class="input-box">
-            <label for="nis">NIS</label>
-            <input autocomplete="off" required type="number" name="nis" id="nis" value="<?= $siswa["nis"] ?>">
-        </div>
         <div class="input-box">
             <label for="nama">Nama</label>
             <input autocomplete="off" required type="text" name="nama_siswa" id="nama" value="<?= $siswa["nama_siswa"] ?>">

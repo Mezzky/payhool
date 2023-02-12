@@ -2,9 +2,9 @@
     require 'functions_petugas.php';
 
     // Get data dari URL
-    $id = $_GET["id_petugas"];
+    $nip = $_GET["nip"];
 
-    $petugas = query("SELECT * FROM tb_petugas WHERE id_petugas = $id")[0];
+    $petugas = query("SELECT * FROM tb_petugas WHERE nip = $nip")[0];
 
     if(isset($_POST["submit"])){
         if(updatePetugas($_POST) > 0){
@@ -35,11 +35,7 @@
 </head>
 <body>
     <form action="" method="POST">
-    <input type="hidden" name="id_petugas" value="<?= $petugas["id_petugas"] ?>">
-        <div class="input-box">
-            <label for="nip">NIP</label>
-            <input autocomplete="off" required type="text" name="nip" id="nip" value="<?= $petugas["nip"] ?>">
-        </div>
+    <input type="hidden" name="nip" value="<?= $petugas["nip"] ?>">
         <div class="input-box">
             <label for="nama">Nama</label>
             <input autocomplete="off" required type="text" name="nama_petugas" id="nama" value="<?= $petugas["nama_petugas"] ?>">

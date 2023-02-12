@@ -34,17 +34,17 @@
             <th>Aksi</th>
         </tr>
 
-        <?php foreach($siswa as $ssw) : ?> 
+        <?php foreach($siswa as $row) : ?> 
         <tr>
-            <td><?= $ssw["nis"]; ?></td>
-            <td><?= $ssw["nama_siswa"]; ?></td>
-            <td><?= $ssw["password"] ?></td>
-            <td><?= $ssw["kelas"]; ?></td>
-            <td><?= $ssw["jenis_kelamin"]; ?></td>
-            <td><?= $ssw["alamat"]; ?></td>
+            <td><?= $row["nis"]; ?></td>
+            <td><?= $row["nama_siswa"]; ?></td>
+            <td><?= $row["password"] ?></td>
+            <td><?= $row["kelas"]; ?></td>
+            <td><?= $row["jenis_kelamin"]; ?></td>
+            <td><?= $row["alamat"]; ?></td>
             <td>
-                <a href="delete_siswa.php?id_siswa=<?= $ssw["id_siswa"]; ?>">Hapus</a>
-                <a href="update_siswa.php?id_siswa=<?= $ssw["id_siswa"]; ?>">Edit</a>
+                <a href="delete_siswa.php?nis=<?= $row["nis"]; ?>">Hapus</a>
+                <a href="update_siswa.php?nis=<?= $row["nis"]; ?>">Edit</a>
             </td>
         </tr>
         <?php endforeach; ?>
