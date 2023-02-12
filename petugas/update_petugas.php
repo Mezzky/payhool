@@ -4,7 +4,7 @@
     // Get data dari URL
     $nip = $_GET["nip"];
 
-    $petugas = query("SELECT * FROM tb_petugas WHERE nip = $nip")[0];
+    $petugas = query("SELECT * FROM tb_petugas WHERE nip = '$nip'")[0];
 
     if(isset($_POST["submit"])){
         if(updatePetugas($_POST) > 0){

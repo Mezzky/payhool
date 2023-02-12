@@ -63,7 +63,8 @@
     function deletePetugas($nip){
         global $conn;
 
-        mysqli_query($conn, "DELETE FROM tb_petugas WHERE nip = $nip");
+        mysqli_query($conn, "DELETE FROM tb_petugas WHERE nip = '$nip'");
+
         return mysqli_affected_rows($conn);
     }
 

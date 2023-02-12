@@ -43,8 +43,8 @@
             <td><?= $row["leveluser"]; ?></td>
             <td><?= $row["no_telp"]; ?></td>
             <td>
-                <a href="delete_petugas.php?nip=<?= $row["nip"] ?>">Hapus</a>
-                <a href="update_petugas.php?nip=<?= $row["nip"] ?>">Edit</a>
+                <a href="delete_petugas.php?nip=<?= $row["nip"]; ?>">Hapus</a>
+                <a href="update_petugas.php?nip=<?= $row["nip"]; ?>">Edit</a>
             </td>
         </tr>
         <?php endforeach; ?>
