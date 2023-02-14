@@ -21,12 +21,12 @@
         $nis = htmlspecialchars($data["nis"]);
         $nama = htmlspecialchars($data["nama_siswa"]);
         $pass = htmlspecialchars($data["password"]); 
-        $kelas = htmlspecialchars($data["kelas"]);
+        $id_kelas = htmlspecialchars($data["id_kelas"]);
         $jenisKel = htmlspecialchars($data["jenis_kelamin"]);
         $alamat = htmlspecialchars($data["alamat"]);
 
         // Query Insert Data
-        $query = "INSERT INTO tb_siswa VALUES ('$nis', '$nama', '$pass', '$kelas', '$jenisKel', '$alamat')";
+        $query = "INSERT INTO tb_siswa VALUES ('$nis', '$nama', '$pass', '$id_kelas', '$jenisKel', '$alamat')";
 
         mysqli_query($conn, $query);
 
@@ -41,7 +41,7 @@
         $nis = htmlspecialchars($data["nis"]);
         $nama = htmlspecialchars($data["nama_siswa"]);
         $pass = htmlspecialchars($data["password"]); 
-        $kelas = htmlspecialchars($data["kelas"]);
+        $id_kelas = htmlspecialchars($data["id_kelas"]);
         $jenisKel = htmlspecialchars($data["jenis_kelamin"]);
         $alamat = htmlspecialchars($data["alamat"]);
 
@@ -49,7 +49,7 @@
         $query = "UPDATE tb_siswa SET
                     nama_siswa = '$nama',
                     password = '$pass',
-                    kelas = '$kelas',
+                    id_kelas = '$id_kelas',
                     alamat = '$alamat'
                     WHERE nis = '$nis'";
 

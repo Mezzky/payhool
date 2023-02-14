@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2023 at 02:47 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Feb 14, 2023 at 04:23 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -64,8 +63,15 @@ CREATE TABLE `tb_pembayaran` (
   `id_pembayaran` int(5) NOT NULL,
   `nis` int(5) NOT NULL,
   `tgl_bayar` datetime NOT NULL,
-  `jumlah_bayar` varchar(100) NOT NULL
+  `jumlah_bayar` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_pembayaran`
+--
+
+INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `tgl_bayar`, `jumlah_bayar`) VALUES
+(1, 5415, '2023-02-14 04:11:27', 600000);
 
 -- --------------------------------------------------------
 
@@ -103,6 +109,13 @@ CREATE TABLE `tb_siswa` (
   `jenis_kelamin` varchar(10) NOT NULL,
   `alamat` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_siswa`
+--
+
+INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `id_kelas`, `jenis_kelamin`, `alamat`) VALUES
+(5415, 'Zidan Abraham', 'dandann', 'XII-02', 'L', 'Jl. Janal');
 
 --
 -- Indexes for dumped tables
@@ -148,7 +161,7 @@ ALTER TABLE `tb_siswa`
 -- AUTO_INCREMENT for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  MODIFY `id_pembayaran` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
