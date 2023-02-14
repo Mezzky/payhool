@@ -43,8 +43,13 @@
             <input autocomplete="off" required type="text" name="password" id="password">
         </div>
         <div class="input-box">
-            <label for="kelas">Kelas</label>
-            <input autocomplete="off" required type="text" name="kelas" id="kelas">
+            <label for="id_kelas">Kelas</label>
+            <select name="id_kelas" id="id_kelas">
+                <?php $kelas = query("SELECT * FROM tb_kelas"); ?>
+                <?php foreach($kelas as $kls) : ?>
+                <option value="<?= $kls['id_kelas']; ?>"><?= $kls['id_kelas']; ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
         <div class="input-box">
             <label for="jenis_kelamin">Jenis Kelamin</label>
