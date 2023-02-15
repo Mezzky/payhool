@@ -1,6 +1,6 @@
 <?php 
     // Koneksi ke Database
-    $conn = mysqli_connect("localhost", "root", "", "db_spp");
+    $conn = mysqli_connect("localhost", "root", "", "spp_db");
 
     // READ
     function query($query){
@@ -12,6 +12,27 @@
             $rows[] = $row;
         }
         return $rows;
+    }
+
+    // Function Tambah SPP
+    function tambahSPP($nis){
+        global $conn;
+
+        $query = "INSERT INTO tb_pembayaran VALUES 
+                ('', '$nis', 'Juli', '', ''),
+                ('', '$nis', 'Juni', '', ''),
+                ('', '$nis', 'Agustus', '', ''),
+                ('', '$nis', 'September', '', ''),
+                ('', '$nis', 'Oktober', '', ''),
+                ('', '$nis', 'November', '', ''),
+                ('', '$nis', 'Desember', '', ''),
+                ('', '$nis', 'Januari', '', ''),
+                ('', '$nis', 'Februari', '', ''),
+                ('', '$nis', 'Maret', '', ''),
+                ('', '$nis', 'April', '', ''),
+                ('', '$nis', 'Mei', '', '')";
+
+        mysqli_query($conn, $query);
     }
 
     // Function Tambah Siswa
@@ -27,8 +48,11 @@
 
         // Query Insert Data
         $query = "INSERT INTO tb_siswa VALUES ('$nis', '$nama', '$pass', '$id_kelas', '$jenisKel', '$alamat')";
-
+        
         mysqli_query($conn, $query);
+
+        tambahSPP($nis);
+        
 
         return mysqli_affected_rows($conn);
     }

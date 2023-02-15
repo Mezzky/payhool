@@ -1,6 +1,10 @@
 <?php 
     require 'functions_pembayaran.php';
-    $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis)");
+    
+    if(isset($_POST['submit'])) {
+        $nis = $_POST['keyword'];
+        $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $nis");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +26,18 @@
 </head>
 <body>
     <h1>Data Pembayaran</h1>
-    <a href="create_pembayaran.php">Tambah Pembayaran</a>
+
+    <form action="http://localhost/rizky-nitip/payhool/pembayaran/pembayaran.php" method="POST" autocomplete="off" class="search-form">
+        <input type="text" name="keyword" placeholder="NIS atau Nama Siswa" required>
+        <button type="submit" name="submit">Cari</button>
+    </form>
+
+  <?php if(isset($_POST['submit'])) : ?>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <th>NIS</th>
             <th>Nama</th>
+            <th>Bulan</th>
             <th>Tanggal Bayar</th>
             <th>Jumlah Bayar</th>
             <th>Keterangan</th>
@@ -37,15 +48,16 @@
         <tr>
             <td><?= $row["nis"]; ?></td>
             <td><?= $row["nama_siswa"]; ?></td>
+            <td><?= $row["bulan"]; ?></td>
             <td><?= $row["tgl_bayar"]; ?></td>
             <td><?= $row["jumlah_bayar"] ?></td>
             <td>Belum Lunas</td>
             <td>
-                <a href="delete_pembayaran.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>">Hapus</a>
-                <a href="update_pembayaran.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>">Edit</a>
+                <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>">Bayar</a>
             </td>
         </tr>
         <?php endforeach; ?>
     </table>
+    <?php endif; ?>
 </body>
 </html>
