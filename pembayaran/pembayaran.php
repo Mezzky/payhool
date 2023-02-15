@@ -27,12 +27,12 @@
 <body>
     <h1>Data Pembayaran</h1>
 
-    <form action="http://localhost/rizky-nitip/payhool/pembayaran/pembayaran.php" method="POST" autocomplete="off" class="search-form">
+    <form action="pembayaran.php" method="POST" autocomplete="off" class="search-form">
         <input type="text" name="keyword" placeholder="NIS atau Nama Siswa" required>
         <button type="submit" name="submit">Cari</button>
     </form>
 
-  <?php if(isset($_POST['submit'])) : ?>
+    <?php if(isset($_POST['submit'])) : ?>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <th>NIS</th>
