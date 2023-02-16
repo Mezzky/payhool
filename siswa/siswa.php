@@ -1,5 +1,6 @@
 <?php 
     require 'functions_siswa.php';
+    require '../views/template/navbar.php';
     $siswa = query("SELECT * FROM tb_siswa");
 ?>
 

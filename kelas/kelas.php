@@ -1,5 +1,6 @@
 <?php 
     require 'functions_kelas.php';
+    require '../views/template/navbar.php';
     $kelas = query("SELECT * FROM tb_kelas");
 ?>
 
