@@ -1,8 +1,9 @@
 <?php 
     require 'functions_pembayaran.php';
+    require '../views/template/navbar.php';
     
-    if(isset($_POST['submit'])) {
-        $nis = $_POST['keyword'];
+    if(isset($_GET['keyword'])) {
+        $nis = $_GET['keyword'];
         $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $nis");
     }
 ?>
@@ -27,12 +28,12 @@
 <body>
     <h1>Data Pembayaran</h1>
 
-    <form action="pembayaran.php" method="POST" autocomplete="off" class="search-form">
+    <form action="pembayaran.php" method="GET" autocomplete="off" class="search-form">
         <input type="text" name="keyword" placeholder="NIS atau Nama Siswa" required>
-        <button type="submit" name="submit">Cari</button>
+        <button type="submit">Cari</button>
     </form>
 
-    <?php if(isset($_POST['submit'])) : ?>
+    <?php if(isset($_GET['keyword'])) : ?>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <th>NIS</th>
@@ -51,10 +52,27 @@
             <td><?= $row["bulan"]; ?></td>
             <td><?= $row["tgl_bayar"]; ?></td>
             <td><?= $row["jumlah_bayar"] ?></td>
-            <td>Belum Lunas</td>
             <td>
-                <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>">Bayar</a>
+                <?php 
+                    if($row["jumlah_bayar"] > 0){
+                        echo "Lunas";
+                    } else{
+                        echo "Belum Lunas";
+                    }
+                ?>
             </td>
+            <?php 
+                if($row["jumlah_bayar"] == 600000){
+            ?>      <td>Terbayar</td>
+            <?php
+                } else{
+            ?>
+                    <td>
+                        <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
+                    </td>
+            <?php
+                }
+            ?>
         </tr>
         <?php endforeach; ?>
     </table>

@@ -15,7 +15,7 @@
         }
 
         // BAYAR
-        function bayarSPP($id) {
+        function bayarSPP($id, $nis) {
             global $conn;
 
             $query = "UPDATE tb_pembayaran SET
@@ -25,5 +25,12 @@
 
             mysqli_query($conn, $query);
 
-            return mysqli_affected_rows($conn);
+            if(mysqli_affected_rows($conn)>0){
+                echo "
+                    <script>
+                        alert('Berhasil Dibayar!');
+                        document.location.href = 'pembayaran.php?keyword=$nis';
+                    </script>
+                ";
+            }
         }

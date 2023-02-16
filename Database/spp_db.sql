@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2023 at 06:54 AM
+-- Generation Time: Feb 16, 2023 at 06:15 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -72,30 +72,30 @@ CREATE TABLE `tb_pembayaran` (
 --
 
 INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tgl_bayar`, `jumlah_bayar`) VALUES
-(2, 5415, 'Juli', '2023-02-15 11:59:01', 600000),
-(3, 5415, 'Juni', '0000-00-00 00:00:00', 0),
-(4, 5415, 'Agustus', '0000-00-00 00:00:00', 0),
-(5, 5415, 'September', '0000-00-00 00:00:00', 0),
-(6, 5415, 'Oktober', '0000-00-00 00:00:00', 0),
-(7, 5415, 'November', '0000-00-00 00:00:00', 0),
-(8, 5415, 'Desember', '0000-00-00 00:00:00', 0),
-(9, 5415, 'Januari', '0000-00-00 00:00:00', 0),
-(10, 5415, 'Februari', '0000-00-00 00:00:00', 0),
-(11, 5415, 'Maret', '0000-00-00 00:00:00', 0),
-(12, 5415, 'April', '0000-00-00 00:00:00', 0),
-(13, 5415, 'Mei', '0000-00-00 00:00:00', 0),
-(38, 5455, 'Juli', '0000-00-00 00:00:00', 0),
-(39, 5455, 'Juni', '0000-00-00 00:00:00', 0),
-(40, 5455, 'Agustus', '0000-00-00 00:00:00', 0),
-(41, 5455, 'September', '0000-00-00 00:00:00', 0),
-(42, 5455, 'Oktober', '0000-00-00 00:00:00', 0),
-(43, 5455, 'November', '0000-00-00 00:00:00', 0),
-(44, 5455, 'Desember', '0000-00-00 00:00:00', 0),
-(45, 5455, 'Januari', '0000-00-00 00:00:00', 0),
-(46, 5455, 'Februari', '0000-00-00 00:00:00', 0),
-(47, 5455, 'Maret', '0000-00-00 00:00:00', 0),
-(48, 5455, 'April', '0000-00-00 00:00:00', 0),
-(49, 5455, 'Mei', '0000-00-00 00:00:00', 0);
+(2, 5415, 'Juli', '2023-02-16 09:50:22', 600000),
+(3, 5415, 'Juni', '2023-02-16 09:49:40', 600000),
+(4, 5415, 'Agustus', '2023-02-16 09:50:07', 600000),
+(5, 5415, 'September', '2023-02-16 09:54:11', 600000),
+(6, 5415, 'Oktober', '2023-02-16 09:54:48', 600000),
+(7, 5415, 'November', '2023-02-16 09:56:39', 600000),
+(8, 5415, 'Desember', '2023-02-16 10:00:24', 600000),
+(9, 5415, 'Januari', '2023-02-16 10:04:29', 600000),
+(10, 5415, 'Februari', '2023-02-16 10:06:36', 600000),
+(11, 5415, 'Maret', '2023-02-16 10:09:00', 600000),
+(12, 5415, 'April', '2023-02-16 10:11:35', 600000),
+(13, 5415, 'Mei', '2023-02-16 10:15:16', 600000),
+(50, 5444, 'Juli', '2023-02-16 11:13:34', 600000),
+(51, 5444, 'Juni', '0000-00-00 00:00:00', 0),
+(52, 5444, 'Agustus', '0000-00-00 00:00:00', 0),
+(53, 5444, 'September', '0000-00-00 00:00:00', 0),
+(54, 5444, 'Oktober', '0000-00-00 00:00:00', 0),
+(55, 5444, 'November', '0000-00-00 00:00:00', 0),
+(56, 5444, 'Desember', '0000-00-00 00:00:00', 0),
+(57, 5444, 'Januari', '0000-00-00 00:00:00', 0),
+(58, 5444, 'Februari', '0000-00-00 00:00:00', 0),
+(59, 5444, 'Maret', '0000-00-00 00:00:00', 0),
+(60, 5444, 'April', '0000-00-00 00:00:00', 0),
+(61, 5444, 'Mei', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -140,7 +140,7 @@ CREATE TABLE `tb_siswa` (
 
 INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `id_kelas`, `jenis_kelamin`, `alamat`) VALUES
 (5415, 'Zidan Abraham', 'dandann', 'XII-02', 'L', 'Jl. Janal'),
-(5455, 'Ngurah', 'iytyit', 'XII-01', 'L', 'Jl');
+(5444, 'Rindu Valencia Rahma', 'rorororo', 'XII-01', 'P', 'Jl. Puluasa');
 
 --
 -- Indexes for dumped tables
@@ -186,7 +186,7 @@ ALTER TABLE `tb_siswa`
 -- AUTO_INCREMENT for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  MODIFY `id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- Constraints for dumped tables
@@ -196,7 +196,7 @@ ALTER TABLE `tb_pembayaran`
 -- Constraints for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  ADD CONSTRAINT `fk_nis` FOREIGN KEY (`nis`) REFERENCES `tb_siswa` (`nis`);
+  ADD CONSTRAINT `fk_nis` FOREIGN KEY (`nis`) REFERENCES `tb_siswa` (`nis`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `tb_siswa`

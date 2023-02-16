@@ -1,5 +1,6 @@
 <?php 
     require 'functions_petugas.php';
+    require '../views/template/navbar.php';
     $petugas = query("SELECT * FROM tb_petugas");
 ?>
 
