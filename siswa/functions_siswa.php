@@ -18,21 +18,21 @@
     function tambahSPP($nis){
         global $conn;
 
-        $query = "INSERT INTO tb_pembayaran VALUES 
-                ('', '$nis', 'Juli', '', ''),
-                ('', '$nis', 'Juni', '', ''),
-                ('', '$nis', 'Agustus', '', ''),
-                ('', '$nis', 'September', '', ''),
-                ('', '$nis', 'Oktober', '', ''),
-                ('', '$nis', 'November', '', ''),
-                ('', '$nis', 'Desember', '', ''),
-                ('', '$nis', 'Januari', '', ''),
-                ('', '$nis', 'Februari', '', ''),
-                ('', '$nis', 'Maret', '', ''),
-                ('', '$nis', 'April', '', ''),
-                ('', '$nis', 'Mei', '', '')";
+        $querySPP = "INSERT INTO tb_pembayaran VALUES 
+                ('', 'A-00', '$nis', 'Juli', '', ''),
+                ('', 'A-00', '$nis', 'Juni', '', ''),
+                ('', 'A-00', '$nis', 'Agustus', '', ''),
+                ('', 'A-00', '$nis', 'September', '', ''),
+                ('', 'A-00', '$nis', 'Oktober', '', ''),
+                ('', 'A-00', '$nis', 'November', '', ''),
+                ('', 'A-00', '$nis', 'Desember', '', ''),
+                ('', 'A-00', '$nis', 'Januari', '', ''),
+                ('', 'A-00', '$nis', 'Februari', '', ''),
+                ('', 'A-00', '$nis', 'Maret', '', ''),
+                ('', 'A-00', '$nis', 'April', '', ''),
+                ('', 'A-00', '$nis', 'Mei', '', '')";
 
-        mysqli_query($conn, $query);
+        mysqli_query($conn, $querySPP);
     }
 
     // Function Tambah Siswa
@@ -41,19 +41,15 @@
 
         $nis = htmlspecialchars($data["nis"]);
         $nama = htmlspecialchars($data["nama_siswa"]);
-        $pass = htmlspecialchars($data["password"]); 
         $id_kelas = htmlspecialchars($data["id_kelas"]);
         $jenisKel = htmlspecialchars($data["jenis_kelamin"]);
         $alamat = htmlspecialchars($data["alamat"]);
 
         // Query Insert Data
-        $query = "INSERT INTO tb_siswa VALUES ('$nis', '$nama', '$pass', '$id_kelas', '$jenisKel', '$alamat')";
-        
+        $query = "INSERT INTO tb_siswa VALUES ('$nis', '$nama', '123456', '$id_kelas', '$jenisKel', '$alamat')";
         mysqli_query($conn, $query);
 
         tambahSPP($nis);
-        
-
         return mysqli_affected_rows($conn);
     }
 
