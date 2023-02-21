@@ -1,11 +1,12 @@
 <?php 
     require 'functions_siswa.php';
     require '../views/template/navbar.php';
-    $siswa = query("SELECT * FROM tb_siswa");
+    $siswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas)");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,14 +14,14 @@
     <title>Data Siswa</title>
     <style>
         html,
-        body{
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
     </style>
 </head>
+
 <body>
     <h1>Data Siswa</h1>
     <a href="create_siswa.php">Tambah Siswa</a>
@@ -35,12 +36,12 @@
             <th>Aksi</th>
         </tr>
 
-        <?php foreach($siswa as $row) : ?> 
+        <?php foreach($siswa as $row) : ?>
         <tr>
             <td><?= $row["nis"]; ?></td>
             <td><?= $row["nama_siswa"]; ?></td>
             <td><?= $row["password"] ?></td>
-            <td><?= $row["id_kelas"]; ?></td>
+            <td><?= $row["kelas"]; ?></td>
             <td><?= $row["jenis_kelamin"]; ?></td>
             <td><?= $row["alamat"]; ?></td>
             <td>
@@ -51,4 +52,5 @@
         <?php endforeach; ?>
     </table>
 </body>
+
 </html>

@@ -1,7 +1,7 @@
 <?php 
     require 'functions_siswa.php';
 
-    if(isset($_POST["submit"])){
+    if(isset($_POST["submit"])) {
         if(createSiswa($_POST) > 0){
             echo "
                 <script>
@@ -38,10 +38,10 @@
             <label for="nama">Nama</label>
             <input autocomplete="off" required type="text" name="nama_siswa" id="nama">
         </div>
-        <div class="input-box">
+        <!-- <div class="input-box">
             <label for="password">Password</label>
             <input autocomplete="off" required type="text" name="password" id="password">
-        </div>
+        </div> -->
         <div class="input-box">
             <label for="id_kelas">Kelas</label>
             <select name="id_kelas" id="id_kelas">

@@ -3,8 +3,10 @@
     require '../views/template/navbar.php';
     
     if(isset($_GET['keyword'])) {
-        $nis = $_GET['keyword'];
-        $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $nis");
+        $keyword = $_GET['keyword'];
+
+        $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword OR nama_siswa LIKE '%$keyword%'");
+        $tagihan = query("SELECT SUM(jumlah_bayar) FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword OR nama_siswa LIKE '%$keyword%'")[0];
     }
 ?>
 
@@ -76,6 +78,9 @@
         </tr>
         <?php endforeach; ?>
     </table>
+    <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
+    <?php $totalNominal = 600000 * 12; ?>
+    <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
     <?php endif; ?>
 </body>
 </html>
