@@ -1,7 +1,7 @@
 <?php 
     require 'functions_siswa.php';
     require '../views/template/navbar.php';
-    $siswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas)");
+    $siswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) ORDER BY nis ASC");
 ?>
 
 <!DOCTYPE html>
