@@ -12,14 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Siswa</title>
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
 
 <body>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Feb 2023 pada 14.30
--- Versi server: 10.4.27-MariaDB
--- Versi PHP: 8.2.0
+-- Generation Time: Feb 22, 2023 at 03:46 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_kelas`
+-- Table structure for table `tb_kelas`
 --
 
 CREATE TABLE `tb_kelas` (
@@ -34,7 +34,7 @@ CREATE TABLE `tb_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data untuk tabel `tb_kelas`
+-- Dumping data for table `tb_kelas`
 --
 
 INSERT INTO `tb_kelas` (`id_kelas`, `kelas`, `jurusan`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `tb_kelas` (`id_kelas`, `kelas`, `jurusan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pembayaran`
+-- Table structure for table `tb_pembayaran`
 --
 
 CREATE TABLE `tb_pembayaran` (
@@ -58,7 +58,7 @@ CREATE TABLE `tb_pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_pembayaran`
+-- Dumping data for table `tb_pembayaran`
 --
 
 INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nip`, `nis`, `bulan`, `tgl_bayar`, `jumlah_bayar`) VALUES
@@ -85,12 +85,48 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nip`, `nis`, `bulan`, `tgl_bayar`
 (178, 'A-00', 5415, 'Februari', '0000-00-00 00:00:00', 0),
 (179, 'A-00', 5415, 'Maret', '0000-00-00 00:00:00', 0),
 (180, 'A-00', 5415, 'April', '0000-00-00 00:00:00', 0),
-(181, 'A-00', 5415, 'Mei', '0000-00-00 00:00:00', 0);
+(181, 'A-00', 5415, 'Mei', '2023-02-21 22:42:27', 600000),
+(182, 'A-00', 5416, 'Juli', '2023-02-21 22:37:45', 600000),
+(183, 'A-00', 5416, 'Juni', '2023-02-21 22:37:55', 600000),
+(184, 'A-00', 5416, 'Agustus', '2023-02-21 22:38:01', 600000),
+(185, 'A-00', 5416, 'September', '2023-02-21 22:38:04', 600000),
+(186, 'A-00', 5416, 'Oktober', '2023-02-21 22:38:10', 600000),
+(187, 'A-00', 5416, 'November', '2023-02-21 22:38:13', 600000),
+(188, 'A-00', 5416, 'Desember', '2023-02-21 22:38:19', 600000),
+(189, 'A-00', 5416, 'Januari', '2023-02-21 22:38:23', 600000),
+(190, 'A-00', 5416, 'Februari', '2023-02-21 22:38:27', 600000),
+(191, 'A-00', 5416, 'Maret', '2023-02-21 22:38:52', 600000),
+(192, 'A-00', 5416, 'April', '2023-02-21 22:39:01', 600000),
+(193, 'A-00', 5416, 'Mei', '2023-02-21 22:39:04', 600000),
+(194, 'A-00', 5417, 'Juli', '0000-00-00 00:00:00', 0),
+(195, 'A-00', 5417, 'Juni', '0000-00-00 00:00:00', 0),
+(196, 'A-00', 5417, 'Agustus', '0000-00-00 00:00:00', 0),
+(197, 'A-00', 5417, 'September', '0000-00-00 00:00:00', 0),
+(198, 'A-00', 5417, 'Oktober', '0000-00-00 00:00:00', 0),
+(199, 'A-00', 5417, 'November', '0000-00-00 00:00:00', 0),
+(200, 'A-00', 5417, 'Desember', '0000-00-00 00:00:00', 0),
+(201, 'A-00', 5417, 'Januari', '0000-00-00 00:00:00', 0),
+(202, 'A-00', 5417, 'Februari', '0000-00-00 00:00:00', 0),
+(203, 'A-00', 5417, 'Maret', '0000-00-00 00:00:00', 0),
+(204, 'A-00', 5417, 'April', '0000-00-00 00:00:00', 0),
+(205, 'A-00', 5417, 'Mei', '0000-00-00 00:00:00', 0),
+(206, 'A-00', 5413, 'Juli', '0000-00-00 00:00:00', 0),
+(207, 'A-00', 5413, 'Juni', '0000-00-00 00:00:00', 0),
+(208, 'A-00', 5413, 'Agustus', '0000-00-00 00:00:00', 0),
+(209, 'A-00', 5413, 'September', '0000-00-00 00:00:00', 0),
+(210, 'A-00', 5413, 'Oktober', '0000-00-00 00:00:00', 0),
+(211, 'A-00', 5413, 'November', '0000-00-00 00:00:00', 0),
+(212, 'A-00', 5413, 'Desember', '0000-00-00 00:00:00', 0),
+(213, 'A-00', 5413, 'Januari', '0000-00-00 00:00:00', 0),
+(214, 'A-00', 5413, 'Februari', '0000-00-00 00:00:00', 0),
+(215, 'A-00', 5413, 'Maret', '0000-00-00 00:00:00', 0),
+(216, 'A-00', 5413, 'April', '0000-00-00 00:00:00', 0),
+(217, 'A-00', 5413, 'Mei', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_petugas`
+-- Table structure for table `tb_petugas`
 --
 
 CREATE TABLE `tb_petugas` (
@@ -103,7 +139,7 @@ CREATE TABLE `tb_petugas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_petugas`
+-- Dumping data for table `tb_petugas`
 --
 
 INSERT INTO `tb_petugas` (`nip`, `nama_petugas`, `username`, `password`, `leveluser`, `no_telp`) VALUES
@@ -113,7 +149,7 @@ INSERT INTO `tb_petugas` (`nip`, `nama_petugas`, `username`, `password`, `levelu
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_siswa`
+-- Table structure for table `tb_siswa`
 --
 
 CREATE TABLE `tb_siswa` (
@@ -126,17 +162,20 @@ CREATE TABLE `tb_siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `tb_siswa`
+-- Dumping data for table `tb_siswa`
 --
 
 INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `id_kelas`, `jenis_kelamin`, `alamat`) VALUES
+(5413, 'I Gusti Pangestu', '123456', 'D-10', 'L', 'Jl. Taman Pancing'),
 (5414, 'Rizky Ryan Sahadha', '123456', 'R-10', 'L', 'Jl. Pulau Moyo'),
-(5415, 'Inyo Mansur', '123456', 'D-10', 'L', 'Jl. Gatot Subroto');
+(5415, 'Inyo Mansur', '123456', 'D-10', 'L', 'Jl. Gatot Subroto'),
+(5416, 'Raffi Adrian Sahadha', '123456', 'T-10', 'L', 'Jl. Pulau Enggano'),
+(5417, 'Arinda Tika Agustin', '123456', 'R-10', 'P', 'Jl. Pemogan');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_spp`
+-- Table structure for table `tb_spp`
 --
 
 CREATE TABLE `tb_spp` (
@@ -149,17 +188,24 @@ CREATE TABLE `tb_spp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `tb_spp`
+--
+
+INSERT INTO `tb_spp` (`id_spp`, `nis`, `bulan`, `tahun`, `jumlah_bayar`, `angkatan`) VALUES
+(1, 5414, 'Januari', '2023', 600000, '1');
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tb_kelas`
+-- Indexes for table `tb_kelas`
 --
 ALTER TABLE `tb_kelas`
   ADD PRIMARY KEY (`id_kelas`);
 
 --
--- Indeks untuk tabel `tb_pembayaran`
+-- Indexes for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
@@ -167,54 +213,60 @@ ALTER TABLE `tb_pembayaran`
   ADD KEY `fk_nip` (`nip`);
 
 --
--- Indeks untuk tabel `tb_petugas`
+-- Indexes for table `tb_petugas`
 --
 ALTER TABLE `tb_petugas`
   ADD PRIMARY KEY (`nip`);
 
 --
--- Indeks untuk tabel `tb_siswa`
+-- Indexes for table `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
   ADD PRIMARY KEY (`nis`),
   ADD KEY `fk_id_kelas` (`id_kelas`);
 
 --
--- Indeks untuk tabel `tb_spp`
+-- Indexes for table `tb_spp`
 --
 ALTER TABLE `tb_spp`
   ADD PRIMARY KEY (`id_spp`),
   ADD KEY `fk_nis_spp` (`nis`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pembayaran`
+-- AUTO_INCREMENT for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  MODIFY `id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=182;
+  MODIFY `id_pembayaran` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- AUTO_INCREMENT for table `tb_spp`
+--
+ALTER TABLE `tb_spp`
+  MODIFY `id_spp` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `tb_pembayaran`
+-- Constraints for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
   ADD CONSTRAINT `fk_nip` FOREIGN KEY (`nip`) REFERENCES `tb_petugas` (`nip`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_nis` FOREIGN KEY (`nis`) REFERENCES `tb_siswa` (`nis`) ON DELETE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `tb_siswa`
+-- Constraints for table `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
   ADD CONSTRAINT `fk_id_kelas` FOREIGN KEY (`id_kelas`) REFERENCES `tb_kelas` (`id_kelas`);
 
 --
--- Ketidakleluasaan untuk tabel `tb_spp`
+-- Constraints for table `tb_spp`
 --
 ALTER TABLE `tb_spp`
   ADD CONSTRAINT `fk_nis_spp` FOREIGN KEY (`nis`) REFERENCES `tb_siswa` (`nis`) ON DELETE CASCADE;
