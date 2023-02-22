@@ -5,8 +5,8 @@
     if(isset($_GET['keyword'])) {
         $keyword = $_GET['keyword'];
 
-        $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword OR nama_siswa LIKE '%$keyword%'");
-        $tagihan = query("SELECT SUM(jumlah_bayar) FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword OR nama_siswa LIKE '%$keyword%'")[0];
+        $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword");
+        $tagihan = query("SELECT SUM(jumlah_bayar) FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword")[0];
     }
 ?>
 
@@ -31,7 +31,7 @@
     <h1>Data Pembayaran</h1>
 
     <form action="pembayaran.php" method="GET" autocomplete="off" class="search-form">
-        <input type="text" name="keyword" placeholder="NIS atau Nama Siswa" required>
+        <input type="number" name="keyword" placeholder="Cari NIS" required>
         <button type="submit">Cari</button>
     </form>
 
