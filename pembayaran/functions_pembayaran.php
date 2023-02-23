@@ -18,19 +18,23 @@
         function bayarSPP($id, $nis) {
             global $conn;
 
-            $query = "UPDATE tb_pembayaran SET
-                        tgl_bayar = NOW(),
+            $querySPP = "INSERT INTO tb_spp VALUES ('', 'A-01', '$nis', NOW(), '600000')";
+            mysqli_query($conn, $querySPP);
+
+            $queryBayar = "UPDATE tb_pembayaran SET
                         jumlah_bayar = '600000'
                         WHERE id_pembayaran = $id";
 
-            mysqli_query($conn, $query);
+            mysqli_query($conn, $queryBayar);
 
-            if(mysqli_affected_rows($conn)>0){
+            if (mysqli_affected_rows($conn) > 0){
                 echo "
                     <script>
                         alert('Berhasil Dibayar!');
                         document.location.href = 'pembayaran.php?keyword=$nis';
                     </script>
                 ";
+            } else {
+                die(mysqli_error($conn));
             }
         }

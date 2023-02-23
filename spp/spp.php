@@ -19,10 +19,8 @@
         <tr>
             <th>NIS</th>
             <th>Nama</th>
-            <th>Bulan</th>
-            <th>Tahun</th>
-            <th>Jumlah Bayar</th>
-            <th>Angkatan</th>
+            <th>Tanggal Bayar</th>
+            <th>Bayar</th>
             <th>Aksi</th>
         </tr>
 
@@ -30,10 +28,8 @@
         <tr>
             <td><?= $row["nis"]; ?></td>
             <td><?= $row["nama_siswa"]; ?></td>
-            <td><?= $row["bulan"] ?></td>
-            <td><?= $row["tahun"]; ?></td>
-            <td><?= $row["jumlah_bayar"]; ?></td>
-            <td><?= $row["angkatan"]; ?></td>
+            <td><?= $row["tgl_bayar"] ?></td>
+            <td><?= $row["bayar"]; ?></td>
             <td>
                 <a href="delete_spp.php?nis=<?= $row["id_spp"]; ?>">Hapus</a>
                 <a href="update_spp.php?nis=<?= $row["id_spp"]; ?>">Edit</a>

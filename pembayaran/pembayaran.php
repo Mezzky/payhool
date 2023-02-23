@@ -4,14 +4,23 @@
     
     if(isset($_GET['keyword'])) {
         $keyword = $_GET['keyword'];
+        $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword AND angkatan = 'I'");
 
-        $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword");
-        $tagihan = query("SELECT SUM(jumlah_bayar) FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword")[0];
+        if (isset($_POST['angkatan-1'])) {
+            $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword AND angkatan = 'I'");
+        } elseif (isset($_POST['angkatan-2'])) {
+            $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword AND angkatan = 'II'");
+        } elseif (isset($_POST['angkatan-3'])) {
+            $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword AND angkatan = 'III'");
+        }
+
+        $tagihan = query("SELECT SUM(jumlah_bayar) FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword AND angkatan='I'")[0];
     }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,32 +28,45 @@
     <title>Data Pembayaran</title>
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
     <h1>Data Pembayaran</h1>
 
-    <form action="pembayaran.php" method="GET" autocomplete="off" class="search-form">
+    <form action="" method="GET" autocomplete="off" class="search-form">
+        <?php if (!isset($_GET['keyword'])) : ?>
         <input type="number" name="keyword" placeholder="Cari NIS" required>
+        <?php else : ?>
+        <input type="number" name="keyword" placeholder="Cari NIS" value="<?= $_GET['keyword']; ?>" required>
+        <?php endif; ?>
         <button type="submit">Cari</button>
     </form>
 
-    <?php if(isset($_GET['keyword'])) : ?>
+    <?php if (isset($_GET['keyword'])) : ?>
+    <form action="" method="POST">
+        <button type="submit" name="angkatan-1">Angkatan I</button>
+        <button type="submit" name="angkatan-2">Angkatan II</button>
+        <button type="submit" name="angkatan-3">Angkatan III</button>
+    </form>
+
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
+            <th>Angkatan</th>
             <th>NIS</th>
             <th>Nama</th>
             <th>Bulan</th>
-            <th>Tanggal Bayar</th>
+            <th>Tahun</th>
             <th>Jumlah Bayar</th>
             <th>Keterangan</th>
             <th>Aksi</th>
         </tr>
 
-        <?php foreach($pembayaran as $row) : ?> 
+        <?php foreach($pembayaran as $row) : ?>
         <tr>
+            <td><?= $row["angkatan"]; ?></td>
             <td><?= $row["nis"]; ?></td>
             <td><?= $row["nama_siswa"]; ?></td>
             <td><?= $row["bulan"]; ?></td>
-            <td><?= $row["tgl_bayar"]; ?></td>
+            <td><?= $row["tahun"]; ?></td>
             <td><?= $row["jumlah_bayar"] ?></td>
             <td>
                 <?php 
@@ -57,13 +79,13 @@
             </td>
             <?php 
                 if($row["jumlah_bayar"] == 600000){
-            ?>      <td>Terbayar</td>
+            ?> <td>Terbayar</td>
             <?php
                 } else{
             ?>
-                    <td>
-                        <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
-                    </td>
+            <td>
+                <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
+            </td>
             <?php
                 }
             ?>
@@ -75,4 +97,5 @@
     <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
     <?php endif; ?>
 </body>
+
 </html>
