@@ -1,7 +1,7 @@
 <?php 
     require 'functions_petugas.php';
     require '../views/template/navbar.php';
-    $petugas = query("SELECT * FROM tb_petugas");
+    $petugas = query("SELECT * FROM tb_petugas ORDER BY nip ASC");
 ?>
 
 <!DOCTYPE html>

@@ -50,17 +50,10 @@
             <select name="id_kelas" id="id_kelas">
                 <?php $kelas = query("SELECT * FROM tb_kelas"); ?>
                 <?php foreach($kelas as $kls) : ?>
-                <option value="<?= $kls['id_kelas']; ?>"><?= $kls['id_kelas']; ?></option>
+                <option value="<?= $kls['id_kelas']; ?>"><?= $kls['kelas']; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
-        <!-- <div class="input-box">
-            <label for="jenis_kelamin">Jenis Kelamin</label>
-            <select name="jenis_kelamin" id="jenis_kelamin">
-                <option value="L">Laki-Laki</option>
-                <option value="P">Perempuan</option>
-            </select>
-        </div> -->
         <div class="input-box">
             <label for="alamat">Alamat</label>
             <input autocomplete="off" required type="text" name="alamat" id="alamat" value="<?= $siswa["alamat"] ?>">

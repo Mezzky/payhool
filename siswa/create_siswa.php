@@ -47,7 +47,7 @@
             <select name="id_kelas" id="id_kelas">
                 <?php $kelas = query("SELECT * FROM tb_kelas"); ?>
                 <?php foreach($kelas as $kls) : ?>
-                <option value="<?= $kls['kelas']; ?>"><?= $kls['kelas']; ?></option>
+                <option value="<?= $kls['id_kelas']; ?>"><?= $kls['kelas']; ?></option>
                 <?php endforeach; ?>
             </select>
         </div>

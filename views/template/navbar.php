@@ -45,11 +45,11 @@
         <nav>
             <ul>
                 <li><a href="../index.php">Beranda</a></li>
+                <li><a href="../petugas/petugas.php">Data Petugas</a></li>
                 <li><a href="../siswa/siswa.php">Data Siswa</a></li>
                 <li><a href="../kelas/kelas.php">Data Kelas</a></li>
-                <li><a href="../spp/spp.php">Data SPP</a></li>
-                <li><a href="../petugas/petugas.php">Data Petugas</a></li>
-                <li><a href="../pembayaran/pembayaran.php">Pembayaran</a></li>
+                <li><a href="../pembayaran/pembayaran.php">Data SPP</a></li>
+                <li><a href="../spp/spp.php">Histori</a></li>
             </ul>
         </nav>
     </header>
