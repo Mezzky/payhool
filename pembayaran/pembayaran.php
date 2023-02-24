@@ -34,9 +34,9 @@
 
     <form action="" method="GET" autocomplete="off" class="search-form">
         <?php if (!isset($_GET['keyword'])) : ?>
-        <input type="number" name="keyword" placeholder="Cari NIS" required>
+        <input type="text" name="keyword" placeholder="Cari NIS"  maxlength="4" required>
         <?php else : ?>
-        <input type="number" name="keyword" placeholder="Cari NIS" value="<?= $_GET['keyword']; ?>" required>
+        <input type="text" name="keyword" placeholder="Cari NIS" value="<?= $_GET['keyword']; ?>"  maxlength="4" required>
         <?php endif; ?>
         <button type="submit">Cari</button>
     </form>

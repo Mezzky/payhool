@@ -48,11 +48,14 @@
         </div>
         <div class="input-box">
             <label for="leveluser">Leveluser</label>
-            <input autocomplete="off" required type="text" name="leveluser" id="leveluser">
+            <select name="leveluser" id="leveluser">
+                <option value="Admin">Admin</option>
+                <option value="Petugas">Petugas</option>
+            </select>
         </div>
         <div class="input-box">
             <label for="no_telp">No Telepon</label>
-            <input autocomplete="off" required type="number" name="no_telp" id="no_telp">
+            <input autocomplete="off" maxlength="12" required type="text" name="no_telp" id="no_telp">
         </div>
         <div class="btn">
             <button type="reset">Batal</button>
