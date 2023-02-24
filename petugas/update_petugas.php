@@ -49,8 +49,12 @@
             <input autocomplete="off" required type="text" name="password" id="password" value="<?= $petugas["password"] ?>">
         </div>
         <div class="input-box">
+        <div class="input-box">
             <label for="leveluser">Leveluser</label>
-            <input autocomplete="off" required type="text" name="leveluser" id="leveluser" value="<?= $petugas["leveluser"] ?>">
+            <select name="leveluser" id="leveluser">
+                <option value="<?= $row['leveluser']; ?>"><?= $row['leveluser']; ?></option>
+            </select>
+        </div>
         </div>
         <div class="input-box">
             <label for="no_telp">No Telepon</label>

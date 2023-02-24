@@ -1,7 +1,7 @@
 <?php 
     require 'functions_spp.php';
     require '../views/template/navbar.php';
-    $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) ORDER BY id_spp DESC")
+    $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) ORDER BY id_spp DESC")
 ?>
 
 <!DOCTYPE html>
@@ -17,23 +17,20 @@
 <h1>Data SPP</h1>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
+            <th>Petugas</th>
             <th>NIS</th>
             <th>Nama</th>
             <th>Tanggal Bayar</th>
             <th>Bayar</th>
-            <th>Aksi</th>
         </tr>
 
         <?php foreach($spp as $row) : ?>
         <tr>
+            <td><?= $row["nama_petugas"]; ?></td>
             <td><?= $row["nis"]; ?></td>
             <td><?= $row["nama_siswa"]; ?></td>
             <td><?= $row["tgl_bayar"] ?></td>
             <td><?= $row["bayar"]; ?></td>
-            <td>
-                <a href="delete_spp.php?nis=<?= $row["id_spp"]; ?>">Hapus</a>
-                <a href="update_spp.php?nis=<?= $row["id_spp"]; ?>">Edit</a>
-            </td>
         </tr>
         <?php endforeach; ?>
     </table>

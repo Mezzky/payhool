@@ -18,45 +18,50 @@
     function tambahSPP($nis){
         global $conn;
 
-        $querySPP = "INSERT INTO tb_pembayaran VALUES 
-                ('', '$nis', 'Juni', '2022/2023', '', 'I'),
-                ('', '$nis', 'Juli', '2022/2023', '', 'I'),
-                ('', '$nis', 'Agustus', '2022/2023', '', 'I'),
-                ('', '$nis', 'September', '2022/2023', '', 'I'),
-                ('', '$nis', 'Oktober', '2022/2023', '', 'I'),
-                ('', '$nis', 'November', '2022/2023', '', 'I'),
-                ('', '$nis', 'Desember', '2022/2023', '', 'I'),
-                ('', '$nis', 'Januari', '2022/2023', '', 'I'),
-                ('', '$nis', 'Februari', '2022/2023', '', 'I'),
-                ('', '$nis', 'Maret', '2022/2023', '', 'I'),
-                ('', '$nis', 'April', '2022/2023', '', 'I'),
-                ('', '$nis', 'Mei', '2022/2023', '', 'I'),
-                
-                ('', '$nis', 'Juni', '2022/2023', '', 'II'),
-                ('', '$nis', 'Juli', '2022/2023', '', 'II'),
-                ('', '$nis', 'Agustus', '2022/2023', '', 'II'),
-                ('', '$nis', 'September', '2022/2023', '', 'II'),
-                ('', '$nis', 'Oktober', '2022/2023', '', 'II'),
-                ('', '$nis', 'November', '2022/2023', '', 'II'),
-                ('', '$nis', 'Desember', '2022/2023', '', 'II'),
-                ('', '$nis', 'Januari', '2022/2023', '', 'II'),
-                ('', '$nis', 'Februari', '2022/2023', '', 'II'),
-                ('', '$nis', 'Maret', '2022/2023', '', 'II'),
-                ('', '$nis', 'April', '2022/2023', '', 'II'),
-                ('', '$nis', 'Mei', '2022/2023', '', 'II'),
+        $tahunI = date("Y");
+        $tahunII = date("Y", strtotime("+1 year"));
+        $tahunIII = date("Y", strtotime("+2 years"));
+        $tahunIIII = date("Y", strtotime("+3 years"));
 
-                ('', '$nis', 'Juni', '2022/2023', '', 'III'),
-                ('', '$nis', 'Juli', '2022/2023', '', 'III'),
-                ('', '$nis', 'Agustus', '2022/2023', '', 'III'),
-                ('', '$nis', 'September', '2022/2023', '', 'III'),
-                ('', '$nis', 'Oktober', '2022/2023', '', 'III'),
-                ('', '$nis', 'November', '2022/2023', '', 'III'),
-                ('', '$nis', 'Desember', '2022/2023', '', 'III'),
-                ('', '$nis', 'Januari', '2022/2023', '', 'III'),
-                ('', '$nis', 'Februari', '2022/2023', '', 'III'),
-                ('', '$nis', 'Maret', '2022/2023', '', 'III'),
-                ('', '$nis', 'April', '2022/2023', '', 'III'),
-                ('', '$nis', 'Mei', '2022/2023', '', 'III')";
+        $querySPP = "INSERT INTO tb_pembayaran VALUES 
+                ('', '$nis', 'Juni', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'Juli', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'Agustus', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'September', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'Oktober', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'November', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'Desember', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'Januari', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'Februari', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'Maret', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'April', '$tahunI/$tahunII', '', 'I'),
+                ('', '$nis', 'Mei', '$tahunI/$tahunII', '', 'I'),
+                
+                ('', '$nis', 'Juni', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'Juli', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'Agustus', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'September', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'Oktober', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'November', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'Desember', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'Januari', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'Februari', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'Maret', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'April', '$tahunII/$tahunIII', '', 'II'),
+                ('', '$nis', 'Mei', '$tahunII/$tahunIII', '', 'II'),
+
+                ('', '$nis', 'Juni', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'Juli', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'Agustus', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'September', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'Oktober', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'November', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'Desember', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'Januari', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'Februari', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'Maret', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'April', '$tahunIII/$tahunIIII', '', 'III'),
+                ('', '$nis', 'Mei', '$tahunIII/$tahunIIII', '', 'III')";
 
         mysqli_query($conn, $querySPP);
     }
