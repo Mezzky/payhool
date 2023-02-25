@@ -51,8 +51,13 @@
         <div class="input-box">
             <label for="leveluser">Leveluser</label>
             <select name="leveluser" id="leveluser">
-                <option value="Admin">Admin</option>
+            <?php if ($petugas['leveluser'] == 'Admin') : ?>
+                <option value="Admin" selected>Admin</option>
                 <option value="Petugas">Petugas</option>
+                <?php elseif ($petugas['leveluser'] == 'Petugas') : ?>
+                <option value="Admin">Admin</option>
+                <option value="Petugas" selected>Petugas</option>
+                <?php endif; ?>
             </select>
         </div>
         <div class="input-box">
