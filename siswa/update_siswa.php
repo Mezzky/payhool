@@ -3,10 +3,9 @@
 
     // Get data dari URL
     $nis = $_GET["nis"];
+    $siswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) WHERE nis = $nis")[0];
 
-    $siswa = query("SELECT * FROM tb_siswa WHERE nis = $nis")[0];
-
-    if(isset($_POST["submit"])){
+    if(isset($_POST["submit"])) {
         if(updateSiswa($_POST) > 0){
             echo "
                 <script>
@@ -31,12 +30,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Siswa</title>
+    <title>Edit Siswa</title>
 </head>
 <body>
     <form action="" method="POST">
         <input type="hidden" name="nis" value="<?= $siswa["nis"] ?>">
-        <!-- <input type="hidden" name="nis"> -->
         <div class="input-box">
             <label for="nama">Nama</label>
             <input autocomplete="off" required type="text" name="nama_siswa" id="nama" value="<?= $siswa["nama_siswa"] ?>">
@@ -50,7 +48,11 @@
             <select name="id_kelas" id="id_kelas">
                 <?php $kelas = query("SELECT * FROM tb_kelas"); ?>
                 <?php foreach($kelas as $kls) : ?>
+                <?php if ($siswa['id_kelas'] == $kls['id_kelas']) : ?>
+                <option value="<?= $siswa['id_kelas']; ?>" selected><?= $siswa['kelas']; ?></option>
+                <?php else : ?>
                 <option value="<?= $kls['id_kelas']; ?>"><?= $kls['kelas']; ?></option>
+                <?php endif; ?>
                 <?php endforeach; ?>
             </select>
         </div>

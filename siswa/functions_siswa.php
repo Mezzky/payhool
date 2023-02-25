@@ -88,12 +88,10 @@
     function updateSiswa($data){
         global $conn;
 
-        // $id = $data["id_siswa"];
         $nis = htmlspecialchars($data["nis"]);
         $nama = htmlspecialchars($data["nama_siswa"]);
         $pass = htmlspecialchars($data["password"]); 
         $id_kelas = htmlspecialchars($data["id_kelas"]);
-        $jenisKel = htmlspecialchars($data["jenis_kelamin"]);
         $alamat = htmlspecialchars($data["alamat"]);
 
         // Query Update Data
@@ -105,7 +103,6 @@
                     WHERE nis = '$nis'";
 
         mysqli_query($conn, $query) or die(mysqli_error($conn));
-
         return mysqli_affected_rows($conn);
     }
 
