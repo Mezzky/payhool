@@ -30,7 +30,7 @@
             <td><?= $row["nis"]; ?></td>
             <td><?= $row["nama_siswa"]; ?></td>
             <td><?= $row["tgl_bayar"] ?></td>
-            <td><?= $row["bayar"]; ?></td>
+            <td>Rp.<?= number_format($row["bayar"], 0, ',', '.'); ?></td>
         </tr>
         <?php endforeach; ?>
     </table>

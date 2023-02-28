@@ -4,6 +4,7 @@
     
     if(isset($_GET['keyword'])) {
         $keyword = $_GET['keyword'];
+        $nama = query("SELECT * FROM tb_siswa WHERE nis = $keyword");
         $pembayaran = query("SELECT * FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = $keyword AND angkatan = 'I'");
 
         if (isset($_POST['angkatan-1'])) {
@@ -42,59 +43,60 @@
     </form>
 
     <?php if (isset($_GET['keyword'])) : ?>
-    <form action="" method="POST">
-        <button type="submit" name="angkatan-1">Angkatan I</button>
-        <button type="submit" name="angkatan-2">Angkatan II</button>
-        <button type="submit" name="angkatan-3">Angkatan III</button>
-    </form>
+        <h2><?= $nama["nama_siswa"]; ?></h2>
+        <form action="" method="POST">
+            <button type="submit" name="angkatan-1">Angkatan I</button>
+            <button type="submit" name="angkatan-2">Angkatan II</button>
+            <button type="submit" name="angkatan-3">Angkatan III</button>
+        </form>
 
-    <table border="1" cellspacing="0" cellpadding="10">
-        <tr>
-            <th>Angkatan</th>
-            <th>NIS</th>
-            <th>Nama</th>
-            <th>Bulan</th>
-            <th>Tahun</th>
-            <th>Jumlah Bayar</th>
-            <th>Keterangan</th>
-            <th>Aksi</th>
-        </tr>
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>Angkatan</th>
+                <th>NIS</th>
+                <th>Nama</th>
+                <th>Bulan</th>
+                <th>Tahun</th>
+                <th>Jumlah Bayar</th>
+                <th>Keterangan</th>
+                <th>Aksi</th>
+            </tr>
 
-        <?php foreach($pembayaran as $row) : ?>
-        <tr>
-            <td><?= $row["angkatan"]; ?></td>
-            <td><?= $row["nis"]; ?></td>
-            <td><?= $row["nama_siswa"]; ?></td>
-            <td><?= $row["bulan"]; ?></td>
-            <td><?= $row["tahun"]; ?></td>
-            <td><?= $row["jumlah_bayar"] ?></td>
-            <td>
+            <?php foreach($pembayaran as $row) : ?>
+            <tr>
+                <td><?= $row["angkatan"]; ?></td>
+                <td><?= $row["nis"]; ?></td>
+                <td><?= $row["nama_siswa"]; ?></td>
+                <td><?= $row["bulan"]; ?></td>
+                <td><?= $row["tahun"]; ?></td>
+                <td>Rp.<?= number_format($row["jumlah_bayar"], 0, ',', '.'); ?></td>
+                <td>
+                    <?php 
+                        if($row["jumlah_bayar"] > 0){
+                            echo "Lunas";
+                        } else{
+                            echo "Belum Lunas";
+                        }
+                    ?>
+                </td>
                 <?php 
-                    if($row["jumlah_bayar"] > 0){
-                        echo "Lunas";
+                    if($row["jumlah_bayar"] == 600000){
+                ?> <td>Terbayar</td>
+                <?php
                     } else{
-                        echo "Belum Lunas";
+                ?>
+                <td>
+                    <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
+                </td>
+                <?php
                     }
                 ?>
-            </td>
-            <?php 
-                if($row["jumlah_bayar"] == 600000){
-            ?> <td>Terbayar</td>
-            <?php
-                } else{
-            ?>
-            <td>
-                <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
-            </td>
-            <?php
-                }
-            ?>
-        </tr>
-        <?php endforeach; ?>
-    </table>
-    <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
-    <?php $totalNominal = 600000 * 12; ?>
-    <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
+        <?php $totalNominal = 600000 * 12; ?>
+        <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
     <?php endif; ?>
 </body>
 
