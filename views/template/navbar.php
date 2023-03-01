@@ -4,7 +4,7 @@ if (!isset($_SESSION['login'])) {
     echo "
     <script>
     alert('Mohon Login terlebih dahulu');
-    window.location.href = 'http://localhost/rizky-nitip/payhool/login/login.php';
+    window.location.href = '../login/login.php';
     </script>";
 }
 ?>
@@ -74,8 +74,6 @@ if (!isset($_SESSION['login'])) {
                 <li><a href="../spp/spp.php">Histori</a></li>
                 <li><a href="../login/logout.php">Logout</a></li>
                 <?php } ?>
-        
-                
             </ul>
         </nav>
     </header>

@@ -4,7 +4,7 @@ require 'functions_login.php';
 
 if(isset($_SESSION['login'])) {
     echo " <script>
-    window.location.href = '../siswa/siswa.php'
+    window.location.href = '../siswa/siswa.php';
     </script>";
 }
 
@@ -61,7 +61,7 @@ if (isset($_POST['login'])) {
 <body>
     <form action="" method="post">
         <?php if(isset($error))  : ?>
-         <p>NIP/NIS/Password Salah!</p>
+        <p>NIP/NIS/Password Salah!</p>
         <?php  endif; ?>
         <div class="user">
             <label for="user">NIP / NIS</label>

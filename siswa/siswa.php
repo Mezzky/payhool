@@ -33,7 +33,7 @@
             <th>Kelas</th>
             <th>Jenis Kelamin</th>
             <th>Alamat</th>
-             <?php if($_SESSION['leveluser'] == 'Admin' ) : ?>
+            <?php if($_SESSION['leveluser'] == 'Admin' ) : ?>
                 <th>Aksi</th>
             <?php endif; ?>
         </tr>
