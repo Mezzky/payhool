@@ -17,8 +17,10 @@
         // BAYAR
         function bayarSPP($id, $nis) {
             global $conn;
+            session_start();
 
-            $querySPP = "INSERT INTO tb_spp VALUES ('', 'A-01', '$nis', NOW(), '600000')";
+            $petugas = $_SESSION['key'];
+            $querySPP = "INSERT INTO tb_spp VALUES ('', '$petugas', '$nis', NOW(), '600000')";
             mysqli_query($conn, $querySPP);
 
             $queryBayar = "UPDATE tb_pembayaran SET

@@ -2,6 +2,12 @@
     require 'functions_spp.php';
     require '../views/template/navbar.php';
     $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) ORDER BY id_spp DESC");
+
+    $nis = $_SESSION['key'];
+    if($_SESSION['leveluser'] == $nis) {
+        $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) WHERE nis='$nis' ORDER BY id_spp DESC");
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +23,7 @@
 
 <body>
     <h1>Histori Pembayaran</h1>
+    <?php if($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') : ?>
     <form action="laporan_kelas.php" method="POST" autocomplete="off">
         <select name="kelas" id="kelas" required>
             <option value="" selected>Pilih Kelas</option>
@@ -44,7 +51,7 @@
         </select>
         <button type="submit">Buat Laporan Siswa</button>
     </form>
-
+    <?php endif; ?>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <th>Petugas</th>

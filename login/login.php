@@ -1,19 +1,50 @@
 <?php
-session_start(); 
+session_start();
 require 'functions_login.php';
 
-if(isset($_POST['login'])) {
-    $user = $_POST['username'];
+if(isset($_SESSION['login'])) {
+    echo " <script>
+    window.location.href = '../siswa/siswa.php'
+    </script>";
+}
+
+if (isset($_POST['login'])) {
+    $user = $_POST['user'];
     $password = $_POST['password'];
 
-    $petugas = mysqli_query($conn,"SELECT * FROM tb_petugas WHERE nip='$user'");
-    if($petugas['password'] === $password) {
+    $petugas = mysqli_query($conn, "SELECT * FROM tb_petugas WHERE nip=$user");
+    $siswa = mysqli_query($conn, "SELECT * FROM tb_siswa WHERE nis=$user");
+
+    if (mysqli_num_rows($petugas) === 1) {
+        $dataPetugas = mysqli_fetch_assoc($petugas);
         $_SESSION['login'] = true;
-        $_SESSION['namaPetugas'] = $petugas['nama_petugas'];
-        echo "<script>
-        alert('berhasil login');
-        window.location.href = 'http://localhost/payhool-main/siswa/siswa.php;
-        </script>";
+        $_SESSION['key'] = $dataPetugas['nip'];
+        $_SESSION['leveluser'] = $dataPetugas['leveluser'];
+        $_SESSION['namaPetugas'] = $dataPetugas['nama_petugas'];
+        if ("$password" == $dataPetugas['password']) {
+            echo " <script>
+            alert('Berhasil Login');
+            window.location.href = '../siswa/siswa.php';
+            </script>";
+            exit;
+        } else {
+            $error = true;
+        }
+    } elseif (mysqli_num_rows($siswa) === 1) {
+        $dataSiswa = mysqli_fetch_assoc($siswa);
+        $_SESSION['login'] = true;
+        $_SESSION['key'] = $dataSiswa['nis'];
+        $_SESSION['leveluser'] = $dataSiswa['nis'];
+        $_SESSION['namaSiswa'] = $dataSiswa['nama_siswa'];
+        if ("$password" == $dataSiswa['password']) {
+            echo " <script>
+            alert('Berhasil Login');
+            window.location.href = '../siswa/siswa.php';
+            </script>";
+            exit;
+        } else {
+            $error = true;
+        }
     }
 }
 
@@ -29,9 +60,12 @@ if(isset($_POST['login'])) {
 </head>
 <body>
     <form action="" method="post">
-        <div class="username">
-            <label for="username">NIP / NIS</label>
-            <input type="text" name="username" id="username">
+        <?php if(isset($error))  : ?>
+         <p>NIP/NIS/Password Salah!</p>
+        <?php  endif; ?>
+        <div class="user">
+            <label for="user">NIP / NIS</label>
+            <input type="text" name="user" id="user">
         </div>
         <div class="password">
             <label for="password">Password</label>
