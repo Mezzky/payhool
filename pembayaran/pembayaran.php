@@ -43,7 +43,7 @@
     </form>
 
     <?php if (isset($_GET['keyword'])) : ?>
-        <h2><?= $nama["nama_siswa"]; ?></h2>
+        <h2><?= $nama[0]["nama_siswa"]; ?></h2>
         <form action="" method="POST">
             <button type="submit" name="angkatan-1">Angkatan I</button>
             <button type="submit" name="angkatan-2">Angkatan II</button>
