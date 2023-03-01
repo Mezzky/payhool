@@ -4,7 +4,7 @@ if (!isset($_SESSION['login'])) {
     echo "
     <script>
     alert('Mohon Login terlebih dahulu');
-    window.location.href = 'http://localhost/projectuk/login/login.php';
+    window.location.href = 'http://localhost/rizky-nitip/payhool/login/login.php';
     </script>";
 }
 ?>
