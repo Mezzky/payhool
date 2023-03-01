@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2023 at 02:47 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Mar 01, 2023 at 02:41 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tb_kelas` (
-  `id_kelas` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
+  `id_kelas` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `kelas` varchar(10) NOT NULL,
   `jurusan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_kelas`
@@ -56,7 +55,7 @@ CREATE TABLE `tb_pembayaran` (
   `tahun` varchar(50) NOT NULL,
   `jumlah_bayar` double DEFAULT NULL,
   `angkatan` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_pembayaran`
@@ -64,8 +63,8 @@ CREATE TABLE `tb_pembayaran` (
 
 INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_bayar`, `angkatan`) VALUES
 (386, 5417, 'Juni', '2023/2024', 600000, 'I'),
-(387, 5417, 'Juli', '2023/2024', 0, 'I'),
-(388, 5417, 'Agustus', '2023/2024', 0, 'I'),
+(387, 5417, 'Juli', '2023/2024', 600000, 'I'),
+(388, 5417, 'Agustus', '2023/2024', 600000, 'I'),
 (389, 5417, 'September', '2023/2024', 0, 'I'),
 (390, 5417, 'Oktober', '2023/2024', 0, 'I'),
 (391, 5417, 'November', '2023/2024', 0, 'I'),
@@ -98,7 +97,43 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (418, 5417, 'Februari', '2025/2026', 0, 'III'),
 (419, 5417, 'Maret', '2025/2026', 0, 'III'),
 (420, 5417, 'April', '2025/2026', 0, 'III'),
-(421, 5417, 'Mei', '2025/2026', 0, 'III');
+(421, 5417, 'Mei', '2025/2026', 0, 'III'),
+(458, 5418, 'Juni', '2023/2024', 600000, 'I'),
+(459, 5418, 'Juli', '2023/2024', 600000, 'I'),
+(460, 5418, 'Agustus', '2023/2024', 600000, 'I'),
+(461, 5418, 'September', '2023/2024', 600000, 'I'),
+(462, 5418, 'Oktober', '2023/2024', 0, 'I'),
+(463, 5418, 'November', '2023/2024', 0, 'I'),
+(464, 5418, 'Desember', '2023/2024', 0, 'I'),
+(465, 5418, 'Januari', '2023/2024', 0, 'I'),
+(466, 5418, 'Februari', '2023/2024', 0, 'I'),
+(467, 5418, 'Maret', '2023/2024', 0, 'I'),
+(468, 5418, 'April', '2023/2024', 0, 'I'),
+(469, 5418, 'Mei', '2023/2024', 0, 'I'),
+(470, 5418, 'Juni', '2024/2025', 0, 'II'),
+(471, 5418, 'Juli', '2024/2025', 0, 'II'),
+(472, 5418, 'Agustus', '2024/2025', 0, 'II'),
+(473, 5418, 'September', '2024/2025', 0, 'II'),
+(474, 5418, 'Oktober', '2024/2025', 0, 'II'),
+(475, 5418, 'November', '2024/2025', 0, 'II'),
+(476, 5418, 'Desember', '2024/2025', 0, 'II'),
+(477, 5418, 'Januari', '2024/2025', 0, 'II'),
+(478, 5418, 'Februari', '2024/2025', 0, 'II'),
+(479, 5418, 'Maret', '2024/2025', 0, 'II'),
+(480, 5418, 'April', '2024/2025', 0, 'II'),
+(481, 5418, 'Mei', '2024/2025', 0, 'II'),
+(482, 5418, 'Juni', '2025/2026', 0, 'III'),
+(483, 5418, 'Juli', '2025/2026', 0, 'III'),
+(484, 5418, 'Agustus', '2025/2026', 0, 'III'),
+(485, 5418, 'September', '2025/2026', 0, 'III'),
+(486, 5418, 'Oktober', '2025/2026', 0, 'III'),
+(487, 5418, 'November', '2025/2026', 0, 'III'),
+(488, 5418, 'Desember', '2025/2026', 0, 'III'),
+(489, 5418, 'Januari', '2025/2026', 0, 'III'),
+(490, 5418, 'Februari', '2025/2026', 0, 'III'),
+(491, 5418, 'Maret', '2025/2026', 0, 'III'),
+(492, 5418, 'April', '2025/2026', 0, 'III'),
+(493, 5418, 'Mei', '2025/2026', 0, 'III');
 
 -- --------------------------------------------------------
 
@@ -113,15 +148,15 @@ CREATE TABLE `tb_petugas` (
   `password` varchar(50) NOT NULL,
   `leveluser` varchar(50) NOT NULL,
   `no_telp` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_petugas`
 --
 
 INSERT INTO `tb_petugas` (`nip`, `nama_petugas`, `username`, `password`, `leveluser`, `no_telp`) VALUES
-('A-01', 'Gungde Solahudin', 'gungdin', 'petugas12', 'Admin', '087645322'),
-('P-01', 'Arta Wijaya', 'artawi', 'art123', 'Petugas', '087352625415');
+('01', 'Gungde Solahudin', 'gungdin', 'petugas12', 'Admin', '087645322'),
+('02', 'Arta Wijaya', 'artawi', 'art123', 'Petugas', '087352625415');
 
 -- --------------------------------------------------------
 
@@ -136,14 +171,15 @@ CREATE TABLE `tb_siswa` (
   `id_kelas` varchar(10) NOT NULL,
   `jenis_kelamin` varchar(10) NOT NULL,
   `alamat` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_siswa`
 --
 
 INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `id_kelas`, `jenis_kelamin`, `alamat`) VALUES
-(5417, 'Inyo Mansurda', '123456', 'D-10', 'L', 'Jl. Gatot Kayu');
+(5417, 'Inyo Mansurda', '123456', 'D-10', 'L', 'Jl. Gatot Kayu'),
+(5418, 'Idan Abrahim', '123456', 'T-10', 'P', 'Jalan Saelus');
 
 -- --------------------------------------------------------
 
@@ -157,14 +193,20 @@ CREATE TABLE `tb_spp` (
   `nis` int(11) NOT NULL,
   `tgl_bayar` datetime NOT NULL,
   `bayar` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_spp`
 --
 
 INSERT INTO `tb_spp` (`id_spp`, `nip`, `nis`, `tgl_bayar`, `bayar`) VALUES
-(12, 'A-01', 5417, '2023-02-24 09:30:31', 600000);
+(12, '01', 5417, '2023-02-24 09:30:31', 600000),
+(28, '01', 5418, '2023-03-01 20:42:20', 600000),
+(29, '01', 5418, '2023-03-01 20:42:23', 600000),
+(31, '01', 5418, '2023-03-01 20:42:54', 600000),
+(32, '01', 5417, '2023-03-01 20:44:58', 600000),
+(33, '02', 5418, '2023-03-01 21:37:10', 600000),
+(34, '01', 5417, '2023-03-01 21:40:24', 600000);
 
 --
 -- Indexes for dumped tables
@@ -212,13 +254,13 @@ ALTER TABLE `tb_spp`
 -- AUTO_INCREMENT for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=458;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=494;
 
 --
 -- AUTO_INCREMENT for table `tb_spp`
 --
 ALTER TABLE `tb_spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Constraints for dumped tables
@@ -240,7 +282,7 @@ ALTER TABLE `tb_siswa`
 -- Constraints for table `tb_spp`
 --
 ALTER TABLE `tb_spp`
-  ADD CONSTRAINT `fk_nip` FOREIGN KEY (`nip`) REFERENCES `tb_petugas` (`nip`),
+  ADD CONSTRAINT `fk_nip` FOREIGN KEY (`nip`) REFERENCES `tb_petugas` (`nip`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_nis_spp` FOREIGN KEY (`nis`) REFERENCES `tb_siswa` (`nis`) ON DELETE CASCADE;
 COMMIT;
 

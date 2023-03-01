@@ -1,3 +1,14 @@
+<?php 
+session_start();
+if (!isset($_SESSION['login'])) {
+    echo "
+    <script>
+    alert('Mohon Login terlebih dahulu');
+    window.location.href = 'http://localhost/projectuk/login/login.php';
+    </script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,12 +55,27 @@
     <header>
         <nav>
             <ul>
+                <?php if($_SESSION['leveluser'] == "Admin") { ?>
                 <li><a href="../index.php">Beranda</a></li>
                 <li><a href="../petugas/petugas.php">Data Petugas</a></li>
                 <li><a href="../siswa/siswa.php">Data Siswa</a></li>
                 <li><a href="../kelas/kelas.php">Data Kelas</a></li>
                 <li><a href="../pembayaran/pembayaran.php">Data SPP</a></li>
                 <li><a href="../spp/spp.php">Histori</a></li>
+                <li><a href="../login/logout.php">Logout</a></li>
+                <?php } elseif($_SESSION['leveluser'] == "Petugas") { ?>
+                <li><a href="../index.php">Beranda</a></li>
+                <li><a href="../siswa/siswa.php">Data Siswa</a></li>
+                <li><a href="../pembayaran/pembayaran.php">Data SPP</a></li>
+                <li><a href="../spp/spp.php">Histori</a></li>
+                <li><a href="../login/logout.php">Logout</a></li>
+                <?php } else { ?>
+                <li><a href="../index.php">Beranda</a></li>
+                <li><a href="../spp/spp.php">Histori</a></li>
+                <li><a href="../login/logout.php">Logout</a></li>
+                <?php } ?>
+        
+                
             </ul>
         </nav>
     </header>
