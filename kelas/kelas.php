@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
 <body>
-    <h1>Data Petugas</h1>
+    <h1>Data Kelas</h1>
     <a href="create_kelas.php">Tambah Kelas</a>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>

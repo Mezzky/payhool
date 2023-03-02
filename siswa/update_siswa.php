@@ -41,7 +41,7 @@
         </div>
         <div class="input-box">
             <label for="password">Password</label>
-            <input autocomplete="off" required type="text" name="password" id="password" value="<?= $siswa["password"] ?>">
+            <input autocomplete="off" required type="text" readonly name="password" id="password" value="<?= $siswa["password"] ?>">
         </div>
         <div class="input-box">
             <label for="id_kelas">Kelas</label>

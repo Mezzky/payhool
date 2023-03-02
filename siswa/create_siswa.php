@@ -32,7 +32,7 @@
     <form action="" method="POST">
         <div class="input-box">
             <label for="nis">NIS</label>
-            <input autocomplete="off" required type="number" name="nis" id="nis">
+            <input autocomplete="off" required type="text" maxlength="4" name="nis" id="nis">
         </div>
         <div class="input-box">
             <label for="nama">Nama</label>

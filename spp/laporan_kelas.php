@@ -70,6 +70,10 @@
   <p>Denpasar, <?= date('d-m-Y'); ?></p>
   <p>Rizky Ryan Sahadha</p>
 </body>
+<script>
+  window.print();
+  window.onafterprint = () => history.back();
+</script>
 
 
 </html>

@@ -1,10 +1,10 @@
 <?php
 session_start();
-require 'functions_login.php';
+require 'login/functions_login.php';
 
 if(isset($_SESSION['login'])) {
     echo " <script>
-    window.location.href = '../siswa/siswa.php';
+    window.location.href = 'dashboard/dashboard.php';
     </script>";
 }
 
@@ -12,8 +12,8 @@ if (isset($_POST['login'])) {
     $user = $_POST['user'];
     $password = $_POST['password'];
 
-    $petugas = mysqli_query($conn, "SELECT * FROM tb_petugas WHERE nip=$user");
-    $siswa = mysqli_query($conn, "SELECT * FROM tb_siswa WHERE nis=$user");
+    $petugas = mysqli_query($conn, "SELECT * FROM tb_petugas WHERE nip = '$user'");
+    $siswa = mysqli_query($conn, "SELECT * FROM tb_siswa WHERE nis = '$user'");
 
     if (mysqli_num_rows($petugas) === 1) {
         $dataPetugas = mysqli_fetch_assoc($petugas);
@@ -23,8 +23,8 @@ if (isset($_POST['login'])) {
         $_SESSION['namaPetugas'] = $dataPetugas['nama_petugas'];
         if ("$password" == $dataPetugas['password']) {
             echo " <script>
-            alert('Berhasil Login');
-            window.location.href = '../siswa/siswa.php';
+            alert('Berhasil Login Sebagai Petugas');
+            window.location.href = 'dashboard/dashboard.php';
             </script>";
             exit;
         } else {
@@ -38,8 +38,8 @@ if (isset($_POST['login'])) {
         $_SESSION['namaSiswa'] = $dataSiswa['nama_siswa'];
         if ("$password" == $dataSiswa['password']) {
             echo " <script>
-            alert('Berhasil Login');
-            window.location.href = '../siswa/siswa.php';
+            alert('Berhasil Login Sebagai Siswa');
+            window.location.href = 'dashboard/dashboard.php';
             </script>";
             exit;
         } else {
@@ -57,14 +57,15 @@ if (isset($_POST['login'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <form action="" method="post">
+    <form action="" method="post" autocomplete="off">
         <?php if(isset($error))  : ?>
-        <p>NIP/NIS/Password Salah!</p>
+        <p>NIP/Username/Password Salah!</p>
         <?php  endif; ?>
         <div class="user">
-            <label for="user">NIP / NIS</label>
+            <label for="user">NIS / NIP</label>
             <input type="text" name="user" id="user">
         </div>
         <div class="password">
