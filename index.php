@@ -12,42 +12,33 @@ if (isset($_POST['login'])) {
     $user = $_POST['user'];
     $password = $_POST['password'];
 
-    $petugas = mysqli_query($conn, "SELECT * FROM tb_petugas WHERE nip = '$user'");
-    $siswa = mysqli_query($conn, "SELECT * FROM tb_siswa WHERE nis = '$user'");
+    $petugas = mysqli_query($conn, "SELECT * FROM tb_petugas WHERE nip = '$user' AND password = '$password'");
+    $siswa = mysqli_query($conn, "SELECT * FROM tb_siswa WHERE nis = '$user' AND password = '$password'");
 
     if (mysqli_num_rows($petugas) === 1) {
         $dataPetugas = mysqli_fetch_assoc($petugas);
         $_SESSION['login'] = true;
-        $_SESSION['key'] = $dataPetugas['nip'];
+        $_SESSION['nip'] = $dataPetugas['nip'];
         $_SESSION['leveluser'] = $dataPetugas['leveluser'];
-        $_SESSION['namaPetugas'] = $dataPetugas['nama_petugas'];
-        if ("$password" == $dataPetugas['password']) {
-            echo " <script>
-            alert('Berhasil Login Sebagai Petugas');
-            window.location.href = 'dashboard/dashboard.php';
+        $_SESSION['nama_petugas'] = $dataPetugas['nama_petugas'];
+        echo "<script>
+                alert('Berhasil Login Sebagai Petugas');
+                window.location.href = 'dashboard/dashboard.php';
             </script>";
-            exit;
-        } else {
-            $error = true;
-        }
     } elseif (mysqli_num_rows($siswa) === 1) {
         $dataSiswa = mysqli_fetch_assoc($siswa);
         $_SESSION['login'] = true;
-        $_SESSION['key'] = $dataSiswa['nis'];
+        $_SESSION['nis'] = $dataSiswa['nis'];
         $_SESSION['leveluser'] = $dataSiswa['nis'];
-        $_SESSION['namaSiswa'] = $dataSiswa['nama_siswa'];
-        if ("$password" == $dataSiswa['password']) {
-            echo " <script>
-            alert('Berhasil Login Sebagai Siswa');
-            window.location.href = 'dashboard/dashboard.php';
+        $_SESSION['nama_siswa'] = $dataSiswa['nama_siswa'];
+        echo "<script>
+                alert('Berhasil Login Sebagai Siswa');
+                window.location.href = 'dashboard/dashboard.php';
             </script>";
-            exit;
-        } else {
-            $error = true;
-        }
+    } else {
+        $error = true;
     }
 }
-
 ?>
 
 <!DOCTYPE html>
