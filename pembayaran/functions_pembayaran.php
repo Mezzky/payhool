@@ -1,25 +1,28 @@
 <?php
+
         // Koneksi ke Database
         $conn = mysqli_connect("localhost", "root", "", "spp_db");
 
         // READ
-        function query($query){
+        function query($query)
+        {
             global $conn;
-    
+
             $result = mysqli_query($conn, $query);
             $rows = [];
-            while( $row = mysqli_fetch_assoc($result)) {
+            while ($row = mysqli_fetch_assoc($result)) {
                 $rows[] = $row;
             }
             return $rows;
         }
 
         // BAYAR
-        function bayarSPP($id, $nis) {
+        function bayarSPP($id, $nis)
+        {
             global $conn;
             session_start();
 
-            $petugas = $_SESSION['key'];
+            $petugas = $_SESSION['nip'];
             $querySPP = "INSERT INTO tb_spp VALUES ('', '$petugas', '$nis', NOW(), '600000')";
             mysqli_query($conn, $querySPP);
 
@@ -29,7 +32,7 @@
 
             mysqli_query($conn, $queryBayar);
 
-            if (mysqli_affected_rows($conn) > 0){
+            if (mysqli_affected_rows($conn) > 0) {
                 echo "
                     <script>
                         alert('Berhasil Dibayar!');
