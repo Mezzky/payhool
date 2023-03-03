@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 02, 2023 at 04:20 AM
+-- Generation Time: Mar 03, 2023 at 03:32 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -62,7 +62,7 @@ CREATE TABLE `tb_pembayaran` (
 --
 
 INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_bayar`, `angkatan`) VALUES
-(638, 5411, 'Juni', '2023/2024', 0, 'I'),
+(638, 5411, 'Juni', '2023/2024', 600000, 'I'),
 (639, 5411, 'Juli', '2023/2024', 0, 'I'),
 (640, 5411, 'Agustus', '2023/2024', 0, 'I'),
 (641, 5411, 'September', '2023/2024', 0, 'I'),
@@ -98,7 +98,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (671, 5411, 'Maret', '2025/2026', 0, 'III'),
 (672, 5411, 'April', '2025/2026', 0, 'III'),
 (673, 5411, 'Mei', '2025/2026', 0, 'III'),
-(674, 5410, 'Juni', '2023/2024', 0, 'I'),
+(674, 5410, 'Juni', '2023/2024', 600000, 'I'),
 (675, 5410, 'Juli', '2023/2024', 0, 'I'),
 (676, 5410, 'Agustus', '2023/2024', 0, 'I'),
 (677, 5410, 'September', '2023/2024', 0, 'I'),
@@ -134,7 +134,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (707, 5410, 'Maret', '2025/2026', 0, 'III'),
 (708, 5410, 'April', '2025/2026', 0, 'III'),
 (709, 5410, 'Mei', '2025/2026', 0, 'III'),
-(710, 5409, 'Juni', '2023/2024', 0, 'I'),
+(710, 5409, 'Juni', '2023/2024', 600000, 'I'),
 (711, 5409, 'Juli', '2023/2024', 0, 'I'),
 (712, 5409, 'Agustus', '2023/2024', 0, 'I'),
 (713, 5409, 'September', '2023/2024', 0, 'I'),
@@ -170,7 +170,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (743, 5409, 'Maret', '2025/2026', 0, 'III'),
 (744, 5409, 'April', '2025/2026', 0, 'III'),
 (745, 5409, 'Mei', '2025/2026', 0, 'III'),
-(746, 5408, 'Juni', '2023/2024', 0, 'I'),
+(746, 5408, 'Juni', '2023/2024', 600000, 'I'),
 (747, 5408, 'Juli', '2023/2024', 0, 'I'),
 (748, 5408, 'Agustus', '2023/2024', 0, 'I'),
 (749, 5408, 'September', '2023/2024', 0, 'I'),
@@ -206,7 +206,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (779, 5408, 'Maret', '2025/2026', 0, 'III'),
 (780, 5408, 'April', '2025/2026', 0, 'III'),
 (781, 5408, 'Mei', '2025/2026', 0, 'III'),
-(782, 5407, 'Juni', '2023/2024', 0, 'I'),
+(782, 5407, 'Juni', '2023/2024', 600000, 'I'),
 (783, 5407, 'Juli', '2023/2024', 0, 'I'),
 (784, 5407, 'Agustus', '2023/2024', 0, 'I'),
 (785, 5407, 'September', '2023/2024', 0, 'I'),
@@ -242,7 +242,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (815, 5407, 'Maret', '2025/2026', 0, 'III'),
 (816, 5407, 'April', '2025/2026', 0, 'III'),
 (817, 5407, 'Mei', '2025/2026', 0, 'III'),
-(818, 5406, 'Juni', '2023/2024', 0, 'I'),
+(818, 5406, 'Juni', '2023/2024', 600000, 'I'),
 (819, 5406, 'Juli', '2023/2024', 0, 'I'),
 (820, 5406, 'Agustus', '2023/2024', 0, 'I'),
 (821, 5406, 'September', '2023/2024', 0, 'I'),
@@ -278,7 +278,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (851, 5406, 'Maret', '2025/2026', 0, 'III'),
 (852, 5406, 'April', '2025/2026', 0, 'III'),
 (853, 5406, 'Mei', '2025/2026', 0, 'III'),
-(854, 5405, 'Juni', '2023/2024', 0, 'I'),
+(854, 5405, 'Juni', '2023/2024', 600000, 'I'),
 (855, 5405, 'Juli', '2023/2024', 0, 'I'),
 (856, 5405, 'Agustus', '2023/2024', 0, 'I'),
 (857, 5405, 'September', '2023/2024', 0, 'I'),
@@ -314,7 +314,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (887, 5405, 'Maret', '2025/2026', 0, 'III'),
 (888, 5405, 'April', '2025/2026', 0, 'III'),
 (889, 5405, 'Mei', '2025/2026', 0, 'III'),
-(890, 5404, 'Juni', '2023/2024', 0, 'I'),
+(890, 5404, 'Juni', '2023/2024', 600000, 'I'),
 (891, 5404, 'Juli', '2023/2024', 0, 'I'),
 (892, 5404, 'Agustus', '2023/2024', 0, 'I'),
 (893, 5404, 'September', '2023/2024', 0, 'I'),
@@ -350,7 +350,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (923, 5404, 'Maret', '2025/2026', 0, 'III'),
 (924, 5404, 'April', '2025/2026', 0, 'III'),
 (925, 5404, 'Mei', '2025/2026', 0, 'III'),
-(926, 5403, 'Juni', '2023/2024', 0, 'I'),
+(926, 5403, 'Juni', '2023/2024', 600000, 'I'),
 (927, 5403, 'Juli', '2023/2024', 0, 'I'),
 (928, 5403, 'Agustus', '2023/2024', 0, 'I'),
 (929, 5403, 'September', '2023/2024', 0, 'I'),
@@ -386,7 +386,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (959, 5403, 'Maret', '2025/2026', 0, 'III'),
 (960, 5403, 'April', '2025/2026', 0, 'III'),
 (961, 5403, 'Mei', '2025/2026', 0, 'III'),
-(962, 5402, 'Juni', '2023/2024', 0, 'I'),
+(962, 5402, 'Juni', '2023/2024', 600000, 'I'),
 (963, 5402, 'Juli', '2023/2024', 0, 'I'),
 (964, 5402, 'Agustus', '2023/2024', 0, 'I'),
 (965, 5402, 'September', '2023/2024', 0, 'I'),
@@ -422,7 +422,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (995, 5402, 'Maret', '2025/2026', 0, 'III'),
 (996, 5402, 'April', '2025/2026', 0, 'III'),
 (997, 5402, 'Mei', '2025/2026', 0, 'III'),
-(1106, 5401, 'Juni', '2023/2024', 0, 'I'),
+(1106, 5401, 'Juni', '2023/2024', 600000, 'I'),
 (1107, 5401, 'Juli', '2023/2024', 0, 'I'),
 (1108, 5401, 'Agustus', '2023/2024', 0, 'I'),
 (1109, 5401, 'September', '2023/2024', 0, 'I'),
@@ -458,7 +458,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (1139, 5401, 'Maret', '2025/2026', 0, 'III'),
 (1140, 5401, 'April', '2025/2026', 0, 'III'),
 (1141, 5401, 'Mei', '2025/2026', 0, 'III'),
-(1142, 5412, 'Juni', '2023/2024', 0, 'I'),
+(1142, 5412, 'Juni', '2023/2024', 600000, 'I'),
 (1143, 5412, 'Juli', '2023/2024', 0, 'I'),
 (1144, 5412, 'Agustus', '2023/2024', 0, 'I'),
 (1145, 5412, 'September', '2023/2024', 0, 'I'),
@@ -494,7 +494,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (1175, 5412, 'Maret', '2025/2026', 0, 'III'),
 (1176, 5412, 'April', '2025/2026', 0, 'III'),
 (1177, 5412, 'Mei', '2025/2026', 0, 'III'),
-(1178, 5413, 'Juni', '2023/2024', 0, 'I'),
+(1178, 5413, 'Juni', '2023/2024', 600000, 'I'),
 (1179, 5413, 'Juli', '2023/2024', 0, 'I'),
 (1180, 5413, 'Agustus', '2023/2024', 0, 'I'),
 (1181, 5413, 'September', '2023/2024', 0, 'I'),
@@ -530,8 +530,8 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (1211, 5413, 'Maret', '2025/2026', 0, 'III'),
 (1212, 5413, 'April', '2025/2026', 0, 'III'),
 (1213, 5413, 'Mei', '2025/2026', 0, 'III'),
-(1214, 5414, 'Juni', '2023/2024', 0, 'I'),
-(1215, 5414, 'Juli', '2023/2024', 0, 'I'),
+(1214, 5414, 'Juni', '2023/2024', 600000, 'I'),
+(1215, 5414, 'Juli', '2023/2024', 600000, 'I'),
 (1216, 5414, 'Agustus', '2023/2024', 0, 'I'),
 (1217, 5414, 'September', '2023/2024', 0, 'I'),
 (1218, 5414, 'Oktober', '2023/2024', 0, 'I'),
@@ -565,7 +565,79 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (1246, 5414, 'Februari', '2025/2026', 0, 'III'),
 (1247, 5414, 'Maret', '2025/2026', 0, 'III'),
 (1248, 5414, 'April', '2025/2026', 0, 'III'),
-(1249, 5414, 'Mei', '2025/2026', 0, 'III');
+(1249, 5414, 'Mei', '2025/2026', 0, 'III'),
+(1250, 5415, 'Juni', '2023/2024', 600000, 'I'),
+(1251, 5415, 'Juli', '2023/2024', 0, 'I'),
+(1252, 5415, 'Agustus', '2023/2024', 0, 'I'),
+(1253, 5415, 'September', '2023/2024', 0, 'I'),
+(1254, 5415, 'Oktober', '2023/2024', 0, 'I'),
+(1255, 5415, 'November', '2023/2024', 0, 'I'),
+(1256, 5415, 'Desember', '2023/2024', 0, 'I'),
+(1257, 5415, 'Januari', '2023/2024', 0, 'I'),
+(1258, 5415, 'Februari', '2023/2024', 0, 'I'),
+(1259, 5415, 'Maret', '2023/2024', 0, 'I'),
+(1260, 5415, 'April', '2023/2024', 0, 'I'),
+(1261, 5415, 'Mei', '2023/2024', 0, 'I'),
+(1262, 5415, 'Juni', '2024/2025', 0, 'II'),
+(1263, 5415, 'Juli', '2024/2025', 0, 'II'),
+(1264, 5415, 'Agustus', '2024/2025', 0, 'II'),
+(1265, 5415, 'September', '2024/2025', 0, 'II'),
+(1266, 5415, 'Oktober', '2024/2025', 0, 'II'),
+(1267, 5415, 'November', '2024/2025', 0, 'II'),
+(1268, 5415, 'Desember', '2024/2025', 0, 'II'),
+(1269, 5415, 'Januari', '2024/2025', 0, 'II'),
+(1270, 5415, 'Februari', '2024/2025', 0, 'II'),
+(1271, 5415, 'Maret', '2024/2025', 0, 'II'),
+(1272, 5415, 'April', '2024/2025', 0, 'II'),
+(1273, 5415, 'Mei', '2024/2025', 0, 'II'),
+(1274, 5415, 'Juni', '2025/2026', 0, 'III'),
+(1275, 5415, 'Juli', '2025/2026', 0, 'III'),
+(1276, 5415, 'Agustus', '2025/2026', 0, 'III'),
+(1277, 5415, 'September', '2025/2026', 0, 'III'),
+(1278, 5415, 'Oktober', '2025/2026', 0, 'III'),
+(1279, 5415, 'November', '2025/2026', 0, 'III'),
+(1280, 5415, 'Desember', '2025/2026', 0, 'III'),
+(1281, 5415, 'Januari', '2025/2026', 0, 'III'),
+(1282, 5415, 'Februari', '2025/2026', 0, 'III'),
+(1283, 5415, 'Maret', '2025/2026', 0, 'III'),
+(1284, 5415, 'April', '2025/2026', 0, 'III'),
+(1285, 5415, 'Mei', '2025/2026', 0, 'III'),
+(1286, 5416, 'Juni', '2023/2024', 600000, 'I'),
+(1287, 5416, 'Juli', '2023/2024', 0, 'I'),
+(1288, 5416, 'Agustus', '2023/2024', 0, 'I'),
+(1289, 5416, 'September', '2023/2024', 0, 'I'),
+(1290, 5416, 'Oktober', '2023/2024', 0, 'I'),
+(1291, 5416, 'November', '2023/2024', 0, 'I'),
+(1292, 5416, 'Desember', '2023/2024', 0, 'I'),
+(1293, 5416, 'Januari', '2023/2024', 0, 'I'),
+(1294, 5416, 'Februari', '2023/2024', 0, 'I'),
+(1295, 5416, 'Maret', '2023/2024', 0, 'I'),
+(1296, 5416, 'April', '2023/2024', 0, 'I'),
+(1297, 5416, 'Mei', '2023/2024', 0, 'I'),
+(1298, 5416, 'Juni', '2024/2025', 0, 'II'),
+(1299, 5416, 'Juli', '2024/2025', 0, 'II'),
+(1300, 5416, 'Agustus', '2024/2025', 0, 'II'),
+(1301, 5416, 'September', '2024/2025', 0, 'II'),
+(1302, 5416, 'Oktober', '2024/2025', 0, 'II'),
+(1303, 5416, 'November', '2024/2025', 0, 'II'),
+(1304, 5416, 'Desember', '2024/2025', 0, 'II'),
+(1305, 5416, 'Januari', '2024/2025', 0, 'II'),
+(1306, 5416, 'Februari', '2024/2025', 0, 'II'),
+(1307, 5416, 'Maret', '2024/2025', 0, 'II'),
+(1308, 5416, 'April', '2024/2025', 0, 'II'),
+(1309, 5416, 'Mei', '2024/2025', 0, 'II'),
+(1310, 5416, 'Juni', '2025/2026', 0, 'III'),
+(1311, 5416, 'Juli', '2025/2026', 0, 'III'),
+(1312, 5416, 'Agustus', '2025/2026', 0, 'III'),
+(1313, 5416, 'September', '2025/2026', 0, 'III'),
+(1314, 5416, 'Oktober', '2025/2026', 0, 'III'),
+(1315, 5416, 'November', '2025/2026', 0, 'III'),
+(1316, 5416, 'Desember', '2025/2026', 0, 'III'),
+(1317, 5416, 'Januari', '2025/2026', 0, 'III'),
+(1318, 5416, 'Februari', '2025/2026', 0, 'III'),
+(1319, 5416, 'Maret', '2025/2026', 0, 'III'),
+(1320, 5416, 'April', '2025/2026', 0, 'III'),
+(1321, 5416, 'Mei', '2025/2026', 0, 'III');
 
 -- --------------------------------------------------------
 
@@ -587,8 +659,8 @@ CREATE TABLE `tb_petugas` (
 --
 
 INSERT INTO `tb_petugas` (`nip`, `nama_petugas`, `username`, `password`, `leveluser`, `no_telp`) VALUES
-('01', 'Gungde Solahudin', 'gungdin', 'petugas12', 'Admin', '087645322234'),
-('02', 'Arta Wijaya', 'artawi', 'art123', 'Petugas', '087352625415');
+('A-01', 'Gungde Solahudin', 'gungdin', 'admin', 'Admin', '087645322234'),
+('P-01', 'Bagus Komang', 'bakom', 'petugas01', 'Petugas', '087352625415');
 
 -- --------------------------------------------------------
 
@@ -611,19 +683,21 @@ CREATE TABLE `tb_siswa` (
 
 INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `id_kelas`, `jenis_kelamin`, `alamat`) VALUES
 (5401, 'Agus Eka Wijaya', '123456', 'R-10', 'L', 'Jl. Pulau Sunco'),
-(5402, 'I Noman Putra Palguna', '123456', 'R-10', 'L', 'Jl.Raya Sesetan'),
-(5403, 'Made Lingga Wiranata', '123456', 'R-10', 'L', 'Jl.Renon'),
-(5404, 'Arinda Tika agustin', '123456', 'R-10', 'P', 'jl.Isekai'),
-(5405, 'Muhamad Cok Bagus', '123456', 'R-10', 'L', 'jl.Tukad Citarum'),
-(5406, 'Dony Salmanan', '123456', 'R-10', 'L', 'Jl.Sudirman'),
-(5407, 'I Gede Radirya', '123456', 'R-10', 'L', 'jl.sanur'),
+(5402, 'I Noman Palguna', '123456', 'R-10', 'L', 'Jl. Raya Sesetan'),
+(5403, 'Made Lingga Wiranata', '123456', 'R-10', 'L', 'Jl. Renon'),
+(5404, 'Arinda Tika Agustin', '123456', 'R-10', 'P', 'Jl. Pemogan Isekai'),
+(5405, 'Muhamad Cok Bagus', '123456', 'R-10', 'L', 'Jl. Tukad Citarum'),
+(5406, 'Dony Salmanan', '123456', 'R-10', 'L', 'Jl. Sudirman'),
+(5407, 'I Gede Raditya', '123456', 'R-10', 'L', 'Jl. Sanur'),
 (5408, 'Dewi Turmini', '123456', 'R-10', 'P', 'Jl. Kikukik Sawah'),
 (5409, 'Salma Febriyanti', '123456', 'R-10', 'P', 'Jl. Gatot Kayu'),
 (5410, 'Salsabilla Gusnia', '123456', 'R-10', 'P', 'Jl. Tukad Citarum'),
 (5411, 'Dewa Krsna Yanas', '123456', 'R-10', 'L', 'Jl. Akasia Timur'),
 (5412, 'Inyo Mansur Yadana', '123456', 'R-10', 'L', 'Jl. Pulau Bungin'),
 (5413, 'I Kadek Ryan', '123456', 'R-10', 'L', 'Jl. Sesetan'),
-(5414, 'Rizky Ryan Sahadha', '123456', 'R-10', 'L', 'Jl. Pulau Moyo');
+(5414, 'Rizky Ryan Sahadha', '123456', 'R-10', 'L', 'Jl. Pulau Moyo'),
+(5415, 'Malik Ridwan', '123456', 'R-10', 'L', 'Jl. Jalan Yuk'),
+(5416, 'Zidan Ambatukam', '123456', 'R-10', 'L', 'Jl. Pulau Saelus');
 
 -- --------------------------------------------------------
 
@@ -638,6 +712,29 @@ CREATE TABLE `tb_spp` (
   `tgl_bayar` datetime NOT NULL,
   `bayar` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_spp`
+--
+
+INSERT INTO `tb_spp` (`id_spp`, `nip`, `nis`, `tgl_bayar`, `bayar`) VALUES
+(46, 'A-01', 5401, '2023-03-02 14:09:30', 600000),
+(47, 'A-01', 5402, '2023-03-02 14:09:39', 600000),
+(48, 'A-01', 5403, '2023-03-02 14:09:49', 600000),
+(49, 'A-01', 5404, '2023-03-02 14:09:58', 600000),
+(50, 'A-01', 5405, '2023-03-02 14:10:06', 600000),
+(51, 'P-01', 5406, '2023-03-02 14:16:06', 600000),
+(52, 'P-01', 5407, '2023-03-02 14:16:14', 600000),
+(53, 'P-01', 5408, '2023-03-02 14:16:25', 600000),
+(54, 'P-01', 5409, '2023-03-02 14:16:32', 600000),
+(55, 'P-01', 5410, '2023-03-02 14:16:43', 600000),
+(56, 'P-01', 5411, '2023-03-02 14:16:51', 600000),
+(57, 'P-01', 5412, '2023-03-02 14:16:58', 600000),
+(58, 'P-01', 5413, '2023-03-02 14:17:08', 600000),
+(59, 'P-01', 5414, '2023-03-02 14:17:16', 600000),
+(60, 'P-01', 5415, '2023-03-02 14:17:23', 600000),
+(61, 'P-01', 5416, '2023-03-02 14:17:30', 600000),
+(62, 'A-01', 5414, '2023-03-02 14:43:31', 600000);
 
 --
 -- Indexes for dumped tables
@@ -685,13 +782,13 @@ ALTER TABLE `tb_spp`
 -- AUTO_INCREMENT for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1250;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1322;
 
 --
 -- AUTO_INCREMENT for table `tb_spp`
 --
 ALTER TABLE `tb_spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- Constraints for dumped tables
