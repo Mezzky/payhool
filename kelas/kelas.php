@@ -11,12 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Kelas</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.php">
 </head>
 <body>
     <h1>Data Kelas</h1>
     <a href="create_kelas.php">Tambah Kelas</a>
-    <table border="1" cellspacing="0" cellpadding="10">
+    <table border="0" cellspacing="0" cellpadding="0">
         <tr>
             <th>ID</th>
             <th>Kelas</th>
