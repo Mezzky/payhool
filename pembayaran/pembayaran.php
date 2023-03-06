@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data SPP</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.php">
 </head>
 
 <body>
@@ -50,48 +50,52 @@
             <button type="submit" name="angkatan-3">Angkatan III</button>
         </form>
 
-        <table border="1" cellspacing="0" cellpadding="10">
-            <tr>
-                <th>Angkatan</th>
-                <th>NIS</th>
-                <th>Nama</th>
-                <th>Bulan</th>
-                <th>Tahun</th>
-                <th>Jumlah Bayar</th>
-                <th>Keterangan</th>
-                <th>Aksi</th>
-            </tr>
+        <table border="0" cellspacing="0" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Angkatan</th>
+                    <th>NIS</th>
+                    <th>Nama</th>
+                    <th>Bulan</th>
+                    <th>Tahun</th>
+                    <th>Jumlah Bayar</th>
+                    <th>Keterangan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
 
             <?php foreach($pembayaran as $row) : ?>
-            <tr>
-                <td><?= $row["angkatan"]; ?></td>
-                <td><?= $row["nis"]; ?></td>
-                <td><?= $row["nama_siswa"]; ?></td>
-                <td><?= $row["bulan"]; ?></td>
-                <td><?= $row["tahun"]; ?></td>
-                <td>Rp.<?= number_format($row["jumlah_bayar"], 0, ',', '.'); ?></td>
-                <td>
+            <tbody>
+                <tr>
+                    <td><?= $row["angkatan"]; ?></td>
+                    <td><?= $row["nis"]; ?></td>
+                    <td><?= $row["nama_siswa"]; ?></td>
+                    <td><?= $row["bulan"]; ?></td>
+                    <td><?= $row["tahun"]; ?></td>
+                    <td>Rp.<?= number_format($row["jumlah_bayar"], 0, ',', '.'); ?></td>
+                    <td>
+                        <?php 
+                            if($row["jumlah_bayar"] > 0){
+                                echo "Lunas";
+                            } else{
+                                echo "Belum Lunas";
+                            }
+                        ?>
+                    </td>
                     <?php 
-                        if($row["jumlah_bayar"] > 0){
-                            echo "Lunas";
+                        if($row["jumlah_bayar"] == 600000){
+                    ?> <td>Terbayar</td>
+                    <?php
                         } else{
-                            echo "Belum Lunas";
+                    ?>
+                    <td>
+                        <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
+                    </td>
+                    <?php
                         }
                     ?>
-                </td>
-                <?php 
-                    if($row["jumlah_bayar"] == 600000){
-                ?> <td>Terbayar</td>
-                <?php
-                    } else{
-                ?>
-                <td>
-                    <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
-                </td>
-                <?php
-                    }
-                ?>
-            </tr>
+                </tr>
+            </tbody>
             <?php endforeach; ?>
         </table>
         <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>

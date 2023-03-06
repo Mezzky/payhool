@@ -19,7 +19,7 @@ if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histori Pembayaran</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.php">
 </head>
 
 <body>
@@ -53,33 +53,27 @@ if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') {
             <button type="submit">Buat Laporan Siswa</button>
         </form>
     <?php endif; ?>
-    <table border="1" cellspacing="0" cellpadding="10">
-        <tr>
-            <th>Petugas</th>
-            <th>NIS</th>
-            <th>Nama</th>
-            <th>Tanggal Bayar</th>
-            <th>Bayar</th>
-        </tr>
+    <table border="0" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Petugas</th>
+                <th>NIS</th>
+                <th>Nama</th>
+                <th>Tanggal Bayar</th>
+                <th>Bayar</th>
+            </tr>
+        </thead>
 
         <?php foreach ($spp as $row): ?>
+        <tbody>
             <tr>
-                <td>
-                    <?= $row["nama_petugas"]; ?>
-                </td>
-                <td>
-                    <?= $row["nis"]; ?>
-                </td>
-                <td>
-                    <?= $row["nama_siswa"]; ?>
-                </td>
-                <td>
-                    <?= $row["tgl_bayar"] ?>
-                </td>
-                <td>Rp.
-                    <?= number_format($row["bayar"], 0, ',', '.'); ?>
-                </td>
+                <td><?= $row["nama_petugas"]; ?></td>
+                <td><?= $row["nis"]; ?></td>
+                <td><?= $row["nama_siswa"]; ?></td>
+                <td><?= $row["tgl_bayar"] ?></td>
+                <td>Rp.<?= number_format($row["bayar"], 0, ',', '.'); ?></td>
             </tr>
+        </tbody>
         <?php endforeach; ?>
     </table>
 </body>

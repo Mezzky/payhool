@@ -16,24 +16,28 @@
 <body>
     <h1>Data Kelas</h1>
     <a href="create_kelas.php">Tambah Kelas</a>
-    <table border="0" cellspacing="0" cellpadding="0">
-        <tr>
-            <th>ID</th>
-            <th>Kelas</th>
-            <th>Jurusan</th>
-            <th>Keterangan</th>
-        </tr>
+    <table border="0" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Kelas</th>
+                <th>Jurusan</th>
+                <th>Keterangan</th>
+            </tr>
+        </thead>
 
-        <?php foreach($kelas as $row) : ?> 
-        <tr>
-            <td><?= $row["id_kelas"]; ?></td>
-            <td><?= $row["kelas"]; ?></td>
-            <td><?= $row["jurusan"] ?></td>
-            <td>
-                <a href="delete_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">Hapus</a>
-                <a href="update_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">Edit</a>
-            </td>
-        </tr>
+        <?php foreach($kelas as $row) : ?>
+        <tbody>
+            <tr>
+                <td><?= $row["id_kelas"]; ?></td>
+                <td><?= $row["kelas"]; ?></td>
+                <td><?= $row["jurusan"] ?></td>
+                <td>
+                    <a href="delete_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">Hapus</a>
+                    <a href="update_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">Edit</a>
+                </td>
+            </tr>
+        </tbody>
         <?php endforeach; ?>
     </table>
 </body>
