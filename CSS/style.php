@@ -3,7 +3,7 @@
 /* ========== FONT ========== */
 @font-face {
     font-family: 'Poppins';
-    src: url(./Assets/font/Poppins/Poppins-Light.ttf);
+    src: url(../Assets/font/Poppins/Poppins-Light.ttf);
 }
 
 /* ========== CSS VARIABLE ========== */
@@ -40,6 +40,7 @@ table thead tr th{
 }
 
 table tbody tr td{
+    font-weight: 500;
     color: var(--text-color);
 }
 
@@ -47,7 +48,28 @@ input{
     outline: none;
 }
 
+ul, li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.icon-sm{
+    width: 20px;
+}
+
 /* ========== MAIN STYLE ========== */
+header{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    /* background-color: var(--main-color); */
+}
+
 /* Login */
 .form-body{
     height: 100vh;
@@ -55,7 +77,7 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #6c70fd;
+    background-color: var(--main-color);
 }
 
 .form-container{
@@ -74,7 +96,7 @@ input{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     width: 80%;
 }
 
@@ -84,18 +106,18 @@ input{
 }
 
 .form-container .form-input form .tittle-login h2{
-    font-size: 40px;
+    font-size: 30px;
     color: var(--heading-color);
 }
 
 .form-container .form-input form .tittle-login h2:first-child{
     font-weight: 100;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
 }
 
 .form-container .form-input form .tittle-login p{
     color: var(--text-color);
-    margin-top: -10px;
+    margin-top: -20px;
 }
 
 .form-container .form-input form .input-box{
@@ -116,6 +138,7 @@ input{
 }
 
 .form-container .form-input form button{
+    margin-top: 10px;
     cursor: pointer;
     background-color: var(--second-color);
     color: white;
@@ -127,6 +150,16 @@ input{
 }
 .form-container .form-input form button:hover{
     background-color: rgb(106, 111, 255);
+}
+
+.form-container .form-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container .form-img img{
+    width: 400px;
 }
 
 /* Table */
@@ -145,6 +178,10 @@ table thead tr, tbody tr{
 
 table thead{
     background-color: #D2D2D2;
+}
+
+table thead tr th{
+    font-weight: bold;
 }
 
 table tbody:nth-child(odd){
