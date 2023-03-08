@@ -48,22 +48,36 @@ if (isset($_POST['login'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.php">
 </head>
 <body>
-    <form action="" method="post" autocomplete="off">
-        <?php if(isset($error))  : ?>
-        <p>NIP/Username/Password Salah!</p>
-        <?php  endif; ?>
-        <div class="user">
-            <label for="user">NIS / NIP</label>
-            <input type="text" name="user" id="user">
+    <div class="form-body">
+        <div class="form-container">
+            <div class="form-input">
+                <form action="" method="post" autocomplete="off">
+                    <div class="tittle-login">
+                        <h2>Selamat Datang</h2>
+                        <h2>di Payhool</h2>
+                        <p>Silahkan login di bawah</p>
+                    </div>
+                    <?php if(isset($error))  : ?>
+                    <p>NIP/NIS/Password Salah!</p>
+                    <?php  endif; ?>
+                    <div class="input-box">
+                        <label for="user">NIS / NIP</label>
+                        <input type="text" name="user" id="user">
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <button type="submit" name="login">Masuk</button>
+                </form>
+            </div>
+            <div class="form-img">
+                <img src="Assets/img/patterns-img.png">
+            </div>
         </div>
-        <div class="password">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-        </div>
-        <button type="submit" name="login">Masuk</button>
-    </form>
+    </div>
 </body>
 </html>
