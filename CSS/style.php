@@ -61,11 +61,11 @@ a{
     fill: #1F1F1F;
 }
 
-.logout-btn{
+/* .logout-btn{
     position: fixed;
     top: 10px;
     right: 10px;
-}
+} */
 
 /* ========== MAIN STYLE ========== */
 header{
@@ -253,7 +253,14 @@ header nav ul a.active .icon-nav img:last-child{
 }
 
 /* Table */
+.table-container{
+    /* background-color: #0036c0; */
+    padding-left: 260px;
+    padding-right: 40px;
+}
+
 table{
+    width: 100%;
     border-collapse: separate;
     border: 1px solid white;
     border-spacing: 0 20px;

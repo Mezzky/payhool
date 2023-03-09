@@ -26,51 +26,62 @@
     <link rel="stylesheet" href="../CSS/style.php">
 </head>
 <body>
-    <h1>Data Petugas</h1>
-    <a href="create_petugas.php">Tambah Petugas</a>
+    <div class="table-container">
+        <div class="tittle">
+            <div class="tittle-left">
+                <h1>Data Petugas</h1>
+                <p><?= count($petugas); ?> Data</p>
+            </div>
 
-    <!-- Formulir pencarian -->
-    <form action="" method="POST">
-        <input type="text" name="keyword" size="30" autofocus placeholder="Cari Petugas" autocomplete="off">
-        <button type="submit" name="search">Cari</button>
-    </form>
-    <a class="logout-btn" href="../login/logout.php">
-        <img src="../Assets/icon/logout-icon.svg" alt="logout">
-    </a>
+            <div class="tittle-right">
+                <!-- Formulir pencarian -->
+                <form action="" method="POST">
+                    <input type="text" name="keyword" size="30" autofocus placeholder="Cari Petugas" autocomplete="off">
+                    <button type="submit" name="search">Cari</button>
+                </form>
+                <a class="logout-btn" href="../login/logout.php">
+                    <img src="../Assets/icon/logout-icon.svg" alt="logout">
+                </a>
+            </div>
+        </div>
+        
+        <div class="table-content">
+            <a href="create_petugas.php">Tambah Petugas</a>
+            <?php if(empty($petugas)) : ?>
+            <p>Data tidak ditemukan</p>
+            <?php else : ?>
+            <table border="0" cellspacing="0" cellpadding="10">
+                <thead>
+                    <tr>
+                        <th>NIP</th>
+                        <th>Nama</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>leveluser</th>
+                        <th>No Telepon</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
 
-    <?php if(empty($petugas)) : ?>
-        <p>Data tidak ditemukan</p>
-    <?php else : ?>
-        <table border="0" cellspacing="0" cellpadding="10">
-            <thead>
-                <tr>
-                    <th>NIP</th>
-                    <th>Nama</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>leveluser</th>
-                    <th>No Telepon</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-
-            <?php foreach($petugas as $row) : ?> 
-            <tbody>
-                <tr>
-                    <td><?= $row["nip"]; ?></td>
-                    <td><?= $row["nama_petugas"]; ?></td>
-                    <td><?= $row["username"] ?></td>
-                    <td><?= $row["password"]; ?></td>
-                    <td><?= $row["leveluser"]; ?></td>
-                    <td><?= $row["no_telp"]; ?></td>
-                    <td>
-                        <a href="delete_petugas.php?nip=<?= $row["nip"]; ?>">Hapus</a>
-                        <a href="update_petugas.php?nip=<?= $row["nip"]; ?>">Edit</a>
-                    </td>
-                </tr>
-            </tbody>
-            <?php endforeach; ?>
-        </table>
-    <?php endif; ?>
+                <?php foreach($petugas as $row) : ?> 
+                <tbody>
+                    <tr>
+                        <td><?= $row["nip"]; ?></td>
+                        <td><?= $row["nama_petugas"]; ?></td>
+                        <td><?= $row["username"] ?></td>
+                        <td><?= $row["password"]; ?></td>
+                        <td><?= $row["leveluser"]; ?></td>
+                        <td><?= $row["no_telp"]; ?></td>
+                        <td>
+                            <a href="delete_petugas.php?nip=<?= $row["nip"]; ?>">Hapus</a>
+                            <a href="update_petugas.php?nip=<?= $row["nip"]; ?>">Edit</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <?php endforeach; ?>
+            </table>
+            <?php endif; ?>
+        </div>
+    </div>
 </body>
 </html>
