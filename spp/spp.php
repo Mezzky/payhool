@@ -52,6 +52,9 @@ if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') {
             </select>
             <button type="submit">Buat Laporan Siswa</button>
         </form>
+        <a class="logout-btn" href="../login/logout.php">
+            <img src="../Assets/icon/logout-icon.svg" alt="logout">
+        </a>
     <?php endif; ?>
     <table border="0" cellspacing="0" cellpadding="10">
         <thead>

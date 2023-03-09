@@ -19,6 +19,9 @@
     <?php elseif (isset($_SESSION['nis'])) : ?>
     <h1>Selamat Datang <?= $_SESSION["nama_siswa"]; ?></h1>
     <?php endif; ?>
+    <a class="logout-btn" href="../login/logout.php">
+        <img src="../Assets/icon/logout-icon.svg" alt="logout">
+    </a>
 </body>
 
 </html>

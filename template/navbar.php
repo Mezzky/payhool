@@ -75,10 +75,7 @@ if (!isset($_SESSION['login'])) {
                         </div>
                         <span>Histori</span>
                     </a>
-
-                    <a href="../login/logout.php">
-                        <span>Logout</span>
-                    </a>
+                    
 
                 <?php } elseif ($_SESSION['leveluser'] == "Petugas") { ?>
                     <a href="../dashboard/dashboard.php">
@@ -112,10 +109,7 @@ if (!isset($_SESSION['login'])) {
                         </div>
                         <span>Histori</span>
                     </a>
-
-                    <a href="../login/logout.php">
-                        <span>Logout</span>
-                    </a>
+                    
 
                 <?php } else { ?>
                     <a href="../dashboard/dashboard.php">
@@ -133,32 +127,21 @@ if (!isset($_SESSION['login'])) {
                         </div>
                         <span>Histori Siswa</span>
                     </a>
-
-                    <a href="../login/logout.php">
-                        <span>Logout</span>
-                    </a>
+                    
                 <?php } ?>
             </ul>
         </nav>
     </header>
     <script>
-        // Get the current URL
-        var currentUrl = window.location.href;
+        const currentUrl = window.location.href;
 
-        // Get the container element for the navigation menu
-        var navContainer = document.querySelector('header nav');
+        const navContainer = document.querySelector('header nav');
+        const navLinks = navContainer.querySelectorAll('a');
 
-        // Get all anchor elements in the navigation menu
-        var navLinks = navContainer.querySelectorAll('a');
-
-        // Loop through each anchor element
         navLinks.forEach(function(link) {
-            // Check if the anchor element's href matches the current URL
             if (link.href === currentUrl) {
-                // Add the 'active' class to the matching anchor element
                 link.classList.add('active');
             } else {
-                // Remove the 'active' class from the non-matching anchor elements
                 link.classList.remove('active');
             }
         });

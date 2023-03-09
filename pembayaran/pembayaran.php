@@ -41,6 +41,9 @@
         <?php endif; ?>
         <button type="submit">Cari</button>
     </form>
+    <a class="logout-btn" href="../login/logout.php">
+        <img src="../Assets/icon/logout-icon.svg" alt="logout">
+    </a>
 
     <?php if (isset($_GET['keyword'])) : ?>
         <h2><?= $nama[0]["nama_siswa"]; ?></h2>

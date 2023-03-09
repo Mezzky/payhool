@@ -61,6 +61,12 @@ a{
     fill: #1F1F1F;
 }
 
+.logout-btn{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
 /* ========== MAIN STYLE ========== */
 header{
     display: flex;
