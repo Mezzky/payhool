@@ -1,5 +1,5 @@
 <?php 
-    require '../views/template/navbar.php';
+    require '../template/navbar.php';
 ?>
 
 <!DOCTYPE html>

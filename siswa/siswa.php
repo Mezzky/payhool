@@ -1,35 +1,43 @@
 <?php 
     require 'functions_siswa.php';
-    require '../views/template/navbar.php';
-    $siswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) ORDER BY nis ASC");
+    require '../template/navbar.php';
 
-    // $nis = $_SESSION['key'];
-    // if($_SESSION['leveluser'] == $nis ) {
-    //     $siswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) WHERE nis=$nis ORDER BY nis ASC");
-    // }
+    // Proses pencarian
+    if(isset($_POST['search'])) {
+        $keyword = $_POST['keyword'];
+        $siswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) WHERE 
+                        nis LIKE '%$keyword%' OR 
+                        nama_siswa LIKE '%$keyword%' OR 
+                        kelas LIKE '%$keyword%' OR 
+                        jenis_kelamin LIKE '%$keyword%' OR 
+                        alamat LIKE '%$keyword%' ORDER BY nis ASC");
+    } else {
+        $siswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) ORDER BY nis ASC");
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Siswa</title>
     <link rel="stylesheet" href="../CSS/style.php">
-    <style>
-        /* table{
-            border: 5px solid black;
-        } */
-    </style>
 </head>
-
 <body>
     <h1>Data Siswa</h1>
     <?php if($_SESSION['leveluser'] == 'Admin' ) : ?>
-    <a href="create_siswa.php">Tambah Siswa</a>
+    <a href="create_siswa.php">+ Tambah Siswa</a>
     <?php endif; ?>
+    <!-- Form pencarian -->
+    <form action="" method="post">
+        <input type="text" name="keyword" size="30" placeholder="Cari Siswa" autocomplete="off">
+        <button type="submit" name="search">Cari</button>
+    </form>
+    <a href="../login/logout.php">
+        <img src="../Assets/icon/logout-icon.svg" alt="logout">
+    </a>
     <table border="0" cellspacing="0" cellpadding="10">
         <thead>
             <tr>
@@ -65,5 +73,4 @@
         <?php endforeach; ?>
     </table>
 </body>
-
 </html>

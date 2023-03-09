@@ -1,6 +1,6 @@
 <?php 
     require 'functions_pembayaran.php';
-    require '../views/template/navbar.php';
+    require '../template/navbar.php';
     
     if(isset($_GET['keyword'])) {
         $keyword = $_GET['keyword'];
