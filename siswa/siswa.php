@@ -37,10 +37,12 @@
                 <!-- Form pencarian -->
                 <form action="" method="post">
                     <input type="text" name="keyword" size="30" placeholder="Cari Siswa" autocomplete="off">
-                    <button type="submit" name="search">Cari</button>
+                    <button type="submit" name="search">
+                        <img class="icon-sm" src="../Assets/icon/search-icon.svg" alt="search">
+                    </button>
                 </form>
-                <a class="logout-btn" href="../login/logout.php">
-                    <img src="../Assets/icon/logout-icon.svg" alt="logout">
+                <a href="../login/logout.php">
+                    <img class="icon-md" src="../Assets/icon/logout-icon.svg" alt="logout">
                 </a>
             </div>
         </div>
@@ -80,9 +82,15 @@
                         <td><?= $row["alamat"]; ?></td>
                         <?php if($_SESSION['leveluser'] == 'Admin' ) : ?>
                             <td>
-                                <a href="delete_siswa.php?nis=<?= $row["nis"]; ?>">Hapus</a>
-                                <a href="update_siswa.php?nis=<?= $row["nis"]; ?>">Edit</a>
-                                </td>
+                                <div class="btn">
+                                    <a href="delete_siswa.php?nis=<?= $row["nis"]; ?>">
+                                        <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
+                                    </a>
+                                    <a href="update_siswa.php?nis=<?= $row["nis"]; ?>">
+                                        <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
+                                    </a>
+                                </div>
+                            </td>
                         <?php endif; ?>
                     </tr>
                 </tbody>

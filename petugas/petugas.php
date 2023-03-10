@@ -37,7 +37,9 @@
                 <!-- Formulir pencarian -->
                 <form action="" method="POST">
                     <input type="text" name="keyword" size="30" autofocus placeholder="Cari Petugas" autocomplete="off">
-                    <button type="submit" name="search">Cari</button>
+                    <button type="submit" name="search">
+                        <img class="icon-sm" src="../Assets/icon/search-icon.svg" alt="search">
+                    </button>
                 </form>
                 <a class="logout-btn" href="../login/logout.php">
                     <img src="../Assets/icon/logout-icon.svg" alt="logout">
@@ -46,7 +48,7 @@
         </div>
         
         <div class="table-content">
-            <a href="create_petugas.php">Tambah Petugas</a>
+            <a href="create_petugas.php">+ Tambah Petugas</a>
             <?php if(empty($petugas)) : ?>
             <p>Data tidak ditemukan</p>
             <?php else : ?>
@@ -73,8 +75,14 @@
                         <td><?= $row["leveluser"]; ?></td>
                         <td><?= $row["no_telp"]; ?></td>
                         <td>
-                            <a href="delete_petugas.php?nip=<?= $row["nip"]; ?>">Hapus</a>
-                            <a href="update_petugas.php?nip=<?= $row["nip"]; ?>">Edit</a>
+                            <div class="btn">
+                                <a href="delete_petugas.php?nip=<?= $row["nip"]; ?>">
+                                    <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
+                                </a>
+                                <a href="update_petugas.php?nip=<?= $row["nip"]; ?>">
+                                    <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>

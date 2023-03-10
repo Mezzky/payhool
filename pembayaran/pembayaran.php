@@ -32,80 +32,93 @@
 
 <body>
     <div class="table-container">
-        <h1>Pembayaran</h1>
+        <div class="tittle">
+            <div class="tittle-left">
+                <h1>Pembayaran</h1>
+            </div>
 
-        <form action="" method="GET" autocomplete="off" class="search-form">
-            <?php if (!isset($_GET['keyword'])) : ?>
-            <input type="text" name="keyword" placeholder="Cari NIS"  maxlength="4" required>
-            <?php else : ?>
-            <input type="text" name="keyword" placeholder="Cari NIS" value="<?= $_GET['keyword']; ?>"  maxlength="4" required>
-            <?php endif; ?>
-            <button type="submit">Cari</button>
-        </form>
-        <a class="logout-btn" href="../login/logout.php">
-            <img src="../Assets/icon/logout-icon.svg" alt="logout">
-        </a>
+            <div class="tittle-right">
+                <form action="" method="GET" autocomplete="off" class="search-form">
+                    <?php if (!isset($_GET['keyword'])) : ?>
+                    <input type="text" name="keyword" placeholder="Cari NIS"  maxlength="4" required>
+                    <?php else : ?>
+                    <input type="text" name="keyword" placeholder="Cari NIS" value="<?= $_GET['keyword']; ?>"  maxlength="4" required>
+                    <?php endif; ?>
+                    <button type="submit">
+                        <img class="icon-sm" src="../Assets/icon/search-icon.svg" alt="search">
+                    </button>
+                </form>
+                <a class="logout-btn" href="../login/logout.php">
+                    <img src="../Assets/icon/logout-icon.svg" alt="logout">
+                </a>
+            </div>
+        </div>
 
-        <?php if (isset($_GET['keyword'])) : ?>
-            <h2><?= $nama[0]["nama_siswa"]; ?></h2>
-            <form action="" method="POST">
-                <button type="submit" name="angkatan-1">Angkatan I</button>
-                <button type="submit" name="angkatan-2">Angkatan II</button>
-                <button type="submit" name="angkatan-3">Angkatan III</button>
-            </form>
+        <div class="table-content">
+            <?php if (isset($_GET['keyword'])) : ?>
+                <div class="name-tittle">
+                    <h2><?= $nama[0]["nama_siswa"]; ?></h2>
+                    <form action="" method="POST">
+                        <button type="submit" name="angkatan-1">Angkatan I</button>
+                        <button type="submit" name="angkatan-2">Angkatan II</button>
+                        <button type="submit" name="angkatan-3">Angkatan III</button>
+                    </form>
+                </div>
 
-            <table border="0" cellspacing="0" cellpadding="10">
-                <thead>
-                    <tr>
-                        <th>Angkatan</th>
-                        <th>NIS</th>
-                        <th>Nama</th>
-                        <th>Bulan</th>
-                        <th>Tahun</th>
-                        <th>Jumlah Bayar</th>
-                        <th>Keterangan</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-
-                <?php foreach($pembayaran as $row) : ?>
-                <tbody>
-                    <tr>
-                        <td><?= $row["angkatan"]; ?></td>
-                        <td><?= $row["nis"]; ?></td>
-                        <td><?= $row["nama_siswa"]; ?></td>
-                        <td><?= $row["bulan"]; ?></td>
-                        <td><?= $row["tahun"]; ?></td>
-                        <td>Rp.<?= number_format($row["jumlah_bayar"], 0, ',', '.'); ?></td>
-                        <td>
+                <table border="0" cellspacing="0" cellpadding="10">
+                    <thead>
+                        <tr>
+                            <th>Angkatan</th>
+                            <th>NIS</th>
+                            <th>Nama</th>
+                            <th>Bulan</th>
+                            <th>Tahun</th>
+                            <th>Jumlah Bayar</th>
+                            <th>Keterangan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+    
+                    <?php foreach($pembayaran as $row) : ?>
+                    <tbody>
+                        <tr>
+                            <td><?= $row["angkatan"]; ?></td>
+                            <td><?= $row["nis"]; ?></td>
+                            <td><?= $row["nama_siswa"]; ?></td>
+                            <td><?= $row["bulan"]; ?></td>
+                            <td><?= $row["tahun"]; ?></td>
+                            <td>Rp.<?= number_format($row["jumlah_bayar"], 0, ',', '.'); ?></td>
+                            <td>
+                                <?php 
+                                    if($row["jumlah_bayar"] > 0){
+                                        echo "Lunas";
+                                    } else{
+                                        echo "Belum Lunas";
+                                    }
+                                ?>
+                            </td>
                             <?php 
-                                if($row["jumlah_bayar"] > 0){
-                                    echo "Lunas";
+                                if($row["jumlah_bayar"] == 600000){
+                            ?> <td>Terbayar</td>
+                            <?php
                                 } else{
-                                    echo "Belum Lunas";
+                            ?>
+                            <td>
+                                <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
+                            </td>
+                            <?php
                                 }
                             ?>
-                        </td>
-                        <?php 
-                            if($row["jumlah_bayar"] == 600000){
-                        ?> <td>Terbayar</td>
-                        <?php
-                            } else{
-                        ?>
-                        <td>
-                            <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
-                        </td>
-                        <?php
-                            }
-                        ?>
-                    </tr>
-                </tbody>
-                <?php endforeach; ?>
-            </table>
-            <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
-            <?php $totalNominal = 600000 * 12; ?>
-            <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
-        <?php endif; ?>
+                        </tr>
+                    </tbody>
+                    <?php endforeach; ?>
+                </table>
+                <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
+                <?php $totalNominal = 600000 * 12; ?>
+                <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
+            <?php endif; ?>
+        </div>
+
     </div>
 </body>
 

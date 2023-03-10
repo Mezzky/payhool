@@ -33,7 +33,9 @@
                 <!-- Formulir pencarian -->
                 <form action="" method="POST">
                     <input type="text" name="keyword" size="30" autofocus placeholder="Cari Kelas" autocomplete="off">
-                    <button type="submit" name="search">Cari</button>
+                    <button type="submit" name="search">
+                        <img class="icon-sm" src="../Assets/icon/search-icon.svg" alt="search">
+                    </button>
                 </form>
                 <a class="logout-btn" href="../login/logout.php">
                     <img src="../Assets/icon/logout-icon.svg" alt="logout">
@@ -64,8 +66,14 @@
                         <td><?= $row["kelas"]; ?></td>
                         <td><?= $row["jurusan"] ?></td>
                         <td>
-                            <a href="delete_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">Hapus</a>
-                            <a href="update_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">Edit</a>
+                            <div class="btn">
+                                <a href="delete_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">
+                                    <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
+                                </a>
+                                <a href="update_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">
+                                    <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>

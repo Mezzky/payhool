@@ -131,7 +131,13 @@ if (!isset($_SESSION['login'])) {
                 <?php } ?>
             </ul>
         </nav>
+        
+        <footer>
+        <p>&copy;Copyright by Payhool <?= date("Y"); ?></p>
+        </footer>
     </header>
+
+
     <script>
         const currentUrl = window.location.href;
 

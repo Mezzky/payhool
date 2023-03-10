@@ -19,6 +19,7 @@
 /* ========== CSS RESET ========== */
 *{
     font-family: var(--font-text);
+    margin: 0;
 }
 
 html,
@@ -27,6 +28,18 @@ body{
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #abaeff;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #535AFF;
 }
 
 tr, th, td{
@@ -56,9 +69,20 @@ a{
     text-decoration: none;
 }
 
+.icon-xsm{
+    width: 18px;
+}
+
 .icon-sm{
     width: 24px;
-    fill: #1F1F1F;
+}
+
+.icon-md{
+    width: 34px;
+}
+
+button{
+    cursor: pointer;
 }
 
 /* .logout-btn{
@@ -71,7 +95,6 @@ a{
 header{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     width: 230px;
     align-items: center;
     position: fixed;
@@ -82,24 +105,16 @@ header{
     gap: 30px;
 }
 
-header .logo{
-    /* background-color: var(--danger-color); */
-}
-
 header .logo a{
     color: white;
     font-size: 30px;
-    /* font-weight: bold; */
 }
 
 header nav{
-    /* background-color: #1F1F1F; */
     align-self: flex-end;
 }
 
 header nav ul{
-    /* background-color: #535AFF; */
-    /* width: 100px; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -112,9 +127,7 @@ header nav ul a{
     padding: 8px 30px 8px 20px;
     display: flex;
     gap: 20px;
-    /* justify-content: center; */
     align-items: center;
-    /* background-color: #FF3434; */
     border-radius: 10px 0 0px 10px;
     transition: 300ms all;
 }
@@ -130,7 +143,6 @@ header nav ul a span{
     height: 100%;
     color: white;
     transition: 300ms all;
-    /* background-color: #1F1F1F; */
 }
 header nav ul a:hover span{
     color: var(--text-color);
@@ -157,6 +169,25 @@ header nav ul a:hover .icon-nav img:last-child{
 }
 header nav ul a.active .icon-nav img:last-child{
     opacity: 1;
+}
+
+header footer{
+    position: absolute;
+    bottom: 16px;
+    border-top: 2px solid var(--second-color);
+    padding: 10px 20px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header footer p{
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
 }
 
 /* Login */
@@ -201,13 +232,13 @@ header nav ul a.active .icon-nav img:last-child{
 
 .form-container .form-input form .tittle-login h2:first-child{
     font-weight: 500;
-    margin-bottom: -20px;
+    margin-bottom: 1px;
 }
 
 .form-container .form-input form .tittle-login p{
     font-weight: 500;
     color: var(--text-color);
-    margin-top: -20px;
+    margin: 10px 0;
 }
 
 .form-container .form-input form .input-box{
@@ -255,11 +286,85 @@ header nav ul a.active .icon-nav img:last-child{
 /* Table */
 .table-container{
     /* background-color: #0036c0; */
+    padding-top: 20px;
     padding-left: 260px;
-    padding-right: 40px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-table{
+.table-container .tittle{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.table-container .tittle .tittle-left{
+    display: flex;
+    flex-direction: column;
+}
+
+.table-container .tittle .tittle-left p{
+    /* background-color: #546eaf; */
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.table-container .tittle .tittle-right{
+    display: flex;
+    align-items: center;
+    width: 70%;
+    gap: 20px;
+    /* background-color: #ff0000; */
+}
+
+.table-container .tittle .tittle-right form{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+}
+
+.table-container .tittle .tittle-right form input{
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--text-color);
+}
+
+.table-container .tittle .tittle-right form button{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--second-color);
+    transition: 100ms all;
+}
+.table-container .tittle .tittle-right form button:hover{
+    background-color: #7b80ff;
+}
+
+.table-container .table-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.table-container .table-content > a{
+    color: var(--main-color);
+    transition: 300ms all;
+}
+.table-container .table-content > a:hover{
+    transform: translateX(-5px);
+}
+
+.table-container .table-content table{
     width: 100%;
     border-collapse: separate;
     border: 1px solid white;
@@ -268,19 +373,41 @@ table{
     /* overflow: hidden; */
 }
 
-table thead tr, tbody tr{
+.table-container .table-content table thead tr, tbody tr{
     box-shadow: 0px 0px 0px 1px black;
     border-radius: 5px;
 }
 
-table thead{
+.table-container .table-content table thead{
     background-color: #D2D2D2;
 }
 
-table thead tr th{
+.table-container .table-content table thead tr th{
     font-weight: bold;
 }
 
-table tbody:nth-child(odd){
+.table-container .table-content table tbody:nth-child(odd){
     background-color: #E9E9FC;
+}
+
+.table-container .table-content table tbody tr td .btn{
+    display: flex;
+    gap: 5px;
+}
+
+.table-container .table-content table tbody tr td .btn > a{
+    background-color: var(--danger-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 300ms all;
+}
+.table-container .table-content table tbody tr td .btn > a:last-child{
+    background-color: var(--second-color);
+}
+
+.table-container .table-content table tbody tr td .btn > a:hover{
+    opacity: .8;
 }
