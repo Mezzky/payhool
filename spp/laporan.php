@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
     require 'functions_spp.php';
     $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) ORDER BY id_spp DESC")
 ?>
@@ -46,4 +46,4 @@
         window.onafterprint = () => history.back();
     </script>
 </body>
-</html>
+</html> -->

@@ -32,22 +32,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Kelas</title>
+    <link rel="stylesheet" href="../CSS/style.php">
 </head>
 <body>
-    <form action="" method="POST">
-    <input type="hidden" name="id_kelas" value="<?= $kelas["id_kelas"] ?>">
-        <div class="input-box">
-            <label for="kelas">Kelas</label>
-            <input autocomplete="off" required type="text" name="kelas" id="kelas" value="<?= $kelas["kelas"] ?>">
+    <div class="modal-body">
+        <a href="kelas.php" class="back-btn">&larr;</a>
+        <div class="modal-container">
+            <h1>Edit Kelas</h1>
+            <form action="" method="POST">
+            <input type="hidden" name="id_kelas" value="<?= $kelas["id_kelas"] ?>">
+                <div class="input-box">
+                    <label for="kelas">Kelas</label>
+                    <input autocomplete="off" required type="text" name="kelas" id="kelas" value="<?= $kelas["kelas"] ?>">
+                </div>
+                <div class="input-box">
+                    <label for="jurusan">Jurusan</label>
+                    <input autocomplete="off" required type="text" name="jurusan" id="jurusan" value="<?= $kelas["jurusan"] ?>">
+                </div>
+                <div class="btn">
+                    <button type="reset">Batal</button>
+                    <button type="submit" name="submit">Ubah</button>
+                </div>
+            </form>
         </div>
-        <div class="input-box">
-            <label for="jurusan">Jurusan</label>
-            <input autocomplete="off" required type="text" name="jurusan" id="jurusan" value="<?= $kelas["jurusan"] ?>">
-        </div>
-        <div class="btn">
-            <button type="reset">Batal</button>
-            <button type="submit" name="submit">Ubah</button>
-        </div>
-    </form>
+    </div>
 </body>
 </html>

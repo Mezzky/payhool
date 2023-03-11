@@ -57,7 +57,7 @@
         <div class="table-content">
             <?php if (isset($_GET['keyword'])) : ?>
                 <div class="name-tittle">
-                    <h2><?= $nama[0]["nama_siswa"]; ?></h2>
+                    <h2>Nama Siswa: <?= $nama[0]["nama_siswa"]; ?></h2>
                     <form action="" method="POST">
                         <button type="submit" name="angkatan-1">Angkatan I</button>
                         <button type="submit" name="angkatan-2">Angkatan II</button>
@@ -113,9 +113,11 @@
                     </tbody>
                     <?php endforeach; ?>
                 </table>
-                <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
-                <?php $totalNominal = 600000 * 12; ?>
-                <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
+                <div class="total-tagihan">
+                    <?php $totalNominal = 600000 * 12; ?>
+                    <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
+                    <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
+                </div>
             <?php endif; ?>
         </div>
 

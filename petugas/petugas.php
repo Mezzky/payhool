@@ -36,7 +36,7 @@
             <div class="tittle-right">
                 <!-- Formulir pencarian -->
                 <form action="" method="POST">
-                    <input type="text" name="keyword" size="30" autofocus placeholder="Cari Petugas" autocomplete="off">
+                    <input type="text" name="keyword" size="30" placeholder="Cari Petugas" autocomplete="off">
                     <button type="submit" name="search">
                         <img class="icon-sm" src="../Assets/icon/search-icon.svg" alt="search">
                     </button>
@@ -57,7 +57,7 @@
                     <tr>
                         <th>NIP</th>
                         <th>Nama</th>
-                        <th>Username</th>
+                        <!-- <th>Username</th> -->
                         <th>Password</th>
                         <th>leveluser</th>
                         <th>No Telepon</th>
@@ -70,7 +70,7 @@
                     <tr>
                         <td><?= $row["nip"]; ?></td>
                         <td><?= $row["nama_petugas"]; ?></td>
-                        <td><?= $row["username"] ?></td>
+                        <!-- <td><?= $row["username"] ?></td> -->
                         <td><?= $row["password"]; ?></td>
                         <td><?= $row["leveluser"]; ?></td>
                         <td><?= $row["no_telp"]; ?></td>

@@ -32,7 +32,7 @@
             <div class="tittle-right">
                 <!-- Formulir pencarian -->
                 <form action="" method="POST">
-                    <input type="text" name="keyword" size="30" autofocus placeholder="Cari Kelas" autocomplete="off">
+                    <input type="text" name="keyword" size="30" placeholder="Cari Kelas" autocomplete="off">
                     <button type="submit" name="search">
                         <img class="icon-sm" src="../Assets/icon/search-icon.svg" alt="search">
                     </button>

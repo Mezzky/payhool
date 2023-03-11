@@ -8,10 +8,11 @@
 
 /* ========== CSS VARIABLE ========== */
 :root{
-    --main-color: #0036c0;
+    --main-color: #1C50D3;
     --second-color: #535AFF;
     --danger-color: #FF3434;
     --heading-color: #1F1F1F;
+    --border-color: #888888;
     --text-color: #2F2F2F;
     --font-text: 'Poppins', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -85,12 +86,6 @@ button{
     cursor: pointer;
 }
 
-/* .logout-btn{
-    position: fixed;
-    top: 10px;
-    right: 10px;
-} */
-
 /* ========== MAIN STYLE ========== */
 header{
     display: flex;
@@ -100,7 +95,7 @@ header{
     position: fixed;
     left: 0;
     height: 100vh;
-    background-color: var(--main-color);
+    background: linear-gradient(to right, var(--main-color), #6a6ffc);
     padding: 30px 0;
     gap: 30px;
 }
@@ -197,12 +192,15 @@ header footer p{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-color);
+    background: url(../Assets/img/wave_background.png)
+                no-repeat;
+    background-size: cover;
 }
 
 .form-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0px 0px 100px 20px rgba(0, 0, 0, .5);
 }
 
 .form-container .form-input{
@@ -218,6 +216,10 @@ header footer p{
     justify-content: center;
     gap: 10px;
     width: 80%;
+}
+
+.form-container .form-input form > P{
+    color: var(--danger-color);
 }
 
 .form-container .form-input form .tittle-login{
@@ -254,7 +256,7 @@ header footer p{
 
 .form-container .form-input form .input-box input{
     padding: 10px 6px;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--border-color);
     border-radius: 5px;
 }
 
@@ -318,6 +320,7 @@ header footer p{
     align-items: center;
     width: 70%;
     gap: 20px;
+    /* background-color: #1C50D3; */
     /* background-color: #ff0000; */
 }
 
@@ -347,6 +350,40 @@ header footer p{
 }
 .table-container .tittle .tittle-right form button:hover{
     background-color: #7b80ff;
+}
+
+.table-container .histori-form{
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* background-color: #1C50D3; */
+    /* flex-direction: column; */
+    gap: 10px;
+}
+
+.table-container .histori-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.table-container .histori-form form input, select{
+    /* width: 30%; */
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.table-container .histori-form form button{
+    border: none;
+    padding: 10px;
+    background-color: var(--second-color);
+    color: white;
+    border-radius: 5px;
+    transition: 300ms all;
+}
+.table-container .histori-form form button:hover{
+    background-color: #6a6ffc;
 }
 
 .table-container .table-content{
@@ -410,4 +447,151 @@ header footer p{
 
 .table-container .table-content table tbody tr td .btn > a:hover{
     opacity: .8;
+}
+
+.table-container .table-content .name-tittle, .total-tagihan{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-container .table-content .name-tittle{
+    padding-top: 20px;
+}
+
+.table-container .table-content .total-tagihan{
+    padding-bottom: 20px;
+}
+
+.table-container .table-content .name-tittle h2, .total-tagihan h2{
+    color: var(--heading-color);
+    font-size: 20px;
+}
+
+.table-container .table-content .name-tittle form{
+    display: flex;
+    gap: 5px;
+}
+
+.table-container .table-content .name-tittle form button{
+    background-color: var(--second-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: 300ms all;
+}
+.table-container .table-content .name-tittle form button:hover{
+    background-color: #7b80ff;
+}
+
+.table-container .table-content table tbody tr td > a{
+    background-color: var(--second-color);
+    color: white;
+    padding: 5px 16px;
+    border-radius: 5px;
+    transition: 300ms all;
+}
+.table-container .table-content table tbody tr td > a:hover{
+    background-color: #7b80ff;
+}
+
+/* Modal */
+.modal-body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../Assets/img/wave_background.png)
+                no-repeat;
+    background-size: cover;
+}
+
+.modal-body > a{
+    background-color: #FF4E4E;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 20px;
+    border-radius: 0px 0px 30px 0px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 300ms all;
+}
+.modal-body > a:hover{
+    background-color: #fc7c7c;
+}
+
+.modal-body .modal-container{
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 500px;
+}
+
+.modal-body .modal-container h1{
+    font-size: 20px;
+    color: var(--heading-color);
+}
+.modal-body .modal-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.modal-body .modal-container form .input-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body .modal-container form .input-box input, select{
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.modal-body .modal-container form .btn{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-body .modal-container form .btn button{
+    cursor: pointer;
+    background-color: var(--second-color);
+    color: white;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: none;
+    transition: 300ms all;
+}
+.modal-body .modal-container form .btn button:hover{
+    background-color: #7b80ff;
+}
+
+.modal-body .modal-container form .btn button:first-child{
+    background-color: var(--danger-color);
+}
+.modal-body .modal-container form .btn button:first-child:hover{
+    background-color: #FF4E4E;
+}
+
+/* Dashboard */
+.dash-container{
+    padding-top: 20px;
+    padding-left: 260px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }

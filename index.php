@@ -65,7 +65,7 @@ if (isset($_POST['login'])) {
                     <?php  endif; ?>
                     <div class="input-box">
                         <label for="user">NIS / NIP</label>
-                        <input type="text" name="user" id="user">
+                        <input type="text"autofocus name="user" id="user">
                     </div>
                     <div class="input-box">
                         <label for="password">Password</label>
