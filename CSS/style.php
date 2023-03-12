@@ -713,3 +713,20 @@ header footer p{
     width: 200px;
     /* height: 200px; */
 }
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+    .form-body .form-container .form-img{
+        display: none;
+    }
+
+    .form-container{
+        grid-template-columns: 1fr;
+        width: 80%;
+    }
+
+    .form-container .form-input{
+        padding: 50px 0px;
+        /* width: 80%; */
+    }
+}

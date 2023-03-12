@@ -13,13 +13,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Kelas</title>
     <style>
-        table,
+        /* table,
         tr,
         th,
         td {
             border: 1px solid black;
             border-collapse: collapse;
-        }
+        } */
     </style>
 </head>
 
@@ -29,7 +29,7 @@
     <?php $dataKelas = query("SELECT * FROM tb_kelas WHERE id_kelas = '$idKelas'")[0]; ?>
     <h3>Kelas: <?= $dataKelas['kelas']; ?></h3>
 
-    <table>
+    <table border="1" cellpadding="10" cellspacing="0">
         <thead>
             <tr>
                 <th>No</th>
