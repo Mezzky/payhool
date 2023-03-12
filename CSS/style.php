@@ -14,6 +14,7 @@
     --heading-color: #1F1F1F;
     --border-color: #888888;
     --text-color: #2F2F2F;
+    --box-color: #7678ED;
     --font-text: 'Poppins', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -84,6 +85,10 @@ a{
 
 button{
     cursor: pointer;
+}
+
+.align-start{
+    align-self: flex-start;
 }
 
 /* ========== MAIN STYLE ========== */
@@ -169,7 +174,7 @@ header nav ul a.active .icon-nav img:last-child{
 header footer{
     position: absolute;
     bottom: 16px;
-    border-top: 2px solid var(--second-color);
+    border-top: 2px solid white;
     padding: 10px 20px 20px;
     margin-bottom: 20px;
     text-align: center;
@@ -386,22 +391,22 @@ header footer p{
     background-color: #6a6ffc;
 }
 
-.table-container .table-content{
+.table-content{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: end;
 }
 
-.table-container .table-content > a{
+.table-content > a{
     color: var(--main-color);
     transition: 300ms all;
 }
-.table-container .table-content > a:hover{
+.table-content > a:hover{
     transform: translateX(-5px);
 }
 
-.table-container .table-content table{
+.table-content table{
     width: 100%;
     border-collapse: separate;
     border: 1px solid white;
@@ -410,29 +415,29 @@ header footer p{
     /* overflow: hidden; */
 }
 
-.table-container .table-content table thead tr, tbody tr{
+.table-content table thead tr, tbody tr{
     box-shadow: 0px 0px 0px 1px black;
     border-radius: 5px;
 }
 
-.table-container .table-content table thead{
+.table-content table thead{
     background-color: #D2D2D2;
 }
 
-.table-container .table-content table thead tr th{
+.table-content table thead tr th{
     font-weight: bold;
 }
 
-.table-container .table-content table tbody:nth-child(odd){
+.table-content table tbody:nth-child(odd){
     background-color: #E9E9FC;
 }
 
-.table-container .table-content table tbody tr td .btn{
+.table-content table tbody tr td .btn{
     display: flex;
     gap: 5px;
 }
 
-.table-container .table-content table tbody tr td .btn > a{
+.table-content table tbody tr td .btn > a{
     background-color: var(--danger-color);
     display: flex;
     align-items: center;
@@ -441,40 +446,40 @@ header footer p{
     border-radius: 5px;
     transition: 300ms all;
 }
-.table-container .table-content table tbody tr td .btn > a:last-child{
+.table-content table tbody tr td .btn > a:last-child{
     background-color: var(--second-color);
 }
 
-.table-container .table-content table tbody tr td .btn > a:hover{
+.table-content table tbody tr td .btn > a:hover{
     opacity: .8;
 }
 
-.table-container .table-content .name-tittle, .total-tagihan{
+.table-content .name-tittle, .total-tagihan{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.table-container .table-content .name-tittle{
+.table-content .name-tittle{
     padding-top: 20px;
 }
 
-.table-container .table-content .total-tagihan{
+.table-content .total-tagihan{
     padding-bottom: 20px;
 }
 
-.table-container .table-content .name-tittle h2, .total-tagihan h2{
+.table-content .name-tittle h2, .total-tagihan h2{
     color: var(--heading-color);
     font-size: 20px;
 }
 
-.table-container .table-content .name-tittle form{
+.table-content .name-tittle form{
     display: flex;
     gap: 5px;
 }
 
-.table-container .table-content .name-tittle form button{
+.table-content .name-tittle form button{
     background-color: var(--second-color);
     color: white;
     border: none;
@@ -482,18 +487,18 @@ header footer p{
     padding: 5px 10px;
     transition: 300ms all;
 }
-.table-container .table-content .name-tittle form button:hover{
+.table-content .name-tittle form button:hover{
     background-color: #7b80ff;
 }
 
-.table-container .table-content table tbody tr td > a{
+.table-content table tbody tr td > a{
     background-color: var(--second-color);
     color: white;
     padding: 5px 16px;
     border-radius: 5px;
     transition: 300ms all;
 }
-.table-container .table-content table tbody tr td > a:hover{
+.table-content table tbody tr td > a:hover{
     background-color: #7b80ff;
 }
 
@@ -593,5 +598,118 @@ header footer p{
     padding-right: 30px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.dash-container .dash-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
     gap: 30px;
+}
+
+.dash-container .dash-content .left-content{
+    /* background-color: #1C50D3; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dash-container .dash-content .left-content .welcome{
+    background-color: #F5F5F5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.dash-container .dash-content .left-content .welcome h1{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.dash-container .dash-content .left-content .welcome p{
+    color: var(--border-color);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.dash-container .dash-content .left-content .dash-data{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.dash-container .dash-content .left-content .dash-data .data{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--box-color);
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.dash-container .dash-content .left-content .dash-data .data .count{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash-container .dash-content .left-content .dash-data .data .count span{
+    color: white;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.dash-container .dash-content .left-content .dash-data .data .count img{
+    width: 50px;
+}
+
+.dash-container .dash-content .left-content .dash-data .data p{
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+}
+
+.dash-container .dash-content .right-content{
+    /* background-color: #fc7c7c; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dash-container .dash-content .right-content .top{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dash-container .dash-content .right-content .top p{
+    color: white;
+    font-weight: 600;
+    background-color: var(--box-color);
+    border-radius: 10px;
+    padding: 10px;
+    width: 90%;
+    text-align: center;
+}
+
+.dash-container .dash-content .right-content .img{
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.dash-container .dash-content .right-content .img img{
+    width: 200px;
+    /* height: 200px; */
 }
