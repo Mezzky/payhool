@@ -10,7 +10,7 @@
 :root{
     --main-color: #1C50D3;
     --second-color: #535AFF;
-    --danger-color: #FF3434;
+    --danger-color: #ff5151;
     --heading-color: #1F1F1F;
     --border-color: #888888;
     --text-color: #2F2F2F;
@@ -357,29 +357,12 @@ header footer p{
     background-color: #7b80ff;
 }
 
-.table-container .histori-form{
-    /* width: 100%; */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* background-color: #1C50D3; */
-    /* flex-direction: column; */
+.table-container .btn-histori{
+    display: flex;
     gap: 10px;
 }
 
-.table-container .histori-form form{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.table-container .histori-form form input, select{
-    /* width: 30%; */
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
-}
-
-.table-container .histori-form form button{
+.table-container .btn-histori button{
     border: none;
     padding: 10px;
     background-color: var(--second-color);
@@ -387,8 +370,71 @@ header footer p{
     border-radius: 5px;
     transition: 300ms all;
 }
-.table-container .histori-form form button:hover{
+.table-container .btn-histori button:hover{
     background-color: #6a6ffc;
+}
+
+.table-container .overlay{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2F2F2F;
+    opacity: 0;
+}
+.table-container .overlay.overlay-active{
+    display: flex;
+    opacity: 1;
+}
+
+.table-container .overlay > form{
+    background-color: white;
+    min-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0;
+}
+.table-container .overlay > form.modal-active{
+    display: flex;
+    opacity: 1;
+}
+
+.table-container .overlay form input, select{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.table-container .overlay form .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.table-container .overlay form .btn button{
+    border: none;
+    padding: 10px;
+    background-color: var(--second-color);
+    color: white;
+    border-radius: 5px;
+    transition: 300ms all;
+}
+.table-container .overlay form .btn button:hover{
+    background-color: #6a6ffc;
+}
+.table-container .overlay form .btn button:first-child{
+    background-color: var(--danger-color);
+}
+.table-container .overlay form .btn button:first-child:hover{
+    background-color: #ff6a6a;
 }
 
 .table-content{
