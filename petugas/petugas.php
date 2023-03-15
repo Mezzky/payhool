@@ -76,9 +76,11 @@
                         <td><?= $row["no_telp"]; ?></td>
                         <td>
                             <div class="btn">
+                                <?php if ($_SESSION['nip'] !== $row['nip']) : ?>
                                 <a href="delete_petugas.php?nip=<?= $row["nip"]; ?>">
                                     <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
                                 </a>
+                                <?php endif; ?>
                                 <a href="update_petugas.php?nip=<?= $row["nip"]; ?>">
                                     <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
                                 </a>
