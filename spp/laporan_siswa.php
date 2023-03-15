@@ -12,6 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Siswa</title>
     <style>
+        body {
+            font-size: 12px;
+        }
         table{
             width: 100%;
         }
@@ -45,7 +48,7 @@
                 </tr>
             <?php endforeach; ?>
             <tr>
-                <!-- <?php $totalBayar = query("SELECT SUM(jumlah_bayar) FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) INNER JOIN tb_kelas USING(id_kelas) WHERE id_kelas = '$idKelas' AND angkatan = '$angkatan' AND jumlah_bayar IS NOT NULL ORDER BY nama_siswa ASC")[0]; ?> -->
+                <?php $totalBayar = query("SELECT SUM(jumlah_bayar) FROM tb_pembayaran INNER JOIN tb_siswa USING(nis) WHERE nis = '$nis' AND angkatan = '$angkatan' AND jumlah_bayar IS NOT NULL")[0]; ?>
                 <td colspan="2">Total</td>
                 <td colspan="1">Rp<?= number_format($totalBayar['SUM(jumlah_bayar)'], 0, ',', '.'); ?></td>
             </tr>

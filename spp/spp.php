@@ -36,48 +36,48 @@ if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') {
             </div>
         </div>
 
-        <div class="btn-histori">
-            <button id="kelasBtn">Laporan Kelas</button>
-            <button id="siswaBtn">Laporan Siswa</button>
-        </div>
-
-        <div class="overlay">
-                <?php if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas'): ?>
-                    <form id="laporanKelas" action="laporan_kelas.php" method="POST" autocomplete="off">
-                        <select name="kelas" id="kelas" required>
-                            <option value="" selected>Pilih Kelas</option>
-                            <?php $dataKelas = query("SELECT * FROM tb_kelas"); ?>
-                            <?php foreach ($dataKelas as $kelas): ?>
-                                <option value="<?= $kelas['id_kelas']; ?>"><?= $kelas['kelas']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                        <select name="angkatan" id="angkatan" required>
-                            <option value="" selected>Pilih Angkatan</option>
-                            <option value="I">Angkatan I</option>
-                            <option value="II">Angkatan II</option>
-                            <option value="III">Angkatan III</option>
-                        </select>
-                        <div class="btn">
-                            <button class="closeBtn">Batal</button>
-                            <button type="submit">Buat Laporan Kelas</button>
-                        </div>
-                    </form>
-        
-                    <form id="laporanSiswa" action="laporan_siswa.php" method="POST" autocomplete="off">
-                        <input type="text" name="nis" id="nis" placeholder="Masukkan NIS Siswa" required>
-                        <select name="angkatan" id="angkatan" required>
-                            <option value="" selected>Pilih Angkatan</option>
-                            <option value="I">Angkatan I</option>
-                            <option value="II">Angkatan II</option>
-                            <option value="III">Angkatan III</option>
-                        </select>
-                        <div class="btn">
-                            <button class="closeBtn">Batal</button>
-                            <button type="submit">Buat Laporan Siswa</button>
-                        </div>
-                    </form>
-                <?php endif; ?>
+        <?php if (!isset($_SESSION['nis'])): ?>
+            <div class="btn-histori">
+                <button id="kelasBtn">Laporan Kelas</button>
+                <button id="siswaBtn">Laporan Siswa</button>
             </div>
+
+            <div class="overlay">
+                <form id="laporanKelas" action="laporan_kelas.php" method="POST" autocomplete="off">
+                    <select name="kelas" id="kelas" required>
+                        <option value="" selected>Pilih Kelas</option>
+                        <?php $dataKelas = query("SELECT * FROM tb_kelas"); ?>
+                        <?php foreach ($dataKelas as $kelas): ?>
+                            <option value="<?= $kelas['id_kelas']; ?>"><?= $kelas['kelas']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <select name="angkatan" id="angkatan" required>
+                        <option value="" selected>Pilih Angkatan</option>
+                        <option value="I">Angkatan I</option>
+                        <option value="II">Angkatan II</option>
+                        <option value="III">Angkatan III</option>
+                    </select>
+                    <div class="btn">
+                        <button class="closeBtn">Batal</button>
+                        <button type="submit">Buat Laporan Kelas</button>
+                    </div>
+                </form>
+        
+                <form id="laporanSiswa" action="laporan_siswa.php" method="POST" autocomplete="off">
+                    <input type="text" name="nis" id="nis" placeholder="Masukkan NIS Siswa" required>
+                    <select name="angkatan" id="angkatan" required>
+                        <option value="" selected>Pilih Angkatan</option>
+                        <option value="I">Angkatan I</option>
+                        <option value="II">Angkatan II</option>
+                        <option value="III">Angkatan III</option>
+                    </select>
+                    <div class="btn">
+                        <button type="submit" class="closeBtn">Batal</button>
+                        <button type="submit">Buat Laporan Siswa</button>
+                    </div>
+                </form>
+            </div>
+        <?php endif; ?>
 
         <div class="table-content">
             <table border="0" cellspacing="0" cellpadding="10">
@@ -125,10 +125,11 @@ if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') {
         });
 
         closeBtn.forEach((el) => {
-            el.addEventListener('click', () => {
+            el.addEventListener('click', (event) => {
                 overlay.classList.remove('overlay-active');
                 laporanKelas.classList.remove('modal-active');
                 laporanSiswa.classList.remove('modal-active');
+                event.preventDefault();
             });
         });
 
