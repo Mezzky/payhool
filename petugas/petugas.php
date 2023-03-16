@@ -82,7 +82,7 @@
                                     <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
                                 </a>
                             </div>
-                        </td>
+                        </td> 
                     </tr>
                 </tbody>
                 <?php endforeach; ?>
