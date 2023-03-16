@@ -383,7 +383,8 @@ header footer p{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #2F2F2F;
+    background-color: rgba(0, 0, 0, .7);
+    backdrop-filter: blur(10px);
     opacity: 0;
 }
 .table-container .overlay.overlay-active{

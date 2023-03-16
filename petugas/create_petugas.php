@@ -43,10 +43,6 @@
                     <label for="nama">Nama</label>
                     <input autocomplete="off" required type="text" name="nama_petugas" id="nama">
                 </div>
-                <!-- <div class="input-box">
-                    <label for="username">Username</label>
-                    <input autocomplete="off" required type="text" name="username" id="username">
-                </div> -->
                 <div class="input-box">
                     <label for="password">Password</label>
                     <input autocomplete="off" required type="text" name="password" id="password">

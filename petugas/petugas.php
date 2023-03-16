@@ -7,8 +7,7 @@
         $keyword = $_POST['keyword'];
         $petugas = query("SELECT * FROM tb_petugas WHERE 
                         nip LIKE '%$keyword%' OR 
-                        nama_petugas LIKE '%$keyword%' OR 
-                        username LIKE '%$keyword%' OR
+                        nama_petugas LIKE '%$keyword%' OR
                         leveluser LIKE '%$keyword%' OR 
                         no_telp LIKE '%$keyword%'");
     } else {
@@ -57,7 +56,6 @@
                     <tr>
                         <th>NIP</th>
                         <th>Nama</th>
-                        <!-- <th>Username</th> -->
                         <th>Password</th>
                         <th>leveluser</th>
                         <th>No Telepon</th>
@@ -70,7 +68,6 @@
                     <tr>
                         <td><?= $row["nip"]; ?></td>
                         <td><?= $row["nama_petugas"]; ?></td>
-                        <!-- <td><?= $row["username"] ?></td> -->
                         <td><?= $row["password"]; ?></td>
                         <td><?= $row["leveluser"]; ?></td>
                         <td><?= $row["no_telp"]; ?></td>

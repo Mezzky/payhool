@@ -120,7 +120,7 @@
                     <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
                 </div>
                 <?php else : ?>
-                    <p>Data tidak ditemukan!</p>
+                    <p style="align-self: flex-start;">Data tidak ditemukan!</p>
                 <?php endif; ?>
             <?php endif; ?>
         </div>

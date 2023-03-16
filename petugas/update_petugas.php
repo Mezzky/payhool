@@ -45,10 +45,6 @@
                     <label for="nama">Nama</label>
                     <input autocomplete="off" required type="text" name="nama_petugas" id="nama" value="<?= $petugas["nama_petugas"] ?>">
                 </div>
-                <!-- <div class="input-box">
-                    <label for="username">Username</label>
-                    <input autocomplete="off" required type="text" name="username" id="username" value="<?= $petugas["username"] ?>">
-                </div> -->
                 <div class="input-box">
                     <label for="password">Password</label>
                     <input autocomplete="off" required type="text" name="password" id="password" value="<?= $petugas["password"] ?>">

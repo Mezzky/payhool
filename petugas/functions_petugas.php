@@ -20,13 +20,12 @@
 
         $nip = htmlspecialchars($data["nip"]);
         $nama = htmlspecialchars($data["nama_petugas"]);
-        $username = htmlspecialchars($data["username"]);
         $pass = htmlspecialchars($data["password"]); 
         $leveluser = htmlspecialchars($data["leveluser"]);
         $no_telp = htmlspecialchars($data["no_telp"]);
 
         // Query Insert Data
-        $query = "INSERT INTO tb_petugas VALUES ('$nip', '$nama', '$username', '$pass', '$leveluser', '$no_telp')";
+        $query = "INSERT INTO tb_petugas VALUES ('$nip', '$nama', '$pass', '$leveluser', '$no_telp')";
 
         mysqli_query($conn, $query);
 
@@ -40,7 +39,6 @@
         // $id = $data["id_petugas"];
         $nip = htmlspecialchars($data["nip"]);
         $nama = htmlspecialchars($data["nama_petugas"]);
-        $username = htmlspecialchars($data["username"]);
         $pass = htmlspecialchars($data["password"]); 
         $leveluser = htmlspecialchars($data["leveluser"]);
         $no_telp = htmlspecialchars($data["no_telp"]);
@@ -49,7 +47,6 @@
         $query = "UPDATE tb_petugas SET
                     nama_petugas = '$nama',
                     password = '$pass',
-                    username = '$username',
                     leveluser = '$leveluser',
                     no_telp = '$no_telp'
                     WHERE nip = '$nip'";
