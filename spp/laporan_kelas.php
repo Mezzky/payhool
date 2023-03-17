@@ -71,6 +71,8 @@
         </tbody>
     </table>
 
+    <p>Note: Jika total bayar = 0, berarti belum dibayar</p>
+
     <p>Denpasar, <?= date('d-m-Y'); ?></p>
     <?php if (isset($_SESSION['nama_petugas'])) : ?>
     <p><?= $_SESSION["nama_petugas"]; ?></p>
