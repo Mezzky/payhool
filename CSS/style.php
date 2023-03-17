@@ -47,6 +47,7 @@ body{
 tr, th, td{
     /* border: 1px solid blue; */
     padding: 10px;
+    cursor: pointer;
 }
 
 table thead tr th{
@@ -315,7 +316,6 @@ header footer p{
 }
 
 .table-container .tittle .tittle-left p{
-    /* background-color: #546eaf; */
     color: var(--text-color);
     font-weight: 600;
 }
@@ -325,8 +325,6 @@ header footer p{
     align-items: center;
     width: 70%;
     gap: 20px;
-    /* background-color: #1C50D3; */
-    /* background-color: #ff0000; */
 }
 
 .table-container .tittle .tittle-right form{
@@ -556,13 +554,15 @@ header footer p{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(../Assets/img/wave_background.png)
+    /* background: url(../Assets/img/wave_background.png)
                 no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    background-color: #888888;
 }
 
 .modal-body > a{
-    background-color: #FF4E4E;
+    /* background-color: #FF4E4E; */
+    background-color: #2F2F2F;
     position: fixed;
     top: 0;
     left: 0;
@@ -619,7 +619,8 @@ header footer p{
 
 .modal-body .modal-container form .btn button{
     cursor: pointer;
-    background-color: var(--second-color);
+    /* background-color: var(--second-color); */
+    background-color: #2F2F2F;
     color: white;
     font-weight: 600;
     padding: 10px 16px;
@@ -632,7 +633,8 @@ header footer p{
 }
 
 .modal-body .modal-container form .btn button:first-child{
-    background-color: var(--danger-color);
+    /* background-color: var(--danger-color); */
+    background-color: #2F2F2F;
 }
 .modal-body .modal-container form .btn button:first-child:hover{
     background-color: #FF4E4E;
