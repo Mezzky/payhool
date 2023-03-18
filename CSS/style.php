@@ -483,7 +483,7 @@ header footer p{
 }
 
 .table-content table tbody tr td .btn > a{
-    background-color: var(--danger-color);
+    background-color: var(--second-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -492,7 +492,7 @@ header footer p{
     transition: 300ms all;
 }
 .table-content table tbody tr td .btn > a:last-child{
-    background-color: var(--second-color);
+    background-color: var(--danger-color);
 }
 
 .table-content table tbody tr td .btn > a:hover{
@@ -554,15 +554,13 @@ header footer p{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: url(../Assets/img/wave_background.png)
+    background: url(../Assets/img/wave_background.png)
                 no-repeat;
-    background-size: cover; */
-    background-color: #888888;
+    background-size: cover;
 }
 
 .modal-body > a{
-    /* background-color: #FF4E4E; */
-    background-color: #2F2F2F;
+    background-color: #FF4E4E;
     position: fixed;
     top: 0;
     left: 0;
@@ -619,8 +617,7 @@ header footer p{
 
 .modal-body .modal-container form .btn button{
     cursor: pointer;
-    /* background-color: var(--second-color); */
-    background-color: #2F2F2F;
+    background-color: var(--second-color);
     color: white;
     font-weight: 600;
     padding: 10px 16px;
@@ -633,8 +630,7 @@ header footer p{
 }
 
 .modal-body .modal-container form .btn button:first-child{
-    /* background-color: var(--danger-color); */
-    background-color: #2F2F2F;
+    background-color: var(--danger-color);
 }
 .modal-body .modal-container form .btn button:first-child:hover{
     background-color: #FF4E4E;
