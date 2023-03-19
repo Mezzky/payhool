@@ -45,8 +45,8 @@ body{
 }
 
 tr, th, td{
-    /* border: 1px solid blue; */
     padding: 10px;
+    cursor: pointer;
 }
 
 table thead tr th{
@@ -156,7 +156,6 @@ header nav ul a .icon-nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: var(--danger-color); */
 }
 
 header nav ul a .icon-nav img:last-child{
@@ -292,7 +291,6 @@ header footer p{
 
 /* Table */
 .table-container{
-    /* background-color: #0036c0; */
     padding-top: 20px;
     padding-left: 260px;
     padding-right: 30px;
@@ -315,7 +313,6 @@ header footer p{
 }
 
 .table-container .tittle .tittle-left p{
-    /* background-color: #546eaf; */
     color: var(--text-color);
     font-weight: 600;
 }
@@ -325,8 +322,6 @@ header footer p{
     align-items: center;
     width: 70%;
     gap: 20px;
-    /* background-color: #1C50D3; */
-    /* background-color: #ff0000; */
 }
 
 .table-container .tittle .tittle-right form{
@@ -459,7 +454,6 @@ header footer p{
     border: 1px solid white;
     border-spacing: 0 20px;
     border-radius: 5px;
-    /* overflow: hidden; */
 }
 
 .table-content table thead tr, tbody tr{
@@ -485,7 +479,7 @@ header footer p{
 }
 
 .table-content table tbody tr td .btn > a{
-    background-color: var(--danger-color);
+    background-color: var(--second-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -494,7 +488,7 @@ header footer p{
     transition: 300ms all;
 }
 .table-content table tbody tr td .btn > a:last-child{
-    background-color: var(--second-color);
+    background-color: var(--danger-color);
 }
 
 .table-content table tbody tr td .btn > a:hover{
@@ -656,7 +650,6 @@ header footer p{
 }
 
 .dash-container .dash-content .left-content{
-    /* background-color: #1C50D3; */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -721,7 +714,6 @@ header footer p{
 }
 
 .dash-container .dash-content .right-content{
-    /* background-color: #fc7c7c; */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -758,7 +750,6 @@ header footer p{
 
 .dash-container .dash-content .right-content .img img{
     width: 200px;
-    /* height: 200px; */
 }
 
 /* Responsive */
@@ -774,6 +765,5 @@ header footer p{
 
     .form-container .form-input{
         padding: 50px 0px;
-        /* width: 80%; */
     }
 }

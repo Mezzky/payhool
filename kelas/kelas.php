@@ -67,11 +67,11 @@
                         <td><?= $row["jurusan"] ?></td>
                         <td>
                             <div class="btn">
-                                <a href="delete_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">
-                                    <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
-                                </a>
                                 <a href="update_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">
                                     <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
+                                </a>
+                                <a href="delete_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">
+                                    <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
                                 </a>
                             </div>
                         </td>
