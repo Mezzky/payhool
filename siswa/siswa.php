@@ -86,7 +86,7 @@
                                     <a href="update_siswa.php?nis=<?= $row["nis"]; ?>">
                                         <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
                                     </a>
-                                    <a href="delete_siswa.php?nis=<?= $row["nis"]; ?>">
+                                    <a onclick="return confirm('Anda yakin ingin menghapus Data: <?= $row['nama_siswa']; ?>?');" href="delete_siswa.php?nis=<?= $row["nis"]; ?>">
                                         <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
                                     </a>
                                 </div>

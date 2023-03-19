@@ -31,7 +31,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Kelas</title>
+    <title>Edit Kelas</title>
     <link rel="stylesheet" href="../CSS/style.php">
 </head>
 <body>
@@ -48,6 +48,10 @@
                 <div class="input-box">
                     <label for="jurusan">Jurusan</label>
                     <input autocomplete="off" required type="text" name="jurusan" id="jurusan" value="<?= $kelas["jurusan"] ?>">
+                </div>
+                <div class="input-box">
+                    <label for="tingkat_kelas">Jurusan</label>
+                    <input autocomplete="off" required type="text" name="tingkat_kelas" id="tingkat_kelas" value="<?= $kelas["tingkat_kelas"] ?>">
                 </div>
                 <div class="btn">
                     <button type="reset">Batal</button>

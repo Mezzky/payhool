@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2023 at 04:31 AM
+-- Generation Time: Mar 19, 2023 at 06:50 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,17 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `tb_kelas` (
   `id_kelas` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `kelas` varchar(10) NOT NULL,
-  `jurusan` varchar(100) NOT NULL
+  `jurusan` varchar(100) NOT NULL,
+  `tingkat_kelas` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tb_kelas`
 --
 
-INSERT INTO `tb_kelas` (`id_kelas`, `kelas`, `jurusan`) VALUES
-('D-10', 'X DKV 1', 'Desain Komunikasi Visual'),
-('R-10', 'X RPL 1', 'Rekayasa Perangkat Lunak'),
-('T-10', 'X TKJ 1', 'Teknik Komputer dan Jaringan');
+INSERT INTO `tb_kelas` (`id_kelas`, `kelas`, `jurusan`, `tingkat_kelas`) VALUES
+('X-D1', 'X DKV 1', 'Desain Komunikasi Visual', '10'),
+('X-R1', 'X RPL 1', 'Rekayasa Perangkat Lunak', '10'),
+('X-T1', 'X TKJ 1', 'Teknik Komputer dan Jaringan', '10');
 
 -- --------------------------------------------------------
 
@@ -99,7 +100,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (672, 5411, 'April', '2025/2026', 0, 'III'),
 (673, 5411, 'Mei', '2025/2026', 0, 'III'),
 (674, 5410, 'Juni', '2023/2024', 600000, 'I'),
-(675, 5410, 'Juli', '2023/2024', 0, 'I'),
+(675, 5410, 'Juli', '2023/2024', 600000, 'I'),
 (676, 5410, 'Agustus', '2023/2024', 0, 'I'),
 (677, 5410, 'September', '2023/2024', 0, 'I'),
 (678, 5410, 'Oktober', '2023/2024', 0, 'I'),
@@ -315,7 +316,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (888, 5405, 'April', '2025/2026', 0, 'III'),
 (889, 5405, 'Mei', '2025/2026', 0, 'III'),
 (890, 5404, 'Juni', '2023/2024', 600000, 'I'),
-(891, 5404, 'Juli', '2023/2024', 0, 'I'),
+(891, 5404, 'Juli', '2023/2024', 600000, 'I'),
 (892, 5404, 'Agustus', '2023/2024', 0, 'I'),
 (893, 5404, 'September', '2023/2024', 0, 'I'),
 (894, 5404, 'Oktober', '2023/2024', 0, 'I'),
@@ -532,15 +533,15 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (1213, 5413, 'Mei', '2025/2026', 0, 'III'),
 (1214, 5414, 'Juni', '2023/2024', 600000, 'I'),
 (1215, 5414, 'Juli', '2023/2024', 600000, 'I'),
-(1216, 5414, 'Agustus', '2023/2024', 0, 'I'),
-(1217, 5414, 'September', '2023/2024', 0, 'I'),
-(1218, 5414, 'Oktober', '2023/2024', 0, 'I'),
-(1219, 5414, 'November', '2023/2024', 0, 'I'),
-(1220, 5414, 'Desember', '2023/2024', 0, 'I'),
-(1221, 5414, 'Januari', '2023/2024', 0, 'I'),
-(1222, 5414, 'Februari', '2023/2024', 0, 'I'),
-(1223, 5414, 'Maret', '2023/2024', 0, 'I'),
-(1224, 5414, 'April', '2023/2024', 0, 'I'),
+(1216, 5414, 'Agustus', '2023/2024', 600000, 'I'),
+(1217, 5414, 'September', '2023/2024', 600000, 'I'),
+(1218, 5414, 'Oktober', '2023/2024', 600000, 'I'),
+(1219, 5414, 'November', '2023/2024', 600000, 'I'),
+(1220, 5414, 'Desember', '2023/2024', 600000, 'I'),
+(1221, 5414, 'Januari', '2023/2024', 600000, 'I'),
+(1222, 5414, 'Februari', '2023/2024', 600000, 'I'),
+(1223, 5414, 'Maret', '2023/2024', 600000, 'I'),
+(1224, 5414, 'April', '2023/2024', 600000, 'I'),
 (1225, 5414, 'Mei', '2023/2024', 0, 'I'),
 (1226, 5414, 'Juni', '2024/2025', 0, 'II'),
 (1227, 5414, 'Juli', '2024/2025', 0, 'II'),
@@ -803,6 +804,7 @@ CREATE TABLE `tb_petugas` (
 
 INSERT INTO `tb_petugas` (`nip`, `nama_petugas`, `password`, `leveluser`, `no_telp`) VALUES
 ('A-01', 'Gungde Solahudin', 'admin', 'Admin', '087645322234'),
+('A-02', 'Bagus Murjana', 'admin', 'Admin', '087651436278'),
 ('P-01', 'Bagus Komang', 'petugas01', 'Petugas', '087352625980'),
 ('P-02', 'Linda Halima', 'petugas02', 'Petugas', '087645367677');
 
@@ -826,26 +828,26 @@ CREATE TABLE `tb_siswa` (
 --
 
 INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `id_kelas`, `jenis_kelamin`, `alamat`) VALUES
-(5401, 'Agus Eka Wijaya', '123456', 'R-10', 'L', 'Jl. Pulau Sunco No. 1'),
-(5402, 'I Noman Palguna', '123456', 'R-10', 'L', 'Jl. Raya Sesetan No. 7'),
-(5403, 'Made Lingga Wiranata', '123456', 'R-10', 'L', 'Jl. Renon No. 10 '),
-(5404, 'Arinda Tika Agustin', '123456', 'R-10', 'P', 'Jl. Pemogan Isekai'),
-(5405, 'Muhamad Cok Bagus', '123456', 'R-10', 'L', 'Jl. Tukad Citarum'),
-(5406, 'Dony Salmanan', '123456', 'R-10', 'L', 'Jl. Sudirman NO. 9'),
-(5407, 'I Gede Raditya', '123456', 'R-10', 'L', 'Jl. Sanur No. 4'),
-(5408, 'Dewi Turmini', '123456', 'R-10', 'P', 'Jl. Kikukik Sawah'),
-(5409, 'Salma Febriyanti', '123456', 'R-10', 'P', 'Jl. Gatot Kayu'),
-(5410, 'Salsabilla Gusnia', '123456', 'R-10', 'P', 'Jl. Tukad Citarum'),
-(5411, 'Dewa Krsna Yanas', '123456', 'R-10', 'L', 'Jl. Akasia Timur'),
-(5412, 'Inyo Mansur Yadana', '123456', 'R-10', 'L', 'Jl. Pulau Bungin'),
-(5413, 'I Kadek Ryan', '123456', 'R-10', 'L', 'Jl. Sesetan'),
-(5414, 'Rizky Ryan Sahadha', '123456', 'R-10', 'L', 'Jl. Pulau Moyo'),
-(5415, 'Malik Ridwan', '123456', 'R-10', 'L', 'Jl. Jalan Yuk'),
-(5416, 'Zidan Ambatukam', '123456', 'R-10', 'L', 'Jl. Pulau Saelus'),
-(5417, 'Rindu Valencia Rahma', '123456', 'R-10', 'P', 'Jl. Pulau Enggano'),
-(5418, 'Firman Suryawan', '123456', 'R-10', 'L', 'Jl. Taman Pancing No. 5'),
-(5419, 'Randy Galang', '123456', 'R-10', 'L', 'Jl. Karang Anyar'),
-(5420, 'Tiara Rahma Dewi', '123456', 'R-10', 'P', 'Jl. Kayangan No. 8');
+(5401, 'Agus Eka Wijaya', '123456', 'X-R1', 'L', 'Jl. Pulau Sunco No. 1'),
+(5402, 'I Noman Palguna', '123456', 'X-R1', 'L', 'Jl. Raya Sesetan No. 7'),
+(5403, 'Made Lingga Wiranata', '123456', 'X-R1', 'L', 'Jl. Renon No. 10 '),
+(5404, 'Arinda Tika Agustin', '123456', 'X-R1', 'P', 'Jl. Pemogan Isekai'),
+(5405, 'Muhamad Cok Bagus', '123456', 'X-R1', 'L', 'Jl. Tukad Citarum'),
+(5406, 'Dony Salmanan', '123456', 'X-R1', 'L', 'Jl. Sudirman NO. 9'),
+(5407, 'I Gede Raditya', '123456', 'X-R1', 'L', 'Jl. Sanur No. 4'),
+(5408, 'Dewi Turmini', '123456', 'X-R1', 'P', 'Jl. Kikukik Sawah'),
+(5409, 'Salma Febriyanti', '123456', 'X-R1', 'P', 'Jl. Gatot Kayu'),
+(5410, 'Salsabilla Gusnia', '123456', 'X-R1', 'P', 'Jl. Tukad Citarum'),
+(5411, 'Dewa Krsna Yanas', '123456', 'X-R1', 'L', 'Jl. Akasia Timur'),
+(5412, 'Inyo Mansur Yadana', '123456', 'X-R1', 'L', 'Jl. Pulau Bungin'),
+(5413, 'I Kadek Ryan', '123456', 'X-R1', 'L', 'Jl. Sesetan'),
+(5414, 'Rizky Ryan Sahadha', '123456', 'X-R1', 'L', 'Jl. Pulau Moyo'),
+(5415, 'Malik Ridwan', '123456', 'X-R1', 'L', 'Jl. Jalan Yuk'),
+(5416, 'Zidan Ambatukam', '123456', 'X-R1', 'L', 'Jl. Pulau Saelus'),
+(5417, 'Rindu Valencia Rahma', '123456', 'X-R1', 'P', 'Jl. Pulau Enggano'),
+(5418, 'Firman Suryawan', '123456', 'X-R1', 'L', 'Jl. Taman Pancing No. 5'),
+(5419, 'Randy Galang', '123456', 'X-R1', 'L', 'Jl. Karang Anyar'),
+(5420, 'Tiara Rahma Dewi', '123456', 'X-R1', 'P', 'Jl. Kayangan No. 8');
 
 -- --------------------------------------------------------
 
@@ -885,7 +887,18 @@ INSERT INTO `tb_spp` (`id_spp`, `nip`, `nis`, `tgl_bayar`, `bayar`) VALUES
 (62, 'A-01', 5414, '2023-03-02 14:43:31', 600000),
 (63, 'A-01', 5416, '2023-03-16 12:14:24', 600000),
 (64, 'A-01', 5415, '2023-03-16 12:14:55', 600000),
-(65, 'A-01', 5417, '2023-03-16 12:17:05', 600000);
+(65, 'A-01', 5417, '2023-03-16 12:17:05', 600000),
+(66, 'A-02', 5404, '2023-03-19 12:47:53', 600000),
+(67, 'A-02', 5410, '2023-03-19 12:50:47', 600000),
+(68, 'A-01', 5414, '2023-03-19 13:34:12', 600000),
+(69, 'A-01', 5414, '2023-03-19 13:34:14', 600000),
+(70, 'A-01', 5414, '2023-03-19 13:34:17', 600000),
+(71, 'A-01', 5414, '2023-03-19 13:34:20', 600000),
+(72, 'A-01', 5414, '2023-03-19 13:34:25', 600000),
+(73, 'A-01', 5414, '2023-03-19 13:34:29', 600000),
+(74, 'A-01', 5414, '2023-03-19 13:34:32', 600000),
+(75, 'A-01', 5414, '2023-03-19 13:34:36', 600000),
+(76, 'A-01', 5414, '2023-03-19 13:34:41', 600000);
 
 --
 -- Indexes for dumped tables
@@ -939,7 +952,7 @@ ALTER TABLE `tb_pembayaran`
 -- AUTO_INCREMENT for table `tb_spp`
 --
 ALTER TABLE `tb_spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- Constraints for dumped tables

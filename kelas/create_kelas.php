@@ -40,12 +40,16 @@
                     <input autocomplete="off" required type="text" name="id_kelas" id="id_kelas">
                 </div>
                 <div class="input-box">
-                    <label for="kelas">kelas</label>
+                    <label for="kelas">Kelas</label>
                     <input autocomplete="off" required type="text" name="kelas" id="kelas">
                 </div>
                 <div class="input-box">
                     <label for="jurusan">Jurusan</label>
                     <input autocomplete="off" required type="text" name="jurusan" id="jurusan">
+                </div>
+                <div class="input-box">
+                    <label for="tingkat_kelas">Tingkat Kelas</label>
+                    <input autocomplete="off" required type="text" name="tingkat_kelas" id="tingkat_kelas">
                 </div>
                 <div class="btn">
                     <button type="reset">Batal</button>

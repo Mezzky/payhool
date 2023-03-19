@@ -133,7 +133,7 @@ if (!isset($_SESSION['login'])) {
         </nav>
         
         <footer>
-        <p>&copy;Copyright by Payhool <?= date("Y"); ?></p>
+        <p>&copy; Copyright by Payhool <?= date("Y"); ?></p>
         </footer>
     </header>
 

@@ -4,7 +4,16 @@
     $siswa = query("SELECT * FROM tb_siswa");
     $petugas = query("SELECT * FROM tb_petugas");
     $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) ORDER BY id_spp DESC");
-    $spp = array_slice($spp, 0, 3);
+    
+    if($_SESSION["leveluser"] == "Admin"){
+        $spp = array_slice($spp, 0, 3);
+    } elseif($_SESSION["leveluser"] == "Petugas"){
+        $spp = array_slice($spp, 0, 5);
+    } else{
+        $nis = $_SESSION['nis'];
+        $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) WHERE nis='$nis' ORDER BY id_spp DESC");
+        $spp = array_slice($spp, 0, 5);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +77,6 @@
             </div>
         </div>
 
-        <?php if($_SESSION['leveluser'] == 'Admin' ) : ?>
         <div class="table-content">
             <h2 class="align-start">Transaksi Terakhir</h2>
             <table border="0" cellspacing="0" cellpadding="10">
@@ -98,7 +106,6 @@
                 <?php endforeach; ?>
             </table>
         </div>
-        <?php endif; ?>
     </div>
 </body>
 

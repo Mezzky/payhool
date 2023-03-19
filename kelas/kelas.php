@@ -55,7 +55,8 @@
                         <th>ID</th>
                         <th>Kelas</th>
                         <th>Jurusan</th>
-                        <th>Keterangan</th>
+                        <th>Tingkat Kelas</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
 
@@ -65,12 +66,13 @@
                         <td><?= $row["id_kelas"]; ?></td>
                         <td><?= $row["kelas"]; ?></td>
                         <td><?= $row["jurusan"] ?></td>
+                        <td><?= $row["tingkat_kelas"] ?></td>
                         <td>
                             <div class="btn">
                                 <a href="update_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">
                                     <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
                                 </a>
-                                <a href="delete_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">
+                                <a onclick="return confirm('Anda yakin ingin menghapus Data: <?= $row['kelas']; ?>?');" href="delete_kelas.php?id_kelas=<?= $row["id_kelas"]; ?>">
                                     <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
                                 </a>
                             </div>

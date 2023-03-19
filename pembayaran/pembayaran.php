@@ -115,7 +115,7 @@
                     <?php endforeach; ?>
                 </table>
                 <div class="total-tagihan">
-                    <?php $totalNominal = 600000 * 12; ?>
+                    <?php $totalNominal = 600000 * 36; ?>
                     <h3>Tagihan: Rp<?= number_format($totalNominal - (int) $tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
                     <h3>Total Bayar: Rp<?= number_format($tagihan['SUM(jumlah_bayar)'], 0, ',', '.'); ?></h3>
                 </div>

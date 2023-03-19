@@ -84,7 +84,7 @@
                                         <a href="update_petugas.php?nip=<?= $row["nip"]; ?>">
                                             <img class="icon-sm" src="../Assets/icon/pencil-icon.svg" alt="edit">
                                         </a>
-                                        <a href="delete_petugas.php?nip=<?= $row["nip"]; ?>">
+                                        <a onclick="return confirm('Anda yakin ingin menghapus Data: <?= $row['nama_petugas']; ?>?');" href="delete_petugas.php?nip=<?= $row["nip"]; ?>">
                                             <img class="icon-sm" src="../Assets/icon/trash-icon.svg" alt="delete">
                                         </a>
                                     <?php endif; ?>

@@ -83,6 +83,7 @@ if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') {
             <table border="0" cellspacing="0" cellpadding="10">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th>Petugas</th>
                         <th>NIS</th>
                         <th>Nama</th>
@@ -91,9 +92,11 @@ if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') {
                     </tr>
                 </thead>
     
+                <?php $i = 1; ?>
                 <?php foreach ($spp as $row): ?>
                 <tbody>
                     <tr>
+                        <td><?= $i++; ?></td>
                         <td><?= $row["nama_petugas"]; ?></td>
                         <td><?= $row["nis"]; ?></td>
                         <td><?= $row["nama_siswa"]; ?></td>
