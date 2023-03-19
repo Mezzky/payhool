@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2023 at 03:32 PM
+-- Generation Time: Mar 19, 2023 at 04:31 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -567,7 +567,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (1248, 5414, 'April', '2025/2026', 0, 'III'),
 (1249, 5414, 'Mei', '2025/2026', 0, 'III'),
 (1250, 5415, 'Juni', '2023/2024', 600000, 'I'),
-(1251, 5415, 'Juli', '2023/2024', 0, 'I'),
+(1251, 5415, 'Juli', '2023/2024', 600000, 'I'),
 (1252, 5415, 'Agustus', '2023/2024', 0, 'I'),
 (1253, 5415, 'September', '2023/2024', 0, 'I'),
 (1254, 5415, 'Oktober', '2023/2024', 0, 'I'),
@@ -603,7 +603,7 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (1284, 5415, 'April', '2025/2026', 0, 'III'),
 (1285, 5415, 'Mei', '2025/2026', 0, 'III'),
 (1286, 5416, 'Juni', '2023/2024', 600000, 'I'),
-(1287, 5416, 'Juli', '2023/2024', 0, 'I'),
+(1287, 5416, 'Juli', '2023/2024', 600000, 'I'),
 (1288, 5416, 'Agustus', '2023/2024', 0, 'I'),
 (1289, 5416, 'September', '2023/2024', 0, 'I'),
 (1290, 5416, 'Oktober', '2023/2024', 0, 'I'),
@@ -637,7 +637,151 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 (1318, 5416, 'Februari', '2025/2026', 0, 'III'),
 (1319, 5416, 'Maret', '2025/2026', 0, 'III'),
 (1320, 5416, 'April', '2025/2026', 0, 'III'),
-(1321, 5416, 'Mei', '2025/2026', 0, 'III');
+(1321, 5416, 'Mei', '2025/2026', 0, 'III'),
+(1322, 5417, 'Juni', '2023/2024', 600000, 'I'),
+(1323, 5417, 'Juli', '2023/2024', 0, 'I'),
+(1324, 5417, 'Agustus', '2023/2024', 0, 'I'),
+(1325, 5417, 'September', '2023/2024', 0, 'I'),
+(1326, 5417, 'Oktober', '2023/2024', 0, 'I'),
+(1327, 5417, 'November', '2023/2024', 0, 'I'),
+(1328, 5417, 'Desember', '2023/2024', 0, 'I'),
+(1329, 5417, 'Januari', '2023/2024', 0, 'I'),
+(1330, 5417, 'Februari', '2023/2024', 0, 'I'),
+(1331, 5417, 'Maret', '2023/2024', 0, 'I'),
+(1332, 5417, 'April', '2023/2024', 0, 'I'),
+(1333, 5417, 'Mei', '2023/2024', 0, 'I'),
+(1334, 5417, 'Juni', '2024/2025', 0, 'II'),
+(1335, 5417, 'Juli', '2024/2025', 0, 'II'),
+(1336, 5417, 'Agustus', '2024/2025', 0, 'II'),
+(1337, 5417, 'September', '2024/2025', 0, 'II'),
+(1338, 5417, 'Oktober', '2024/2025', 0, 'II'),
+(1339, 5417, 'November', '2024/2025', 0, 'II'),
+(1340, 5417, 'Desember', '2024/2025', 0, 'II'),
+(1341, 5417, 'Januari', '2024/2025', 0, 'II'),
+(1342, 5417, 'Februari', '2024/2025', 0, 'II'),
+(1343, 5417, 'Maret', '2024/2025', 0, 'II'),
+(1344, 5417, 'April', '2024/2025', 0, 'II'),
+(1345, 5417, 'Mei', '2024/2025', 0, 'II'),
+(1346, 5417, 'Juni', '2025/2026', 0, 'III'),
+(1347, 5417, 'Juli', '2025/2026', 0, 'III'),
+(1348, 5417, 'Agustus', '2025/2026', 0, 'III'),
+(1349, 5417, 'September', '2025/2026', 0, 'III'),
+(1350, 5417, 'Oktober', '2025/2026', 0, 'III'),
+(1351, 5417, 'November', '2025/2026', 0, 'III'),
+(1352, 5417, 'Desember', '2025/2026', 0, 'III'),
+(1353, 5417, 'Januari', '2025/2026', 0, 'III'),
+(1354, 5417, 'Februari', '2025/2026', 0, 'III'),
+(1355, 5417, 'Maret', '2025/2026', 0, 'III'),
+(1356, 5417, 'April', '2025/2026', 0, 'III'),
+(1357, 5417, 'Mei', '2025/2026', 0, 'III'),
+(1358, 5418, 'Juni', '2023/2024', 0, 'I'),
+(1359, 5418, 'Juli', '2023/2024', 0, 'I'),
+(1360, 5418, 'Agustus', '2023/2024', 0, 'I'),
+(1361, 5418, 'September', '2023/2024', 0, 'I'),
+(1362, 5418, 'Oktober', '2023/2024', 0, 'I'),
+(1363, 5418, 'November', '2023/2024', 0, 'I'),
+(1364, 5418, 'Desember', '2023/2024', 0, 'I'),
+(1365, 5418, 'Januari', '2023/2024', 0, 'I'),
+(1366, 5418, 'Februari', '2023/2024', 0, 'I'),
+(1367, 5418, 'Maret', '2023/2024', 0, 'I'),
+(1368, 5418, 'April', '2023/2024', 0, 'I'),
+(1369, 5418, 'Mei', '2023/2024', 0, 'I'),
+(1370, 5418, 'Juni', '2024/2025', 0, 'II'),
+(1371, 5418, 'Juli', '2024/2025', 0, 'II'),
+(1372, 5418, 'Agustus', '2024/2025', 0, 'II'),
+(1373, 5418, 'September', '2024/2025', 0, 'II'),
+(1374, 5418, 'Oktober', '2024/2025', 0, 'II'),
+(1375, 5418, 'November', '2024/2025', 0, 'II'),
+(1376, 5418, 'Desember', '2024/2025', 0, 'II'),
+(1377, 5418, 'Januari', '2024/2025', 0, 'II'),
+(1378, 5418, 'Februari', '2024/2025', 0, 'II'),
+(1379, 5418, 'Maret', '2024/2025', 0, 'II'),
+(1380, 5418, 'April', '2024/2025', 0, 'II'),
+(1381, 5418, 'Mei', '2024/2025', 0, 'II'),
+(1382, 5418, 'Juni', '2025/2026', 0, 'III'),
+(1383, 5418, 'Juli', '2025/2026', 0, 'III'),
+(1384, 5418, 'Agustus', '2025/2026', 0, 'III'),
+(1385, 5418, 'September', '2025/2026', 0, 'III'),
+(1386, 5418, 'Oktober', '2025/2026', 0, 'III'),
+(1387, 5418, 'November', '2025/2026', 0, 'III'),
+(1388, 5418, 'Desember', '2025/2026', 0, 'III'),
+(1389, 5418, 'Januari', '2025/2026', 0, 'III'),
+(1390, 5418, 'Februari', '2025/2026', 0, 'III'),
+(1391, 5418, 'Maret', '2025/2026', 0, 'III'),
+(1392, 5418, 'April', '2025/2026', 0, 'III'),
+(1393, 5418, 'Mei', '2025/2026', 0, 'III'),
+(1394, 5419, 'Juni', '2023/2024', 0, 'I'),
+(1395, 5419, 'Juli', '2023/2024', 0, 'I'),
+(1396, 5419, 'Agustus', '2023/2024', 0, 'I'),
+(1397, 5419, 'September', '2023/2024', 0, 'I'),
+(1398, 5419, 'Oktober', '2023/2024', 0, 'I'),
+(1399, 5419, 'November', '2023/2024', 0, 'I'),
+(1400, 5419, 'Desember', '2023/2024', 0, 'I'),
+(1401, 5419, 'Januari', '2023/2024', 0, 'I'),
+(1402, 5419, 'Februari', '2023/2024', 0, 'I'),
+(1403, 5419, 'Maret', '2023/2024', 0, 'I'),
+(1404, 5419, 'April', '2023/2024', 0, 'I'),
+(1405, 5419, 'Mei', '2023/2024', 0, 'I'),
+(1406, 5419, 'Juni', '2024/2025', 0, 'II'),
+(1407, 5419, 'Juli', '2024/2025', 0, 'II'),
+(1408, 5419, 'Agustus', '2024/2025', 0, 'II'),
+(1409, 5419, 'September', '2024/2025', 0, 'II'),
+(1410, 5419, 'Oktober', '2024/2025', 0, 'II'),
+(1411, 5419, 'November', '2024/2025', 0, 'II'),
+(1412, 5419, 'Desember', '2024/2025', 0, 'II'),
+(1413, 5419, 'Januari', '2024/2025', 0, 'II'),
+(1414, 5419, 'Februari', '2024/2025', 0, 'II'),
+(1415, 5419, 'Maret', '2024/2025', 0, 'II'),
+(1416, 5419, 'April', '2024/2025', 0, 'II'),
+(1417, 5419, 'Mei', '2024/2025', 0, 'II'),
+(1418, 5419, 'Juni', '2025/2026', 0, 'III'),
+(1419, 5419, 'Juli', '2025/2026', 0, 'III'),
+(1420, 5419, 'Agustus', '2025/2026', 0, 'III'),
+(1421, 5419, 'September', '2025/2026', 0, 'III'),
+(1422, 5419, 'Oktober', '2025/2026', 0, 'III'),
+(1423, 5419, 'November', '2025/2026', 0, 'III'),
+(1424, 5419, 'Desember', '2025/2026', 0, 'III'),
+(1425, 5419, 'Januari', '2025/2026', 0, 'III'),
+(1426, 5419, 'Februari', '2025/2026', 0, 'III'),
+(1427, 5419, 'Maret', '2025/2026', 0, 'III'),
+(1428, 5419, 'April', '2025/2026', 0, 'III'),
+(1429, 5419, 'Mei', '2025/2026', 0, 'III'),
+(1430, 5420, 'Juni', '2023/2024', 0, 'I'),
+(1431, 5420, 'Juli', '2023/2024', 0, 'I'),
+(1432, 5420, 'Agustus', '2023/2024', 0, 'I'),
+(1433, 5420, 'September', '2023/2024', 0, 'I'),
+(1434, 5420, 'Oktober', '2023/2024', 0, 'I'),
+(1435, 5420, 'November', '2023/2024', 0, 'I'),
+(1436, 5420, 'Desember', '2023/2024', 0, 'I'),
+(1437, 5420, 'Januari', '2023/2024', 0, 'I'),
+(1438, 5420, 'Februari', '2023/2024', 0, 'I'),
+(1439, 5420, 'Maret', '2023/2024', 0, 'I'),
+(1440, 5420, 'April', '2023/2024', 0, 'I'),
+(1441, 5420, 'Mei', '2023/2024', 0, 'I'),
+(1442, 5420, 'Juni', '2024/2025', 0, 'II'),
+(1443, 5420, 'Juli', '2024/2025', 0, 'II'),
+(1444, 5420, 'Agustus', '2024/2025', 0, 'II'),
+(1445, 5420, 'September', '2024/2025', 0, 'II'),
+(1446, 5420, 'Oktober', '2024/2025', 0, 'II'),
+(1447, 5420, 'November', '2024/2025', 0, 'II'),
+(1448, 5420, 'Desember', '2024/2025', 0, 'II'),
+(1449, 5420, 'Januari', '2024/2025', 0, 'II'),
+(1450, 5420, 'Februari', '2024/2025', 0, 'II'),
+(1451, 5420, 'Maret', '2024/2025', 0, 'II'),
+(1452, 5420, 'April', '2024/2025', 0, 'II'),
+(1453, 5420, 'Mei', '2024/2025', 0, 'II'),
+(1454, 5420, 'Juni', '2025/2026', 0, 'III'),
+(1455, 5420, 'Juli', '2025/2026', 0, 'III'),
+(1456, 5420, 'Agustus', '2025/2026', 0, 'III'),
+(1457, 5420, 'September', '2025/2026', 0, 'III'),
+(1458, 5420, 'Oktober', '2025/2026', 0, 'III'),
+(1459, 5420, 'November', '2025/2026', 0, 'III'),
+(1460, 5420, 'Desember', '2025/2026', 0, 'III'),
+(1461, 5420, 'Januari', '2025/2026', 0, 'III'),
+(1462, 5420, 'Februari', '2025/2026', 0, 'III'),
+(1463, 5420, 'Maret', '2025/2026', 0, 'III'),
+(1464, 5420, 'April', '2025/2026', 0, 'III'),
+(1465, 5420, 'Mei', '2025/2026', 0, 'III');
 
 -- --------------------------------------------------------
 
@@ -648,7 +792,6 @@ INSERT INTO `tb_pembayaran` (`id_pembayaran`, `nis`, `bulan`, `tahun`, `jumlah_b
 CREATE TABLE `tb_petugas` (
   `nip` varchar(5) NOT NULL,
   `nama_petugas` varchar(100) NOT NULL,
-  `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `leveluser` varchar(50) NOT NULL,
   `no_telp` varchar(50) NOT NULL
@@ -658,9 +801,10 @@ CREATE TABLE `tb_petugas` (
 -- Dumping data for table `tb_petugas`
 --
 
-INSERT INTO `tb_petugas` (`nip`, `nama_petugas`, `username`, `password`, `leveluser`, `no_telp`) VALUES
-('A-01', 'Gungde Solahudin', 'gungdin', 'admin', 'Admin', '087645322234'),
-('P-01', 'Bagus Komang', 'bakom', 'petugas01', 'Petugas', '087352625415');
+INSERT INTO `tb_petugas` (`nip`, `nama_petugas`, `password`, `leveluser`, `no_telp`) VALUES
+('A-01', 'Gungde Solahudin', 'admin', 'Admin', '087645322234'),
+('P-01', 'Bagus Komang', 'petugas01', 'Petugas', '087352625980'),
+('P-02', 'Linda Halima', 'petugas02', 'Petugas', '087645367677');
 
 -- --------------------------------------------------------
 
@@ -682,13 +826,13 @@ CREATE TABLE `tb_siswa` (
 --
 
 INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `id_kelas`, `jenis_kelamin`, `alamat`) VALUES
-(5401, 'Agus Eka Wijaya', '123456', 'R-10', 'L', 'Jl. Pulau Sunco'),
-(5402, 'I Noman Palguna', '123456', 'R-10', 'L', 'Jl. Raya Sesetan'),
-(5403, 'Made Lingga Wiranata', '123456', 'R-10', 'L', 'Jl. Renon'),
+(5401, 'Agus Eka Wijaya', '123456', 'R-10', 'L', 'Jl. Pulau Sunco No. 1'),
+(5402, 'I Noman Palguna', '123456', 'R-10', 'L', 'Jl. Raya Sesetan No. 7'),
+(5403, 'Made Lingga Wiranata', '123456', 'R-10', 'L', 'Jl. Renon No. 10 '),
 (5404, 'Arinda Tika Agustin', '123456', 'R-10', 'P', 'Jl. Pemogan Isekai'),
 (5405, 'Muhamad Cok Bagus', '123456', 'R-10', 'L', 'Jl. Tukad Citarum'),
-(5406, 'Dony Salmanan', '123456', 'R-10', 'L', 'Jl. Sudirman'),
-(5407, 'I Gede Raditya', '123456', 'R-10', 'L', 'Jl. Sanur'),
+(5406, 'Dony Salmanan', '123456', 'R-10', 'L', 'Jl. Sudirman NO. 9'),
+(5407, 'I Gede Raditya', '123456', 'R-10', 'L', 'Jl. Sanur No. 4'),
 (5408, 'Dewi Turmini', '123456', 'R-10', 'P', 'Jl. Kikukik Sawah'),
 (5409, 'Salma Febriyanti', '123456', 'R-10', 'P', 'Jl. Gatot Kayu'),
 (5410, 'Salsabilla Gusnia', '123456', 'R-10', 'P', 'Jl. Tukad Citarum'),
@@ -697,7 +841,11 @@ INSERT INTO `tb_siswa` (`nis`, `nama_siswa`, `password`, `id_kelas`, `jenis_kela
 (5413, 'I Kadek Ryan', '123456', 'R-10', 'L', 'Jl. Sesetan'),
 (5414, 'Rizky Ryan Sahadha', '123456', 'R-10', 'L', 'Jl. Pulau Moyo'),
 (5415, 'Malik Ridwan', '123456', 'R-10', 'L', 'Jl. Jalan Yuk'),
-(5416, 'Zidan Ambatukam', '123456', 'R-10', 'L', 'Jl. Pulau Saelus');
+(5416, 'Zidan Ambatukam', '123456', 'R-10', 'L', 'Jl. Pulau Saelus'),
+(5417, 'Rindu Valencia Rahma', '123456', 'R-10', 'P', 'Jl. Pulau Enggano'),
+(5418, 'Firman Suryawan', '123456', 'R-10', 'L', 'Jl. Taman Pancing No. 5'),
+(5419, 'Randy Galang', '123456', 'R-10', 'L', 'Jl. Karang Anyar'),
+(5420, 'Tiara Rahma Dewi', '123456', 'R-10', 'P', 'Jl. Kayangan No. 8');
 
 -- --------------------------------------------------------
 
@@ -734,7 +882,10 @@ INSERT INTO `tb_spp` (`id_spp`, `nip`, `nis`, `tgl_bayar`, `bayar`) VALUES
 (59, 'P-01', 5414, '2023-03-02 14:17:16', 600000),
 (60, 'P-01', 5415, '2023-03-02 14:17:23', 600000),
 (61, 'P-01', 5416, '2023-03-02 14:17:30', 600000),
-(62, 'A-01', 5414, '2023-03-02 14:43:31', 600000);
+(62, 'A-01', 5414, '2023-03-02 14:43:31', 600000),
+(63, 'A-01', 5416, '2023-03-16 12:14:24', 600000),
+(64, 'A-01', 5415, '2023-03-16 12:14:55', 600000),
+(65, 'A-01', 5417, '2023-03-16 12:17:05', 600000);
 
 --
 -- Indexes for dumped tables
@@ -782,13 +933,13 @@ ALTER TABLE `tb_spp`
 -- AUTO_INCREMENT for table `tb_pembayaran`
 --
 ALTER TABLE `tb_pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1322;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1466;
 
 --
 -- AUTO_INCREMENT for table `tb_spp`
 --
 ALTER TABLE `tb_spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- Constraints for dumped tables
