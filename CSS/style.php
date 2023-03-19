@@ -91,6 +91,10 @@ button{
     align-self: flex-start;
 }
 
+.disabled{
+    cursor: not-allowed;
+}
+
 /* ========== MAIN STYLE ========== */
 header{
     display: flex;
