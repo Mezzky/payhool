@@ -3,16 +3,16 @@
     require '../template/navbar.php';
     $siswa = query("SELECT * FROM tb_siswa");
     $petugas = query("SELECT * FROM tb_petugas");
-    $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) ORDER BY id_spp DESC");
+    $sppTotal = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) ORDER BY id_spp DESC");
     
     if($_SESSION["leveluser"] == "Admin"){
-        $spp = array_slice($spp, 0, 3);
+        $spp = array_slice($sppTotal, 0, 3);
     } elseif($_SESSION["leveluser"] == "Petugas"){
-        $spp = array_slice($spp, 0, 5);
+        $spp = array_slice($sppTotal, 0, 3);
     } else{
         $nis = $_SESSION['nis'];
-        $spp = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) WHERE nis='$nis' ORDER BY id_spp DESC");
-        $spp = array_slice($spp, 0, 5);
+        $sppSiswa = query("SELECT * FROM tb_spp INNER JOIN tb_siswa USING (nis) INNER JOIN tb_petugas USING (nip) WHERE nis='$nis' ORDER BY id_spp DESC");
+        $spp = array_slice($sppSiswa, 0, 5);
     }
 ?>
 
@@ -58,6 +58,24 @@
                         <p>Jumlah Petugas</p>
                     </div>
                 </div>
+                <?php elseif($_SESSION['leveluser'] == 'Petugas') : ?>
+                <div class="dash-data">
+                    <div class="data">
+                        <div class="count">
+                            <img src="../Assets/icon/jumlah-siswa.svg" alt="jumlah-siswa">
+                            <span id="jumlah-siswa"><?= count($siswa) ?></span>
+                        </div>
+                        <p>Jumlah Siswa</p>
+                    </div>
+                    
+                    <div class="data">
+                        <div class="count">
+                            <img src="../Assets/icon/jumlah_spp.svg" alt="jumlah-transaksi">
+                            <span id="jumlah-transaksi"><?= count($sppTotal) ?></span>
+                        </div>
+                        <p>Jumlah Transaksi</p>
+                    </div>
+                </div>
                 <?php endif; ?>
             </div>
 
@@ -69,7 +87,7 @@
                     </a>
                 </div>
 
-                <?php if($_SESSION['leveluser'] == 'Admin') : ?>
+                <?php if($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') : ?>
                 <div class="img">
                     <img src="../Assets/img/stonk-img.png" alt="stonk-img">
                 </div>
