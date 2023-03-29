@@ -17,6 +17,14 @@
         }
         table{
             width: 100%;
+        } 
+        /* Laporan */
+        .note-laporan{
+            margin-bottom: 30px;
+        }
+
+        .ttd-box{
+            float: right;
         }
     </style>
 </head>
@@ -55,12 +63,17 @@
         </tbody>
     </table>
 
-    <p>Note: Jika total bayar = 0, berarti belum dibayar</p>
+    <p class="note-laporan">Note: Jika total bayar = 0, berarti belum dibayar</p>
 
-    <p>Denpasar, <?= date('d-m-Y'); ?></p>
-    <?php if (isset($_SESSION['nama_petugas'])) : ?>
-    <p><?= $_SESSION["nama_petugas"]; ?></p>
-    <?php endif; ?>
+    <div class="ttd-box">
+        <p>Denpasar, <?= date('d-m-Y'); ?></p>
+        <br>
+        <br>
+        <br>
+        <?php if (isset($_SESSION['nama_petugas'])) : ?>
+        <p><?= $_SESSION["nama_petugas"]; ?></p>
+        <?php endif; ?>
+    </div>
 </body>
 <script>
     window.print();
