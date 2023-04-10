@@ -12,6 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Siswa</title>
     <style>
+        *{
+            font-family: 'Times New Roman', Times, serif;
+        }
         body {
             font-size: 12px;
         }
@@ -32,9 +35,11 @@
 <body>
     <h1>Laporan SPP</h1>
     <?php $nis =  $_POST['nis']; ?>
+    <?php $angkatan =  $_POST['angkatan']; ?>
     <?php $dataSiswa = query("SELECT * FROM tb_siswa INNER JOIN tb_kelas USING(id_kelas) WHERE nis = $nis")[0]; ?>
     <h3>Nama: <?= $dataSiswa['nama_siswa']; ?></h3>
     <h3>Kelas: <?= $dataSiswa['kelas']; ?></h3>
+    <h3>Angkatan: <?= $angkatan; ?></h3>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>

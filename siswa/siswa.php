@@ -59,6 +59,7 @@
             <table border="0" cellspacing="0" cellpadding="10">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th>NIS</th>
                         <th>Nama</th>
                         <th>Password</th>
@@ -71,9 +72,11 @@
                     </tr>
                 </thead>
 
+                <?php $i = 1; ?>
                 <?php foreach($siswa as $row) : ?>
                 <tbody>
                     <tr>
+                        <td><?= $i++; ?></td>
                         <td><?= $row["nis"]; ?></td>
                         <td><?= $row["nama_siswa"]; ?></td>
                         <td><?= $row["password"] ?></td>

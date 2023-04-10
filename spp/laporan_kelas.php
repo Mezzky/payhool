@@ -14,6 +14,9 @@
     <title>Laporan Kelas</title>
     <style>
         /* Laporan */
+        *{
+            font-family: 'Times New Roman', Times, serif;
+        }
         .note-laporan{
             margin-bottom: 30px;
         }
@@ -27,8 +30,10 @@
 <body>
     <h1>Laporan SPP</h1>
     <?php $idKelas =  $_POST['kelas']; ?>
+    <?php $angkatan =  $_POST['angkatan']; ?>
     <?php $dataKelas = query("SELECT * FROM tb_kelas WHERE id_kelas = '$idKelas'")[0]; ?>
     <h3>Kelas: <?= $dataKelas['kelas']; ?></h3>
+    <h3>Angkatan: <?= $angkatan; ?></h3>
 
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>

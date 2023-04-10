@@ -103,7 +103,7 @@
                         <th>No</th>
                         <th>Petugas</th>
                         <th>NIS</th>
-                        <th>Nama</th>
+                        <th>Nama Siswa</th>
                         <th>Tanggal Bayar</th>
                         <th>Bayar</th>
                     </tr>

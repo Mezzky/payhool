@@ -77,7 +77,7 @@
         $alamat = htmlspecialchars($data["alamat"]);
 
         // Query Insert Data
-        $query = "INSERT INTO tb_siswa VALUES ('$nis', '$nama', '123456', '$id_kelas', '$jenisKel', '$alamat')";
+        $query = "INSERT INTO tb_siswa VALUES ('$nis', '$nama', 'siswa123', '$id_kelas', '$jenisKel', '$alamat')";
         mysqli_query($conn, $query);
 
         tambahSPP($nis);
