@@ -40,7 +40,7 @@
             <div class="tittle-right">
                 <form action="" method="GET" autocomplete="off" class="search-form">
                     <?php if (!isset($_GET['keyword'])) : ?>
-                    <input type="text" name="keyword" placeholder="Cari NIS"  maxlength="4" required>
+                    <input type="text" autofocus name="keyword" placeholder="Cari NIS"  maxlength="4" required>
                     <?php else : ?>
                     <input type="text" name="keyword" placeholder="Cari NIS" value="<?= $_GET['keyword']; ?>"  maxlength="4" required>
                     <?php endif; ?>
