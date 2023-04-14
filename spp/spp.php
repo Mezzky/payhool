@@ -30,8 +30,8 @@ if ($_SESSION['leveluser'] == 'Admin' || $_SESSION['leveluser'] == 'Petugas') {
             </div>
 
             <div class="tittle-right-histori">
-                <a class="logout-btn" href="../login/logout.php">
-                    <img src="../Assets/icon/logout-icon.svg" alt="logout">
+                <a onclick="return confirm('Anda Yakin ingin Logout?')" href="../login/logout.php">
+                    <img class="icon-md" src="../Assets/icon/logout-icon.svg" alt="logout">
                 </a>
             </div>
         </div>

@@ -37,16 +37,12 @@
             <form action="" method="POST">
                 <div class="input-box">
                     <label for="nis">NIS</label>
-                    <input autocomplete="off" required type="text" maxlength="4" name="nis" id="nis">
+                    <input autocomplete="off" required type="number" maxlength="4" name="nis" id="nis" placeholder="NIS harus berupa angka 4 digit">
                 </div>
                 <div class="input-box">
                     <label for="nama">Nama</label>
                     <input autocomplete="off" required type="text" name="nama_siswa" id="nama">
                 </div>
-                <!-- <div class="input-box">
-                    <label for="password">Password</label>
-                    <input autocomplete="off" required type="text" name="password" id="password">
-                </div> -->
                 <div class="input-box">
                     <label for="id_kelas">Kelas</label>
                     <select name="id_kelas" id="id_kelas">

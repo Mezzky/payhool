@@ -48,8 +48,8 @@
                         <img class="icon-sm" src="../Assets/icon/search-icon.svg" alt="search">
                     </button>
                 </form>
-                <a class="logout-btn" href="../login/logout.php">
-                    <img src="../Assets/icon/logout-icon.svg" alt="logout">
+                <a onclick="return confirm('Anda Yakin ingin Logout?')" href="../login/logout.php">
+                    <img class="icon-md" src="../Assets/icon/logout-icon.svg" alt="logout">
                 </a>
             </div>
         </div>
@@ -105,7 +105,7 @@
                                 } else{
                             ?>
                             <td>
-                                <a href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
+                                <a onclick="return confirm('Anda yakin ingin membayar Bulan: <?= $row['bulan']; ?>?');" href="proses_bayar.php?id_pembayaran=<?= $row["id_pembayaran"]; ?>&nis=<?= $row["nis"]; ?>">Bayar</a>
                             </td>
                             <?php
                                 }
